@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[python3种异常处理方法]]></title>
+      <title><![CDATA[python异常处理方法]]></title>
       <url>%2F2017%2F03%2F11%2Ftry%E8%AF%AD%E5%8F%A5%2F</url>
       <content type="text"><![CDATA[1.捕获所有异常12345try: a=b b=c except Exception,e: print Exception,":",e 2.采用traceback模块查看异常1234567891011121314151617181920#引入python中的traceback模块，跟踪错误import traceback try: a=b b=c except: traceback.print_exc()#也可以将异常存储到日志文件中去import tracebacktry: a=b b=c except: f=open("c:log.txt",'a') traceback.print_exc(file=f) f.flush() f.close() 3.采用sys模块回溯最后的异常12345678#引入sys模块import sys try: a=b b=c except: info=sys.exc_info() print info[0],":",info[1]]]></content>
     </entry>
