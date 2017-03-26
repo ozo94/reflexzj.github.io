@@ -1,41 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
-    
-    <entry>
-      <title><![CDATA[openedx搭建笔记]]></title>
-      <url>%2F2017%2F03%2F22%2Fopenedx%E6%90%AD%E5%BB%BA%2F</url>
-      <content type="text"><![CDATA[小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台 openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。 1.git安装的方法由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。根据你的ubuntu系统来选择安装]]></content>
-    </entry>
-
+  
     
     <entry>
       <title><![CDATA[post&get 方法]]></title>
-      <url>%2F2017%2F03%2F15%2Fpost_get%2F</url>
-      <content type="text"><![CDATA[HTTP 定义了与服务器交互的不同方法，最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。 GET与POST方法有以下区别： 在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。 GET方式提交的数据最多只能有1024字节，而POST则没有此限制。 安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。]]></content>
+      <url>http://yoursite.com/2017/03/15/post_get/</url>
+      <content type="html"><![CDATA[<p>HTTP 定义了与服务器交互的不同方法，最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。</p>
+<a id="more"></a>
+<p>GET与POST方法有以下区别：</p>
+<ul>
+<li>在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。</li>
+<li>GET方式提交的数据最多只能有1024字节，而POST则没有此限制。</li>
+<li>安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> web开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> post </tag>
+            
+            <tag> get </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[python异常处理方法]]></title>
-      <url>%2F2017%2F03%2F11%2Ftry%E8%AF%AD%E5%8F%A5%2F</url>
-      <content type="text"><![CDATA[1.捕获所有异常123456try: a=b b=c except Exception,e: print Exception,&quot;:&quot;,e 2.采用traceback模块查看异常1234567891011121314151617181920#引入python中的traceback模块，跟踪错误import traceback try: a=b b=c except: traceback.print_exc()#也可以将异常存储到日志文件中去import tracebacktry: a=b b=c except: f=open("c:log.txt",'a') traceback.print_exc(file=f) f.flush() f.close() 3.采用sys模块回溯最后的异常12345678#引入sys模块import sys try: a=b b=c except: info=sys.exc_info() print info[0],":",info[1]]]></content>
+      <url>http://yoursite.com/2017/03/11/try%E8%AF%AD%E5%8F%A5/</url>
+      <content type="html"><![CDATA[<h3 id="1-捕获所有异常"><a href="#1-捕获所有异常" class="headerlink" title="1.捕获所有异常"></a>1.捕获所有异常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">try:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line">except Exception,e:  </div><div class="line">    print Exception,&quot;:&quot;,e</div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="2-采用traceback模块查看异常"><a href="#2-采用traceback模块查看异常" class="headerlink" title="2.采用traceback模块查看异常"></a>2.采用traceback模块查看异常</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入python中的traceback模块，跟踪错误</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    traceback.print_exc()</div><div class="line"></div><div class="line"><span class="comment">#也可以将异常存储到日志文件中去</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback</div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    f=open(<span class="string">"c:log.txt"</span>,<span class="string">'a'</span>)  </div><div class="line">    traceback.print_exc(file=f)  </div><div class="line">    f.flush()  </div><div class="line">    f.close()</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-采用sys模块回溯最后的异常"><a href="#3-采用sys模块回溯最后的异常" class="headerlink" title="3.采用sys模块回溯最后的异常"></a>3.采用sys模块回溯最后的异常</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入sys模块</span></div><div class="line"><span class="keyword">import</span> sys  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    info=sys.exc_info()  </div><div class="line">    <span class="keyword">print</span> info[<span class="number">0</span>],<span class="string">":"</span>,info[<span class="number">1</span>]</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
-
+    
+    <entry>
+      <title><![CDATA[openedx搭建笔记]]></title>
+      <url>http://yoursite.com/2017/03/01/openedx%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<p>小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台</p>
+<ul>
+<li>openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h3 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h3><p>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。</p>
+<ul>
+<li>根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 <em>edx/configuration 、edx/edx-platform</em> 这两个开源项目</li>
+</ul>
+<p>本人使用了12.04的安装平台，具体的安装方法可以参考：<a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation" target="_blank" rel="external">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></p>
+<h4 id="这里罗列了一些手动安装过程中会出现的一些问题"><a href="#这里罗列了一些手动安装过程中会出现的一些问题" class="headerlink" title="这里罗列了一些手动安装过程中会出现的一些问题"></a>这里罗列了一些手动安装过程中会出现的一些问题</h4><ul>
+<li>由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令</li>
+</ul>
+<p>安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot;</div></pre></td></tr></table></figure></p>
+<h5 id="整理了一些错误报告"><a href="#整理了一些错误报告" class="headerlink" title="整理了一些错误报告"></a>整理了一些错误报告</h5><p>（1） cannot import name _unicode</p>
+<ul>
+<li><p>py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键）</p>
+<pre><code>sudo apt-get install python-pymongo
+</code></pre></li>
+<li><p>已经安装了还是不行，选择安装最新版本的</p>
+<pre><code>sudo pip uninstall pymongo bson
+sudo pip install pymongo --upgrade
+</code></pre></li>
+</ul>
+<p>（2）pip软件包的警告<br>    SNIMissingWarning: An HTTPS request has been made,….see <a href="https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning" target="_blank" rel="external">https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning</a>. </p>
+<ul>
+<li>解决方案<pre><code>pip install pyopenssl ndg-httpsclient pyasn1
+</code></pre></li>
+</ul>
+<p>（3）用户权限问题<br>    The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. </p>
+<p>可以参考linux权限辅助的处理方案</p>
+<p>（4）安装mongo服务器时候<br>    “msg”: “Failed to update apt cache.”</p>
+<ul>
+<li>删除 /var/lib/apt/lists下所有缓存文件<pre><code>sudo rm -rf  *
+</code></pre></li>
+<li>更新apt列表<pre><code>sudo apt-get update
+</code></pre></li>
+</ul>
+<h3 id="ova镜像挂载"><a href="#ova镜像挂载" class="headerlink" title="ova镜像挂载"></a>ova镜像挂载</h3><p>挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置<br>主要是配置网络IP<br>edustack网站给出的指引方案<br>可以参考：<a href="http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/" target="_blank" rel="external">http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</a></p>
+<h3 id="run文件安装"><a href="#run文件安装" class="headerlink" title="run文件安装"></a>run文件安装</h3><p>bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。<br>附上地址：<a href="https://bitnami.com/stack/edx" target="_blank" rel="external">https://bitnami.com/stack/edx</a><br>该文件是在ubuntu系统下进行安装：</p>
+<ul>
+<li><p>安装openedx<br>添加权限后安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run</div><div class="line">./bitnami-edx-20160414-4-linux-x64-installer.run</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装配置<br>安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）<br>如果在图形界面中配置，则很简单<br>附上dos界面的配置<br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png" alt="none"><br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png" alt="none"></p>
+</li>
+<li><p>修改主机名/ip地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip)</div></pre></td></tr></table></figure>
+</li>
+<li><p>备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh stop</div><div class="line">$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动openedx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh start</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="box文件"><a href="#box文件" class="headerlink" title="box文件"></a>box文件</h3><p>github上放出的最新的box镜像<br>环境要求：vagrant+vitualbox<br>参考地址：<a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html</a><br>安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置<br>操作流程</p>
+<ul>
+<li>新建一个文件夹</li>
+<li><p>导入对应的box文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vagrant box add (name) (file_directory)</div><div class="line">vagrant init (name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件</p>
+<ul>
+<li><p>打开网络地址（包括本地网络和外网地址）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</div><div class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置映射文件<br>本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）<br>以当前文件目录为起始点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>启动、结束、重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vagrant up</div><div class="line">vagrant halt</div><div class="line">vagrant reload</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> openEdx </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> edx </tag>
+            
+            <tag> vagrant </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python进制转换]]></title>
+      <url>http://yoursite.com/2016/12/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
+      <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">二进制：    bin(num)</div><div class="line">八进制：    oct(num)</div><div class="line">十六进制：  hex(num)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="汉明距离"><a href="#汉明距离" class="headerlink" title="汉明距离"></a>汉明距离</h5><p>汉明距离：两个数进行二进制转换后，不同的位数<br></p>
+<h6 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：<br></h6><p>两个数之间进行异或操作，不同的位置将会标’1’<br></p>
+<p>分别给出python和c++的代码实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
+<p>c++中通过按位与的方法来做，很巧妙<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n=x^y</div><div class="line"><span class="keyword">while</span>(n)</div><div class="line">&#123;</div><div class="line">  ++flag;</div><div class="line">  n &amp;= n - <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="实现按位的非操作（在python中并没有’-a’这样的表达形式）"><a href="#实现按位的非操作（在python中并没有’-a’这样的表达形式）" class="headerlink" title="实现按位的非操作（在python中并没有’!a’这样的表达形式）"></a>实现按位的非操作（在python中并没有’!a’这样的表达形式）</h5><h6 id="思路：-1"><a href="#思路：-1" class="headerlink" title="思路："></a>思路：</h6><p>要想’0’，’1’发生互换，对应位置与’1’进行异或操作<br><br>难点在于：产生与num二进制转化后，同样长度的’1’<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">5(101)</div><div class="line"> (111)</div></pre></td></tr></table></figure></p>
+<p>给出巧妙的代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div><div class="line"><span class="comment">#5  (0101)</span></div><div class="line"><span class="comment">#i-1(0111)</span></div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> python编程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
     
     <entry>
       <title><![CDATA[静态网页爬虫抓取]]></title>
-      <url>%2F2016%2F12%2F05%2F%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96%2F</url>
-      <content type="text"><![CDATA[爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）源码地址：https://github.com/reflexzj/simple-crawler.git 一、概述简单的爬虫组成 URL管理器 网页下载器 网页解析器这三个部分组成 给出三个部件协同工作流程 二、url管理器为什么需要urlManager这个组件？ 防止重复抓取、循环抓取（最坏情况：两个URL之间相互指向） 添加新的URL时需要判断 URL管理的基本功能范围 实现方案 使用集合将待爬取的url放入集合中python中的set()方法可以去除重复元素 关系型数据库通过表和相应的标志位来实现这个功能 缓存数据库eg:redis,使用两个数据的方案（大型公司的选用方式）个人可以使用电脑的内存或者是关系型数据库 三、网页下载器将互联网上URL对应的网页下载到本地的工具 工具 urllib2Python官方的基础模块： 支持直接的URL下载 向网页提交一些需要用户输入的数据 需要登陆网页的cookie处理 代理访问功能 requests第三方插件，提供更为强大的功能 urllib2用法 1.将URL传送给urllib2.urlopen()方法123456789import urllib2 #直接请求 response = urllib2.urlopen('http://www.baidu.com') #获取状态码，如果是200，则表示获取成功 print response.getcode() #读取内容 contt = response.read() 2.添加data、http header 增强处理：向服务器提交需要用户输入的数据 将url、data、header等信息传给request，将request对象作为参数发送网页请求123456789101112import urllib2 #创建request对象 request = urllib2.request(url) #添加数据（'a'这个数据项的值为'1'） request.add_data('a','1') #添加http的header（伪装成Mozilla浏览器） request.add_header('USer-Agent','Mozilla/5.0') #发送请求获取结果 response = urllib2.urlopen(request) 3.添加特殊场景的处理登陆访问：HTTPCookieProcesser 代理访问：ProxyHandler 协议加密：HTTPSHandler URL之间相互跳转：HTTPRedirectHandler …..eg：增强cookie的处理123456789101112import urllib2, cookielib #创建cookie容器 cj = cookielib.CookieJar() #将cookieJar作为一个参数生成对应的Handler，将此Handler传给Opener opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj)) #增强处理器，为urllib2安装opener urllib2.install_opener(opener) #此时使用带有cookie的urllib2来访问网页 response = urllib2.urlopen("http://www.baidu.com/") 四、网页解析器种类介绍 1.模糊匹配解析正则表达式 将整个网页文档当成一个字符串，使用模糊匹配的方式提取数据 直观，面对复杂内容，效率底下 2.结构化解析将整个网页文档下成一个文档对象模型树DOM(document Object Model) 解析工具： 1.html.parser自带的解析工具 2.Beautiful Soup可已使用html.parser以及Ixml来作为其的解析器 3.Ixml Beautiful Soup 安装文档参考地址：https://www.crummy.com/software/BeautifulSoup/bs4/doc/在windows环境下通过python工具包自带的pip工具来安装pip程序在Scripts文件中，检查是否安装 cd python_27\Scripts安装 pip install beautifulsoup4 用法 原理根据下载好的Html网页创建一个BeatifulSoup对象，文档则会变为相应的DOM树 代码实现（1）创建BeautifulSoup对象 1234 from bs4 import BeautifulSoup#根据HTML网页字符串创建BeautifulSoup对象#对象中的参数分别表示为HTML文档字符串、HTML解析器、指定文档的编码soup= BeautifulSoup(html_doc,'html.parser',from_encoding='utf8') （2）搜索节点（find_all,find） 这两个方法具有相同的参数：d_all(name,attrs,string) find_all() 搜索所有满足条件的节点 find() 搜索第一个满足条件的节点 -方法中的三个参数代表搜索的三个方向，分为名称、属性、内容 123456789#查找所有标签为a的节点soup.find_all('a')#查找所有标签为啊，链接符合/view/123.htm形式的节点(也可以传入正则表达式)soup.find_all('a',href='/view/123.htm')soup.find_all('a',href=re.compile(r'/view/\d+\.htm'))#查找所有标签为div，class为abc，文字为Python的节点(class为python关键字，加下划线避免冲突)soup.find_all('div',class_='abc',string='Python') （3）访问节点信息 12345678910 #得到节点：&lt;a href='1.html'&gt;Python&lt;/a&gt;#获取查找到的节点标签名称node.name#获取查找到的a节点的href属性node['href']#获取查找到的a节点的链接文字node.get_text()]]></content>
+      <url>http://yoursite.com/2016/12/05/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96/</url>
+      <content type="html"><![CDATA[<p>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。<br>开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）<br><a id="more"></a><br>源码地址：<a href="https://github.com/reflexzj/simple-crawler.git" target="_blank" rel="external">https://github.com/reflexzj/simple-crawler.git</a></p>
+<hr>
+<h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><h4 id="简单的爬虫组成"><a href="#简单的爬虫组成" class="headerlink" title="简单的爬虫组成"></a>简单的爬虫组成</h4><ul>
+<li>URL管理器</li>
+<li>网页下载器</li>
+<li>网页解析器这三个部分组成</li>
+</ul>
+<h4 id="给出三个部件协同工作流程"><a href="#给出三个部件协同工作流程" class="headerlink" title="给出三个部件协同工作流程"></a>给出三个部件协同工作流程</h4><p><img src="http://omouah54e.bkt.clouddn.com/image/spidersipder-sequence.bmp" alt="none"></p>
+<hr>
+<h3 id="二、url管理器"><a href="#二、url管理器" class="headerlink" title="二、url管理器"></a>二、url管理器</h3><p>为什么需要urlManager这个组件？</p>
+<ul>
+<li>防止重复抓取、循环抓取（最坏情况：两个URL之间相互指向）</li>
+<li>添加新的URL时需要判断</li>
+</ul>
+<h4 id="URL管理的基本功能范围"><a href="#URL管理的基本功能范围" class="headerlink" title="URL管理的基本功能范围"></a>URL管理的基本功能范围</h4><p><img src="http://omouah54e.bkt.clouddn.com/image/spider/urlmanager.bmp" alt="none"></p>
+<h4 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h4><ul>
+<li><h5 id="使用集合将待爬取的url放入集合中"><a href="#使用集合将待爬取的url放入集合中" class="headerlink" title="使用集合将待爬取的url放入集合中"></a>使用集合将待爬取的url放入集合中</h5><p>python中的set()方法可以去除重复元素</p>
+</li>
+<li><h5 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h5><p>通过表和相应的标志位来实现这个功能</p>
+</li>
+<li><h5 id="缓存数据库"><a href="#缓存数据库" class="headerlink" title="缓存数据库"></a>缓存数据库</h5><p>eg:redis,使用两个数据的方案（大型公司的选用方式）<br>个人可以使用电脑的内存或者是关系型数据库</p>
+</li>
+</ul>
+<hr>
+<h3 id="三、网页下载器"><a href="#三、网页下载器" class="headerlink" title="三、网页下载器"></a>三、网页下载器</h3><p>将互联网上URL对应的网页下载到本地的工具</p>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ul>
+<li><h5 id="urllib2"><a href="#urllib2" class="headerlink" title="urllib2"></a>urllib2</h5><p>Python官方的基础模块：</p>
+<ul>
+<li>支持直接的URL下载</li>
+<li>向网页提交一些需要用户输入的数据</li>
+<li>需要登陆网页的cookie处理</li>
+<li>代理访问功能</li>
+</ul>
+</li>
+<li><h5 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h5><p>第三方插件，提供更为强大的功能</p>
+</li>
+</ul>
+<h4 id="urllib2用法"><a href="#urllib2用法" class="headerlink" title="urllib2用法"></a>urllib2用法</h4><ul>
+<li><h5 id="1-将URL传送给urllib2-urlopen-方法"><a href="#1-将URL传送给urllib2-urlopen-方法" class="headerlink" title="1.将URL传送给urllib2.urlopen()方法"></a>1.将URL传送给urllib2.urlopen()方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">    <span class="comment">#直接请求</span></div><div class="line">    response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#获取状态码，如果是200，则表示获取成功</span></div><div class="line">    <span class="keyword">print</span> response.getcode()</div><div class="line"></div><div class="line">    <span class="comment">#读取内容</span></div><div class="line">    contt = response.read()</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="2-添加data、http-header"><a href="#2-添加data、http-header" class="headerlink" title="2.添加data、http header"></a>2.添加data、http header</h5><ul>
+<li>增强处理：向服务器提交需要用户输入的数据</li>
+<li>将url、data、header等信息传给request，将request对象作为参数发送网页请求<br><img src="http://omouah54e.bkt.clouddn.com/image/spider/urllib2-dhh.bmp" alt="none"><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">    <span class="comment">#创建request对象</span></div><div class="line">    request = urllib2.request(url)</div><div class="line"></div><div class="line">    <span class="comment">#添加数据（'a'这个数据项的值为'1'）</span></div><div class="line">    request.add_data(<span class="string">'a'</span>,<span class="string">'1'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#添加http的header（伪装成Mozilla浏览器）</span></div><div class="line">    request.add_header(<span class="string">'USer-Agent'</span>,<span class="string">'Mozilla/5.0'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#发送请求获取结果</span></div><div class="line">    response = urllib2.urlopen(request)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="3-添加特殊场景的处理"><a href="#3-添加特殊场景的处理" class="headerlink" title="3.添加特殊场景的处理"></a>3.添加特殊场景的处理</h5><p>登陆访问：HTTPCookieProcesser</p>
+<ul>
+<li>代理访问：ProxyHandler</li>
+<li>协议加密：HTTPSHandler</li>
+<li>URL之间相互跳转：HTTPRedirectHandler</li>
+<li>…..<br><br><br><img src="http://omouah54e.bkt.clouddn.com/image/spider/urllib2-dhh.bmp" alt="none"><br>eg：增强cookie的处理<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2, cookielib</div><div class="line">     <span class="comment">#创建cookie容器</span></div><div class="line">     cj = cookielib.CookieJar()</div><div class="line"></div><div class="line">     <span class="comment">#将cookieJar作为一个参数生成对应的Handler，将此Handler传给Opener</span></div><div class="line">     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))</div><div class="line"></div><div class="line">     <span class="comment">#增强处理器，为urllib2安装opener</span></div><div class="line">     urllib2.install_opener(opener)</div><div class="line"></div><div class="line">     <span class="comment">#此时使用带有cookie的urllib2来访问网页</span></div><div class="line">     response = urllib2.urlopen(<span class="string">"http://www.baidu.com/"</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="四、网页解析器"><a href="#四、网页解析器" class="headerlink" title="四、网页解析器"></a>四、网页解析器</h3><h4 id="种类介绍"><a href="#种类介绍" class="headerlink" title="种类介绍"></a>种类介绍</h4><ul>
+<li><h5 id="1-模糊匹配解析"><a href="#1-模糊匹配解析" class="headerlink" title="1.模糊匹配解析"></a>1.模糊匹配解析</h5><p>正则表达式</p>
+<ul>
+<li>将整个网页文档当成一个字符串，使用模糊匹配的方式提取数据</li>
+<li>直观，面对复杂内容，效率底下</li>
+</ul>
+</li>
+<li><h5 id="2-结构化解析"><a href="#2-结构化解析" class="headerlink" title="2.结构化解析"></a>2.结构化解析</h5><p>将整个网页文档下成一个文档对象模型树<br>DOM(document Object Model)</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/page-editor.bmp" alt="none"></p>
+<p>解析工具：</p>
+<ul>
+<li>1.html.parser<br>自带的解析工具</li>
+<li>2.Beautiful Soup<br>可已使用html.parser以及Ixml来作为其的解析器</li>
+<li>3.Ixml</li>
+</ul>
+</li>
+</ul>
+<h4 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a>Beautiful Soup</h4><ul>
+<li><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>文档参考地址：<br><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a><br>在windows环境下通过python工具包自带的pip工具来安装<br>pip程序在Scripts文件中，检查是否安装<br> cd python_27\Scripts<br>安装<br> pip install beautifulsoup4</p>
+</li>
+<li><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
+<li><h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>根据下载好的Html网页创建一个BeatifulSoup对象，文档则会变为相应的DOM树</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/image/spider/DOM1.bmp" alt="none"></p>
+</li>
+<li><h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><p>（1）创建BeautifulSoup对象    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="comment">#根据HTML网页字符串创建BeautifulSoup对象</span></div><div class="line"><span class="comment">#对象中的参数分别表示为HTML文档字符串、HTML解析器、指定文档的编码</span></div><div class="line">soup= BeautifulSoup(html_doc,<span class="string">'html.parser'</span>,from_encoding=<span class="string">'utf8'</span>)</div></pre></td></tr></table></figure>
+<p>（2）搜索节点（find_all,find）</p>
+<ul>
+<li>这两个方法具有相同的参数：d_all(name,attrs,string)</li>
+<li>find_all() 搜索所有满足条件的节点</li>
+<li><p>find() 搜索第一个满足条件的节点    -方法中的三个参数代表搜索的三个方向，分为名称、属性、内容</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/image/spider/DOM2.bmp" alt="none"></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查找所有标签为a的节点</span></div><div class="line">soup.find_all(<span class="string">'a'</span>)</div><div class="line"></div><div class="line"><span class="comment">#查找所有标签为啊，链接符合/view/123.htm形式的节点(也可以传入正则表达式)</span></div><div class="line">soup.find_all(<span class="string">'a'</span>,href=<span class="string">'/view/123.htm'</span>)</div><div class="line">soup.find_all(<span class="string">'a'</span>,href=re.compile(<span class="string">r'/view/\d+\.htm'</span>))</div><div class="line"></div><div class="line"><span class="comment">#查找所有标签为div，class为abc，文字为Python的节点(class为python关键字，加下划线避免冲突)</span></div><div class="line">soup.find_all(<span class="string">'div'</span>,class_=<span class="string">'abc'</span>,string=<span class="string">'Python'</span>)</div></pre></td></tr></table></figure>
+<p>（3）访问节点信息</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">#得到节点：&lt;a href='1.html'&gt;Python&lt;/a&gt;</span></div><div class="line"></div><div class="line"><span class="comment">#获取查找到的节点标签名称</span></div><div class="line">node.name</div><div class="line"></div><div class="line"><span class="comment">#获取查找到的a节点的href属性</span></div><div class="line">node[<span class="string">'href'</span>]</div><div class="line"></div><div class="line"><span class="comment">#获取查找到的a节点的链接文字</span></div><div class="line">node.get_text()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 爬虫 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> spider </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[__name__ = '__main__' 的作用]]></title>
-      <url>%2F2016%2F10%2F05%2Fmain%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90%2F</url>
-      <content type="text"><![CDATA[给一个模块12345#module.pydef main(): print "we are in %s"%__name__if __name__ == '__main__': main() 这个函数定义了一个main函数，执行后打印出”we are in main“,说明if语句中的内容被执行了，调用了main() 从另外一个模块中调用main()方法123#anothermodle.pyfrom module import mainmain() 执行的结果是：we are in module 没有显示”we are in main“,也就是说模块name = ‘main‘ 下面的函数没有执行。 分析直接执行某个.py文件的时候，该文件中那么”name == ‘main‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时name的值就是这个py文件的名字而不是main。 这个功能还有一个用处：调试代码的时候，在”if name == ‘main‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。]]></content>
+      <url>http://yoursite.com/2016/10/05/main%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h6 id="给一个模块"><a href="#给一个模块" class="headerlink" title="给一个模块"></a>给一个模块</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</p>
+<h6 id="从另外一个模块中调用main-方法"><a href="#从另外一个模块中调用main-方法" class="headerlink" title="从另外一个模块中调用main()方法"></a>从另外一个模块中调用main()方法</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#anothermodle.py</span></div><div class="line"><span class="keyword">from</span> module <span class="keyword">import</span> main</div><div class="line">main()</div></pre></td></tr></table></figure>
+<p>执行的结果是：we are in module</p>
+<p>没有显示”we are in <strong>main</strong>“,也就是说模块<strong>name</strong> = ‘<strong>main</strong>‘ 下面的函数没有执行。</p>
+<h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>直接执行某个.py文件的时候，该文件中那么”<strong>name</strong> == ‘<strong>main</strong>‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时<strong>name</strong>的值就是这个py文件的名字而不是<strong>main</strong>。</p>
+<p>这个功能还有一个用处：调试代码的时候，在”if <strong>name</strong> == ‘<strong>main</strong>‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python编程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> pyhton </tag>
+            
+        </tags>
+        
     </entry>
-
     
   
   

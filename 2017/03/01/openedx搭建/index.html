@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>openedx搭建笔记 | ZhangJian&#39;s blog</title>
+  
+  
+  <meta name="description" content="小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台
+
+openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="openedx搭建笔记"/>
+  <meta property="og:site_name" content="ZhangJian&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">ZhangJian&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> openedx搭建笔记</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台</p>
+<ul>
+<li>openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h3 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h3><p>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。</p>
+<ul>
+<li>根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 <em>edx/configuration 、edx/edx-platform</em> 这两个开源项目</li>
+</ul>
+<p>本人使用了12.04的安装平台，具体的安装方法可以参考：<a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation" target="_blank" rel="external">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></p>
+<h4 id="这里罗列了一些手动安装过程中会出现的一些问题"><a href="#这里罗列了一些手动安装过程中会出现的一些问题" class="headerlink" title="这里罗列了一些手动安装过程中会出现的一些问题"></a>这里罗列了一些手动安装过程中会出现的一些问题</h4><ul>
+<li>由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令</li>
+</ul>
+<p>安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot;</div></pre></td></tr></table></figure></p>
+<h5 id="整理了一些错误报告"><a href="#整理了一些错误报告" class="headerlink" title="整理了一些错误报告"></a>整理了一些错误报告</h5><p>（1） cannot import name _unicode</p>
+<ul>
+<li><p>py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键）</p>
+<pre><code>sudo apt-get install python-pymongo
+</code></pre></li>
+<li><p>已经安装了还是不行，选择安装最新版本的</p>
+<pre><code>sudo pip uninstall pymongo bson
+sudo pip install pymongo --upgrade
+</code></pre></li>
+</ul>
+<p>（2）pip软件包的警告<br>    SNIMissingWarning: An HTTPS request has been made,….see <a href="https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning" target="_blank" rel="external">https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning</a>. </p>
+<ul>
+<li>解决方案<pre><code>pip install pyopenssl ndg-httpsclient pyasn1
+</code></pre></li>
+</ul>
+<p>（3）用户权限问题<br>    The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. </p>
+<p>可以参考linux权限辅助的处理方案</p>
+<p>（4）安装mongo服务器时候<br>    “msg”: “Failed to update apt cache.”</p>
+<ul>
+<li>删除 /var/lib/apt/lists下所有缓存文件<pre><code>sudo rm -rf  *
+</code></pre></li>
+<li>更新apt列表<pre><code>sudo apt-get update
+</code></pre></li>
+</ul>
+<h3 id="ova镜像挂载"><a href="#ova镜像挂载" class="headerlink" title="ova镜像挂载"></a>ova镜像挂载</h3><p>挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置<br>主要是配置网络IP<br>edustack网站给出的指引方案<br>可以参考：<a href="http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/" target="_blank" rel="external">http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</a></p>
+<h3 id="run文件安装"><a href="#run文件安装" class="headerlink" title="run文件安装"></a>run文件安装</h3><p>bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。<br>附上地址：<a href="https://bitnami.com/stack/edx" target="_blank" rel="external">https://bitnami.com/stack/edx</a><br>该文件是在ubuntu系统下进行安装：</p>
+<ul>
+<li><p>安装openedx<br>添加权限后安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run</div><div class="line">./bitnami-edx-20160414-4-linux-x64-installer.run</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装配置<br>安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）<br>如果在图形界面中配置，则很简单<br>附上dos界面的配置<br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png" alt="none"><br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png" alt="none"></p>
+</li>
+<li><p>修改主机名/ip地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip)</div></pre></td></tr></table></figure>
+</li>
+<li><p>备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh stop</div><div class="line">$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动openedx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh start</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="box文件"><a href="#box文件" class="headerlink" title="box文件"></a>box文件</h3><p>github上放出的最新的box镜像<br>环境要求：vagrant+vitualbox<br>参考地址：<a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html</a><br>安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置<br>操作流程</p>
+<ul>
+<li>新建一个文件夹</li>
+<li><p>导入对应的box文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vagrant box add (name) (file_directory)</div><div class="line">vagrant init (name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件</p>
+<ul>
+<li><p>打开网络地址（包括本地网络和外网地址）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</div><div class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置映射文件<br>本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）<br>以当前文件目录为起始点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>启动、结束、重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vagrant up</div><div class="line">vagrant halt</div><div class="line">vagrant reload</div></pre></td></tr></table></figure></li>
+</ul>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2017/03/11/try语句/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2016/12/15/进制转换/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2017-03-01 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/openEdx/">openEdx<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/edx/">edx<span>1</span></a></li> <li><a href="/tags/vagrant/">vagrant<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2017 ZhangJian&#39;s blog
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

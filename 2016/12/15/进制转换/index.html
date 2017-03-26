@@ -6,15 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>post&amp;get 方法 | ZhangJian&#39;s blog</title>
+  <title>python进制转换 | ZhangJian&#39;s blog</title>
   
   
-  <meta name="description" content="HTTP 定义了与服务器交互的不同方法，最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。">
+  <meta name="description" content="123二进制：    bin(num)八进制：    oct(num)十六进制：  hex(num)">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="post&amp;get 方法"/>
+  <meta property="og:title" content="python进制转换"/>
   <meta property="og:site_name" content="ZhangJian&#39;s blog"/>
 
   
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header">
-			<h1> post&amp;get 方法</h1>
+			<h1> python进制转换</h1>
 		</div>
 	
 
@@ -135,14 +135,14 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p>HTTP 定义了与服务器交互的不同方法，最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。</p>
+	  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">二进制：    bin(num)</div><div class="line">八进制：    oct(num)</div><div class="line">十六进制：  hex(num)</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>GET与POST方法有以下区别：</p>
-<ul>
-<li>在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。</li>
-<li>GET方式提交的数据最多只能有1024字节，而POST则没有此限制。</li>
-<li>安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。</li>
-</ul>
+<h5 id="汉明距离"><a href="#汉明距离" class="headerlink" title="汉明距离"></a>汉明距离</h5><p>汉明距离：两个数进行二进制转换后，不同的位数<br></p>
+<h6 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：<br></h6><p>两个数之间进行异或操作，不同的位置将会标’1’<br></p>
+<p>分别给出python和c++的代码实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
+<p>c++中通过按位与的方法来做，很巧妙<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n=x^y</div><div class="line"><span class="keyword">while</span>(n)</div><div class="line">&#123;</div><div class="line">  ++flag;</div><div class="line">  n &amp;= n - <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="实现按位的非操作（在python中并没有’-a’这样的表达形式）"><a href="#实现按位的非操作（在python中并没有’-a’这样的表达形式）" class="headerlink" title="实现按位的非操作（在python中并没有’!a’这样的表达形式）"></a>实现按位的非操作（在python中并没有’!a’这样的表达形式）</h5><h6 id="思路：-1"><a href="#思路：-1" class="headerlink" title="思路："></a>思路：</h6><p>要想’0’，’1’发生互换，对应位置与’1’进行异或操作<br><br>难点在于：产生与num二进制转化后，同样长度的’1’<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">5(101)</div><div class="line"> (111)</div></pre></td></tr></table></figure></p>
+<p>给出巧妙的代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div><div class="line"><span class="comment">#5  (0101)</span></div><div class="line"><span class="comment">#i-1(0111)</span></div></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -152,12 +152,13 @@ var _hmt = _hmt || [];
 
     
     
-    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    <a href="/2017/03/01/openedx搭建/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2017/03/11/try语句/" type="button" class="btn btn-default ">Next<i
+    <a href="/2016/12/05/静态网页爬虫抓取/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -186,7 +187,7 @@ var _hmt = _hmt || [];
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-03-15 
+	2016-12-15 
 	</div>
 	
 
@@ -197,7 +198,7 @@ var _hmt = _hmt || [];
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/web开发/">web开发<span>1</span></a></li>
+    <li><a href="/categories/python编程/">python编程<span>2</span></a></li>
   </li>
 
     </ul>
@@ -210,7 +211,7 @@ var _hmt = _hmt || [];
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/前端/">前端<span>1</span></a></li> <li><a href="/tags/post/">post<span>1</span></a></li> <li><a href="/tags/get/">get<span>1</span></a></li>
+  <li><a href="/tags/python/">python<span>3</span></a></li>
     </ul>
 	</div>
 		
