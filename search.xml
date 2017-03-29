@@ -5,14 +5,14 @@
     <entry>
       <title><![CDATA[c++算法整理]]></title>
       <url>%2F2017%2F03%2F29%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。 字符串 字符串逆置统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;;]]></content>
+      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。 字符串[字符串逆置]统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;; 位运算[汉明距离]汉明距离：两个数进行二进制转换后，不同的位数执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125;]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[python算法练习]]></title>
       <url>%2F2017%2F03%2F29%2Fpython%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串 字符串逆序]]></content>
+      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作123二进制： bin(num)八进制： oct(num)十六进制： hex(num) [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]显然不能通过”!”这个符号来直接实现按位非的操作。要想’0’，’1’发生互换，对应位置与’1’进行异或操作即可难点在于：如何产生与num二进制转化后，同样长度的’1’,我们可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数），最后产生的i-1=10..0-1=011..112345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num]]></content>
     </entry>
 
     
@@ -41,13 +41,6 @@
       <title><![CDATA[openedx搭建笔记]]></title>
       <url>%2F2017%2F03%2F01%2Fopenedx%E6%90%AD%E5%BB%BA%2F</url>
       <content type="text"><![CDATA[小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台 openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。 git安装的方法由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。 根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 edx/configuration 、edx/edx-platform 这两个开源项目 本人使用了12.04的安装平台，具体的安装方法可以参考：https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation 这里罗列了一些手动安装过程中会出现的一些问题 由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令 安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中1sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot; 整理了一些错误报告（1） cannot import name _unicode py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键） sudo apt-get install python-pymongo 已经安装了还是不行，选择安装最新版本的 sudo pip uninstall pymongo bson sudo pip install pymongo --upgrade （2）pip软件包的警告 SNIMissingWarning: An HTTPS request has been made,….see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning. 解决方案pip install pyopenssl ndg-httpsclient pyasn1 （3）用户权限问题 The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. 可以参考linux权限辅助的处理方案 （4）安装mongo服务器时候 “msg”: “Failed to update apt cache.” 删除 /var/lib/apt/lists下所有缓存文件sudo rm -rf * 更新apt列表sudo apt-get update ova镜像挂载挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置主要是配置网络IPedustack网站给出的指引方案可以参考：http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/ run文件安装bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。附上地址：https://bitnami.com/stack/edx该文件是在ubuntu系统下进行安装： 安装openedx添加权限后安装 12sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run./bitnami-edx-20160414-4-linux-x64-installer.run 安装配置安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）如果在图形界面中配置，则很简单附上dos界面的配置 修改主机名/ip地址 1sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip) 备份 12$ /home/azureuser/edx-20160414-4/ctlscript.sh stop$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4 启动openedx 1$ /home/azureuser/edx-20160414-4/ctlscript.sh start box文件github上放出的最新的box镜像环境要求：vagrant+vitualbox参考地址：http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置操作流程 新建一个文件夹 导入对应的box文件 12vagrant box add (name) (file_directory)vagrant init (name) 修改配置文件 打开网络地址（包括本地网络和外网地址） 12config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot; 配置映射文件本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）以当前文件目录为起始点 1config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot; 启动、结束、重启 123vagrant upvagrant haltvagrant reload]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[python进制转换]]></title>
-      <url>%2F2016%2F12%2F15%2F%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%2F</url>
-      <content type="text"><![CDATA[123二进制： bin(num)八进制： oct(num)十六进制： hex(num) 汉明距离汉明距离：两个数进行二进制转换后，不同的位数 思路：两个数之间进行异或操作，不同的位置将会标’1’ 分别给出python和c++的代码实现1bin(x^y).count('1') c++中通过按位与的方法来做，很巧妙123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125; 实现按位的非操作（在python中并没有’!a’这样的表达形式）思路：要想’0’，’1’发生互换，对应位置与’1’进行异或操作难点在于：产生与num二进制转化后，同样长度的’1’125(101) (111) 给出巧妙的代码1234567def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num#5 (0101)#i-1(0111)]]></content>
     </entry>
 
     

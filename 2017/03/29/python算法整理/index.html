@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法,python," />
+  <meta name="keywords" content="python,算法," />
 
 
 
@@ -111,10 +111,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/29/python算法整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
 <meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……">
-<meta property="og:updated_time" content="2017-03-29T12:06:43.840Z">
+<meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/python_image.jpg">
+<meta property="og:updated_time" content="2017-03-29T13:31:20.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python算法练习">
 <meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……">
+<meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/python_image.jpg">
 
 
 
@@ -371,11 +373,13 @@
       
 
       
-        <p>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……<br><a id="more"></a></p>
+        <p><img src="http://omouah54e.bkt.clouddn.com/PYTHON/python_image.jpg" width="100%"><br>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……<br><a id="more"></a></p>
 <hr>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
-<li>字符串逆序</li>
-</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串逆序"><a href="#字符串逆序" class="headerlink" title="[字符串逆序]"></a>[字符串逆序]</h4><p>明显的字符串切片（list也可以进行切片操作）<br>备注一下倒叙切片的语法 s[-4:-1]<br>倒数第一个元素的序号为-1（符合数学习惯）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="进制操作"><a href="#进制操作" class="headerlink" title="进制操作"></a>进制操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">二进制：    bin(num)</div><div class="line">八进制：    oct(num)</div><div class="line">十六进制：  hex(num)</div></pre></td></tr></table></figure>
+<h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>进行二进制转换后的异或位数（同位不同值即为一个距离）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="二进制的非操作"><a href="#二进制的非操作" class="headerlink" title="[二进制的非操作]"></a>[二进制的非操作]</h4><p>显然不能通过”!”这个符号来直接实现按位非的操作。要想’0’，’1’发生互换，对应位置与’1’进行异或操作即可<br>难点在于：如何产生与num二进制转化后，同样长度的’1’,我们可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数），最后产生的i-1=10..0-1=011..1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -405,9 +409,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
-          
             <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -504,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -599,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串逆序"><span class="nav-number">1.1.</span> <span class="nav-text">[字符串逆序]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制操作"><span class="nav-number">2.</span> <span class="nav-text">进制操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">[汉明距离]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制的非操作"><span class="nav-number">2.2.</span> <span class="nav-text">[二进制的非操作]</span></a></li></ol></li></ol></div>
             
 
           </div>
