@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[c++算法整理]]></title>
+      <url>%2F2017%2F03%2F29%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
+      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。 字符串 字符串逆置统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[python算法练习]]></title>
+      <url>%2F2017%2F03%2F29%2Fpython%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
+      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串 字符串逆序]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[post&get 方法]]></title>
       <url>%2F2017%2F03%2F15%2Fpost_get%2F</url>
       <content type="text"><![CDATA[HTTP 定义了与服务器交互的不同方法，最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。 GET与POST方法有以下区别： 在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。 GET方式提交的数据最多只能有1024字节，而POST则没有此限制。 安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。]]></content>
