@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[python内建函数（序列相关）]]></title>
+      <url>%2F2017%2F03%2F30%2Fpython%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%8F%E5%88%97%E7%AF%87%2F</url>
+      <content type="text"><![CDATA[python常见的与序列相关的内建函数有4种（sorted()、reversed()、enumerate()、zip()）sorted()、reversed()是返回的一个列表对象enumerate()、zip()返回的是一个迭代器 12345678&gt;&gt;&gt; type(sorted(s))&lt;type 'list'&gt;&gt;&gt;&gt; type(zip(s))&lt;type 'list'&gt;&gt;&gt;&gt; type(reversed(s))&lt;type 'listreverseiterator'&gt;&gt;&gt;&gt; type(enumerate(s))&lt;type 'enumerate'&gt; zip()函数zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。 [基本用法]12345678910&gt;&gt;&gt;s1=[1,2,3]&gt;&gt;&gt;s2=[4,5,6,7]&gt;&gt;&gt;result=zip(s1.s2)[(1,4),(2,5),(3,6)]#zip与*组合，形成一个行列变换&gt;&gt;&gt;zip(*result)[(1,2,3),(4,5,6)]&gt;&gt;&gt;map(list, zip(*a))[[1,2,3],[4,5,6]] [进阶用法]1.zip打包解包列表和倍数1234567&gt;&gt;&gt; a = [1, 2, 3]&gt;&gt;&gt; b = ['a', 'b', 'c']&gt;&gt;&gt; z = zip(a, b)&gt;&gt;&gt; z[(1, 'a'), (2, 'b'), (3, 'c')]&gt;&gt;&gt; zip(*z)[(1, 2, 3), ('a', 'b', 'c')] 2.使用zip合并相邻的列表项1234567891011121314151617181920212223242526&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]&gt;&gt;&gt; zip(*([iter(a)] * 2))[(1, 2), (3, 4), (5, 6)]#zip(([iter(a)] * k))输出结果为a的k个对象，并没有详细的记过，应该是一种特殊组合&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*([iter(a)] * k))&gt;&gt;&gt; group_adjacent(a, 3)[(1, 2, 3), (4, 5, 6)]&gt;&gt;&gt; group_adjacent(a, 2)[(1, 2), (3, 4), (5, 6)]&gt;&gt;&gt; group_adjacent(a, 1)[(1,), (2,), (3,), (4,), (5,), (6,)]&gt;&gt;&gt; zip(a[::2], a[1::2])[(1, 2), (3, 4), (5, 6)]&gt;&gt;&gt; zip(a[::3], a[1::3], a[2::3])[(1, 2, 3), (4, 5, 6)]&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))&gt;&gt;&gt; group_adjacent(a, 3)[(1, 2, 3), (4, 5, 6)]&gt;&gt;&gt; group_adjacent(a, 2)[(1, 2), (3, 4), (5, 6)]&gt;&gt;&gt; group_adjacent(a, 1)[(1,), (2,), (3,), (4,), (5,), (6,)] 3.使用zip和iterators生成滑动窗口 (n -grams)123456789101112&gt;&gt;&gt; from itertools import islice&gt;&gt;&gt; def n_grams(a, n):... z = (islice(a, i, None) for i in range(n))... return zip(*z)...&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]&gt;&gt;&gt; n_grams(a, 3)[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]&gt;&gt;&gt; n_grams(a, 2)[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]&gt;&gt;&gt; n_grams(a, 4)[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)] 4.使用zip反转字典12345678&gt;&gt;&gt; m = &#123;'a': 1, 'b': 2, 'c': 3, 'd': 4&#125;&gt;&gt;&gt; m.items()[('a', 1), ('c', 3), ('b', 2), ('d', 4)]&gt;&gt;&gt; zip(m.values(), m.keys())[(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]&gt;&gt;&gt; mi = dict(zip(m.values(), m.keys()))&gt;&gt;&gt; mi&#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[python 基本数据结构整理]]></title>
+      <url>%2F2017%2F03%2F29%2Fpython%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B4%E7%90%86%2F</url>
+      <content type="text"><![CDATA[常用的几个数据结构有:list[],tumple(),dict{},以及set()主要对常用的方法和一些细节进行备注 list###[python二维数组] 二维数组的定义1mylist= [[]]*3 这个操作只是定义了3个指向list([])的引用，list[0].append(3)的方法只会让mylist=[[3][3][3]]用如下的方式定义1mylist=[[0]*n, [0]*n, ...] tumple dict set]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[c++算法整理]]></title>
       <url>%2F2017%2F03%2F29%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
       <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。 字符串[字符串逆置]统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;; 位运算[汉明距离]汉明距离：两个数进行二进制转换后，不同的位数执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125;]]></content>
@@ -12,7 +26,7 @@
     <entry>
       <title><![CDATA[python算法练习]]></title>
       <url>%2F2017%2F03%2F29%2Fpython%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作123二进制： bin(num)八进制： oct(num)十六进制： hex(num) [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]显然不能通过”!”这个符号来直接实现按位非的操作。要想’0’，’1’发生互换，对应位置与’1’进行异或操作即可难点在于：如何产生与num二进制转化后，同样长度的’1’,我们可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数），最后产生的i-1=10..0-1=011..112345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num]]></content>
+      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作123二进制： bin(num)八进制： oct(num)十六进制： hex(num) [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]显然不能通过”!”这个符号来直接实现按位非的操作。要想’0’，’1’发生互换，对应位置与’1’进行异或操作即可难点在于：如何产生与num二进制转化后，同样长度的’1’,我们可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数），最后产生的i-1=10..0-1=011..112345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num list以及dict的联合使用[子表到母表的查询]]]></content>
     </entry>
 
     
