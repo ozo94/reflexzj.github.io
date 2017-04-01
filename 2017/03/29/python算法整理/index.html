@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="ZhangJian's blog">
 <meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/python_image.jpg">
-<meta property="og:updated_time" content="2017-03-30T15:19:12.557Z">
+<meta property="og:updated_time" content="2017-03-31T09:30:20.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python算法练习">
 <meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……">
@@ -381,7 +381,8 @@
 <h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>进行二进制转换后的异或位数（同位不同值即为一个距离）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
 <h4 id="二进制的非操作"><a href="#二进制的非操作" class="headerlink" title="[二进制的非操作]"></a>[二进制的非操作]</h4><p>显然不能通过”!”这个符号来直接实现按位非的操作。要想’0’，’1’发生互换，对应位置与’1’进行异或操作即可<br>难点在于：如何产生与num二进制转化后，同样长度的’1’,我们可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数），最后产生的i-1=10..0-1=011..1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="list以及dict的联合使用"><a href="#list以及dict的联合使用" class="headerlink" title="list以及dict的联合使用"></a>list以及dict的联合使用</h3><h4 id="子表到母表的查询"><a href="#子表到母表的查询" class="headerlink" title="[子表到母表的查询]"></a>[子表到母表的查询]</h4>
+<h3 id="list以及dict的联合使用"><a href="#list以及dict的联合使用" class="headerlink" title="list以及dict的联合使用"></a>list以及dict的联合使用</h3><h4 id="list相邻元素之间的比较"><a href="#list相邻元素之间的比较" class="headerlink" title="[list相邻元素之间的比较]"></a>[list相邻元素之间的比较]</h4><p>判断list的相邻的两个元素之间的关系<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">st=[]</div><div class="line"><span class="comment">#使用index进行循环</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(st)):</div><div class="line">    judge(st[x], s[x+<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="comment">#使用另外一个列表协同处理，设置中间列表tmp=[]</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> st:</div><div class="line">    <span class="keyword">while</span> len(tmp) <span class="keyword">and</span> judge(tmp[<span class="number">-1</span>], x):</div><div class="line">        ...</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    tmp.append(x)</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -509,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -604,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串逆序"><span class="nav-number">1.1.</span> <span class="nav-text">[字符串逆序]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制操作"><span class="nav-number">2.</span> <span class="nav-text">进制操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">[汉明距离]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制的非操作"><span class="nav-number">2.2.</span> <span class="nav-text">[二进制的非操作]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list以及dict的联合使用"><span class="nav-number">3.</span> <span class="nav-text">list以及dict的联合使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子表到母表的查询"><span class="nav-number">3.1.</span> <span class="nav-text">[子表到母表的查询]</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串逆序"><span class="nav-number">1.1.</span> <span class="nav-text">[字符串逆序]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制操作"><span class="nav-number">2.</span> <span class="nav-text">进制操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">[汉明距离]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制的非操作"><span class="nav-number">2.2.</span> <span class="nav-text">[二进制的非操作]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list以及dict的联合使用"><span class="nav-number">3.</span> <span class="nav-text">list以及dict的联合使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#list相邻元素之间的比较"><span class="nav-number">3.1.</span> <span class="nav-text">[list相邻元素之间的比较]</span></a></li></ol></li></ol></div>
             
 
           </div>
