@@ -43,31 +43,14 @@
   
 
   
-    
-    
-  
 
   
-    
-      
-    
 
-    
   
 
   
 
   
-    
-      
-    
-
-    
-  
-
-  
-    
-      
     
 
     
@@ -76,7 +59,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=DejaVu Sans Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -520,10 +503,8 @@
 
       
         
-          <blockquote>
-<p>python常见的与序列相关的内建函数有4种（sorted()、reversed()、enumerate()、zip()）<br>sorted()、reversed()是返回的一个列表对象<br>enumerate()、zip()返回的是一个迭代器</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(sorted(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(zip(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(reversed(s))</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure>
+          <p>python常见的与序列相关的内建函数有4种（sorted()、reversed()、enumerate()、zip()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#sorted()、reversed()是返回的一个列表对象</span></div><div class="line">type(sorted(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line">type(zip(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">#enumerate()、zip()返回的是一个迭代器</span></div><div class="line">type(reversed(s))</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line">type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/30/python内建函数序列篇/#more" rel="contents">
