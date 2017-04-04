@@ -88,17 +88,26 @@
 
 
 
-<meta name="description" content="参数读取，数据读取，这是两个不同的概念。参数设置是在程序编译之前，所设置的对应参数数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
+<meta name="description" content="参数/数据读取，这是两个不同的概念
+
+参数设置是在程序编译之前，所设置的对应参数
+数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python数据读取">
+<meta property="og:title" content="数据读取（参数/控制台输入）">
 <meta property="og:url" content="http://yoursite.com/2017/04/01/python读取控制台数据/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="参数读取，数据读取，这是两个不同的概念。参数设置是在程序编译之前，所设置的对应参数数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
+<meta property="og:description" content="参数/数据读取，这是两个不同的概念
+
+参数设置是在程序编译之前，所设置的对应参数
+数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG">
-<meta property="og:updated_time" content="2017-04-02T14:39:53.965Z">
+<meta property="og:updated_time" content="2017-04-04T17:02:24.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python数据读取">
-<meta name="twitter:description" content="参数读取，数据读取，这是两个不同的概念。参数设置是在程序编译之前，所设置的对应参数数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
+<meta name="twitter:title" content="数据读取（参数/控制台输入）">
+<meta name="twitter:description" content="参数/数据读取，这是两个不同的概念
+
+参数设置是在程序编译之前，所设置的对应参数
+数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据">
 <meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG">
 
 
@@ -133,7 +142,7 @@
 
 
 
-  <title> python数据读取 | ZhangJian's blog </title>
+  <title> 数据读取（参数/控制台输入） | ZhangJian's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +292,7 @@
             
             
               
-                python数据读取
+                数据读取（参数/控制台输入）
               
             
           </h1>
@@ -356,11 +365,30 @@
       
 
       
-        <p>参数读取，数据读取，这是两个不同的概念。<br>参数设置是在程序编译之前，所设置的对应参数<br>数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据<br><a id="more"></a></p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>在pycharm中，通过配置运行环境，预设好参数<br><img src="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG" alt="none"><br>通过argv[]获取参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="comment">#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数</span></div><div class="line">sys.argv[i]</div><div class="line"><span class="comment">#第i个参数（j--&gt;k位）</span></div><div class="line">sys.argv[i][j:k]</div></pre></td></tr></table></figure></p>
+        <p>参数/数据读取，这是两个不同的概念</p>
+<ul>
+<li>参数设置是在程序编译之前，所设置的对应参数</li>
+<li>数据读取则是执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据<a id="more"></a>
+</li>
+</ul>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>在pycharm中，通过配置运行环境，预设好参数<br><img src="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG" alt="none"><br>通过argv[]获取参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="comment">#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数</span></div><div class="line">sys.argv[i]</div><div class="line"><span class="comment">#第i个参数（j--&gt;k位）</span></div><div class="line">sys.argv[i][j:k]</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><h4 id="raw-input-input"><a href="#raw-input-input" class="headerlink" title="[raw_input/input]"></a>[raw_input/input]</h4><p>raw_input([prompt]) 函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）<br>input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 可以接收一个Python表达式作为输入，并将运算结果返回。</p>
-<h4 id="sys-stdin-readline"><a href="#sys-stdin-readline" class="headerlink" title="[sys.stdin.readline()]"></a>[sys.stdin.readline()]</h4><p>标准输入读取一行，但是会读取换行符’\n’<br>与input方法不同的是：都去了输入的所有值，将输入的每一行存入一个list中</p>
+<h3 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h3><h4 id="raw-input-input"><a href="#raw-input-input" class="headerlink" title="[raw_input/input]"></a>[raw_input/input]</h4><ul>
+<li><p>raw_input([prompt])<br>函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）<br>将每行的输入看作一个字符串来处理，需要对数据进行处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果希望读取出in型数据，则需要进行转化</span></div><div class="line">map(int, raw_input().split())</div><div class="line"></div><div class="line">int(raw_input().split()[<span class="number">0</span>])</div></pre></td></tr></table></figure>
+</li>
+<li><p>input([prompt]) 函数<br>与raw_input([prompt]) 函数基本类似<br>可以接收一个Python表达式作为输入（希望接受的是一个合法的python表达式）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s=input()</div><div class="line"><span class="comment"># string，需要将输入通过引号括起来，不然会报SyntaxError错误</span></div><div class="line"><span class="comment"># 输入数字会自动识别为int/float型</span></div><div class="line"><span class="comment"># 输入正确的表达式，会给出执行后的结果</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="sys-stdin"><a href="#sys-stdin" class="headerlink" title="[sys.stdin]"></a>[sys.stdin]</h4><ul>
+<li><p>readline()<br>标准输入读取一行，但是会读取换行符’\n’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">str= sys.stdin.readline()</div></pre></td></tr></table></figure>
+</li>
+<li><p>realines()<br>读取所有的输入（读取了所有行的输入信息），有时候我们需要处理每行读取后的’\n’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#fist method</span></div><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> sys.stdin.readlines():</div><div class="line">    e=e.strip()</div><div class="line"><span class="comment">#second method</span></div><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> sys.stdin.read().splitlines():</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -403,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/python内建函数序列篇/" rel="next" title="python内建函数（序列相关）">
-                <i class="fa fa-chevron-left"></i> python内建函数（序列相关）
+              <a href="/2017/03/30/python内建函数序列篇/" rel="next" title="内建函数（序列相关）">
+                <i class="fa fa-chevron-left"></i> 内建函数（序列相关）
               </a>
             
           </div>
@@ -578,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据"><span class="nav-number">2.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#raw-input-input"><span class="nav-number">2.1.</span> <span class="nav-text">[raw_input/input]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sys-stdin-readline"><span class="nav-number">2.2.</span> <span class="nav-text">[sys.stdin.readline()]</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制台"><span class="nav-number">2.</span> <span class="nav-text">控制台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#raw-input-input"><span class="nav-number">2.1.</span> <span class="nav-text">[raw_input/input]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sys-stdin"><span class="nav-number">2.2.</span> <span class="nav-text">[sys.stdin]</span></a></li></ol></li></ol></div>
             
 
           </div>
