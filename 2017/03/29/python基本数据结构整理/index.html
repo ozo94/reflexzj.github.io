@@ -88,18 +88,19 @@
 
 
 
-<meta name="description" content="常用的几个数据结构有:list[],tumple(),dict{},以及set()主要对常用的方法和一些细节进行备注">
+<meta name="description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
+主要对常用的方法和一些细节进行备注">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基本数据结构（python）">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/python基本数据结构整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="常用的几个数据结构有:list[],tumple(),dict{},以及set()主要对常用的方法和一些细节进行备注">
-<meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/python_normal.jpg">
-<meta property="og:updated_time" content="2017-04-04T17:03:37.903Z">
+<meta property="og:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
+主要对常用的方法和一些细节进行备注">
+<meta property="og:updated_time" content="2017-04-05T14:35:38.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基本数据结构（python）">
-<meta name="twitter:description" content="常用的几个数据结构有:list[],tumple(),dict{},以及set()主要对常用的方法和一些细节进行备注">
-<meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/python_normal.jpg">
+<meta name="twitter:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
+主要对常用的方法和一些细节进行备注">
 
 
 
@@ -356,17 +357,43 @@
       
 
       
-        <p><img src="http://omouah54e.bkt.clouddn.com/PYTHON/python_normal.jpg" width="100%"><br>常用的几个数据结构有:list[],tumple(),dict{},以及set()<br>主要对常用的方法和一些细节进行备注<br><a id="more"></a></p>
-<hr>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>###[python二维数组]</p>
-<ul>
-<li>二维数组的定义<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div></pre></td></tr></table></figure>
+        <ul>
+<li>常用的几个数据结构有: list[], tumple(), dict{}, set()</li>
+<li>主要对常用的方法和一些细节进行备注<a id="more"></a>
 </li>
 </ul>
-<p>这个操作只是定义了3个指向list([])的引用，list[0].append(3)的方法只会让mylist=[[3][3][3]]<br>用如下的方式定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="python二维数组"><a href="#python二维数组" class="headerlink" title="[python二维数组]"></a>[python二维数组]</h3><ul>
+<li><p>二维数组的定义<br>如下操作只是定义了3个指向list([])的引用<br>list[0].append(3)的方法只会让mylist=[[3][3][3]]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>用如下的方式定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
 <h2 id="tumple"><a href="#tumple" class="headerlink" title="tumple"></a>tumple</h2><hr>
-<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><hr>
+<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><ul>
+<li><p>种类<br>分为有序字典和无序字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">ordr_dic=collections.OrderedDict</div></pre></td></tr></table></figure>
+</li>
+<li><p>字典的迭代<br>注：有序字典只能使用前三种方法</p>
+<ul>
+<li><p>（1）enumerate(dict)<br>enumerate() 函数自动把每个元素变成 (index, element) 这样的tuple，再迭代，就同时获得了索引和元素本身。</p>
+</li>
+<li><p>（2）iter(dict)<br>直接读取对应的key和value（只能在有序字典中使用）</p>
+</li>
+<li><p>（3）下标读取</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">print</span> e[<span class="number">0</span>],e[<span class="number">1</span>]</div><div class="line"><span class="comment">#索引e[0]，也有可能是一个list（e[0][0]）</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>（4）分开读取<br>values(), keys()<br>   实质上是把一个 dict 转换成了包含 value 的list。<br>itervalues()<br>   直接从dict中取出数据，返回的是 <dictionary-valueiterator> 对象</dictionary-valueiterator></p>
+</li>
+<li><p>（5）dict.items()/ dict.iteritems()<br>   读取[index,element]组合，前者会先生成一个list</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2>
       
     </div>
@@ -409,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/29/c_c++_算法整理/" rel="next" title="c++算法整理">
-                <i class="fa fa-chevron-left"></i> c++算法整理
+              <a href="/2017/03/29/c_c++_算法整理/" rel="next" title="算法整理(c++)">
+                <i class="fa fa-chevron-left"></i> 算法整理(c++)
               </a>
             
           </div>
@@ -588,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tumple"><span class="nav-number">2.</span> <span class="nav-text">tumple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dict"><span class="nav-number">3.</span> <span class="nav-text">dict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python二维数组"><span class="nav-number">1.1.</span> <span class="nav-text">[python二维数组]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tumple"><span class="nav-number">2.</span> <span class="nav-text">tumple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dict"><span class="nav-number">3.</span> <span class="nav-text">dict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li></ol></div>
             
 
           </div>
