@@ -3,51 +3,16 @@
   
     
     <entry>
-      <title><![CDATA[数据读取（参数/控制台输入）]]></title>
+      <title><![CDATA[读取（参数/控制台输入）]]></title>
       <url>%2F2017%2F04%2F01%2Fpython%E8%AF%BB%E5%8F%96%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%95%B0%E6%8D%AE%2F</url>
-      <content type="text"><![CDATA[参数读取： 在程序编译之前，所设置的对应参数 数据读取： 执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据 参数在pycharm中，通过配置运行环境，预设好参数通过argv[]获取参数12345import sys#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数sys.argv[i]#第i个参数（j--&gt;k位）sys.argv[i][j:k] 控制台[raw_input/input] raw_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）将每行的输入看作一个字符串来处理，需要对数据进行处理 1234#如果希望读取出in型数据，则需要进行转化map(int, raw_input().split())int(raw_input().split()[0]) input([prompt]) 函数与raw_input([prompt]) 函数基本类似可以接收一个Python表达式作为输入（希望接受的是一个合法的python表达式） 1234s=input()# string，需要将输入通过引号括起来，不然会报SyntaxError错误# 输入数字会自动识别为int/float型# 输入正确的表达式，会给出执行后的结果 [sys.stdin] readline()标准输入读取一行，但是会读取换行符’\n’ 12import sysstr= sys.stdin.readline() realines()读取所有的输入（读取了所有行的输入信息），有时候我们需要处理每行读取后的’\n’ 123456#fist methodfor e in sys.stdin.readlines(): e=e.strip()#second methodfor e in sys.stdin.read().splitlines(): pass]]></content>
+      <content type="text"><![CDATA[读取参数： 在程序编译之前，所设置的对应参数 读取数据： 执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据 参数在pycharm中，通过配置运行环境，预设好参数通过argv[]获取参数12345import sys#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数sys.argv[i]#第i个参数（j--&gt;k位）sys.argv[i][j:k] 控制台[raw_input/input] raw_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）将每行的输入看作一个字符串来处理，需要对数据进行处理 1234#如果希望读取出in型数据，则需要进行转化map(int, raw_input().split())int(raw_input().split()[0]) input([prompt]) 函数与raw_input([prompt]) 函数基本类似可以接收一个Python表达式作为输入（希望接受的是一个合法的python表达式） 1234s=input()# string，需要将输入通过引号括起来，不然会报SyntaxError错误# 输入数字会自动识别为int/float型# 输入正确的表达式，会给出执行后的结果 [sys.stdin] readline()标准输入读取一行，但是会读取换行符’\n’ 12import sysstr= sys.stdin.readline() realines()读取所有的输入（读取了所有行的输入信息），有时候我们需要处理每行读取后的’\n’ 123456#fist methodfor e in sys.stdin.readlines(): e=e.strip()#second methodfor e in sys.stdin.read().splitlines(): pass]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[内建函数（序列相关）]]></title>
-      <url>%2F2017%2F03%2F30%2Fpython%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%8F%E5%88%97%E7%AF%87%2F</url>
-      <content type="text"><![CDATA[python常见的与序列相关的内建函数有4种 &gt;&gt;&gt; sorted()、reversed()、enumerate()、zip() 1234567891011#sorted()、reversed()是返回的一个列表对象type(sorted(s))&lt;type 'list'&gt;type(zip(s))&lt;type 'list'&gt;#enumerate()、zip()返回的是一个迭代器type(reversed(s))&lt;type 'listreverseiterator'&gt;type(enumerate(s))&lt;type 'enumerate'&gt; zip()函数zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。 [基本用法]1234567891011#按少进行匹配s1=[1,2,3]s2=[4,5,6,7]result=zip(s1.s2)# result:[(1,4),(2,5),(3,6)]#zip与*组合，形成一个行列变换zip(*result)[(1,2,3),(4,5,6)]map(list, zip(*a))# [[1,2,3],[4,5,6]] [进阶用法][1.zip打包解包列表和倍数]1234567a = [1, 2, 3]b = ['a', 'b', 'c']z = zip(a, b)# [(1, 'a'), (2, 'b'), (3, 'c')]zip(*z)# [(1, 2, 3), ('a', 'b', 'c')] [2.使用zip合并相邻的列表项]1a = [1, 2, 3, 4, 5, 6] -（1）’*’方法定义多个list1234567zip(*([iter(a)] * 2))# [(1, 2), (3, 4), (5, 6)]#zip(([iter(a)] * k))输出结果为a的k个对象，并没有详细的记过，应该是一种特殊组合group_adjacent = lambda a, k: zip(*([iter(a)] * k))group_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] -（2）使用多重循环123456zip(a[::3], a[1::3], a[2::3])# [(1, 2, 3), (4, 5, 6)]group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))roup_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] [3.使用zip和iterators生成滑动窗口 (n -grams) ]123456789101112&gt;&gt;&gt; from itertools import islice&gt;&gt;&gt; def n_grams(a, n):... z = (islice(a, i, None) for i in range(n))... return zip(*z)...&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]&gt;&gt;&gt; n_grams(a, 3)[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]&gt;&gt;&gt; n_grams(a, 2)[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]&gt;&gt;&gt; n_grams(a, 4)[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)] [4.使用zip反转字典]12345678m = &#123;'a': 1, 'b': 2, 'c': 3, 'd': 4&#125;m.items()# [('a', 1), ('c', 3), ('b', 2), ('d', 4)]zip(m.values(), m.keys())# [(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]mi = dict(zip(m.values(), m.keys()))# &#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[基本数据结构（python）]]></title>
-      <url>%2F2017%2F03%2F29%2Fpython%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[常用的几个数据结构有: list[], tumple(), dict{}, set() 主要对常用的方法和一些细节进行备注 list[python二维数组] 二维数组的定义如下操作只是定义了3个指向list([])的引用list[0].append(3)的方法只会让mylist=[[3][3][3]] 1mylist= [[]]*3 用如下的方式定义： 1mylist=[[0]*n, [0]*n, ...] tumple dict 种类 有序字典 无序字典12import collectionsordr_dic=collections.OrderedDict 字典的迭代字典是无序的字典默认读取的是字典元素的key 12for key in dic: print key:dic[key] （1）iter(dict)在有序字典中，读取字典的全部属性值直接读取对应的key和value （2）下标读取 123for e in dict: print e[0],e[1]#索引e[0]，也有可能是一个list（e[0][0]） （3）分开读取values(), keys() 实质上是把一个 dict 转换成了包含 value/key 的list。itervalues(), interkeys() 直接从dict中取出数据，返回的是 对象 （4）dict.items()/ dict.iteritems() 读取[index,element]组合，前者会先生成一个list set]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[算法整理(c++)]]></title>
-      <url>%2F2017%2F03%2F29%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。 字符串[字符串逆置]统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;; 位运算[汉明距离]汉明距离：两个数进行二进制转换后，不同的位数执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[python算法练习]]></title>
+      <title><![CDATA[算法练习(python)]]></title>
       <url>%2F2017%2F03%2F29%2Fpython%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作基本的进制函数 二进制：bin(num) 八进制：oct(num) 十六进制：hex(num) 将对应的进制的数转为十进制12#使用方法： int(str, num)int('0x10', 16) &gt;&gt;&gt;16 [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可难点在于： 如何产生与num二进制转化后，同样长度的’1’ 可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数） 最后产生：i-1= 10..0-1= 011..1 12345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num list以及dict的联合使用[list相邻元素之间的比较]判断list的相邻的两个元素之间的关系1234567891011st=[]#使用index进行循环for x in range(len(st)): judge(st[x], s[x+1])#使用另外一个列表协同处理，设置中间列表tmp=[]for x in st: while len(tmp) and judge(tmp[-1], x): ... pass tmp.append(x)]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[post&get 方法]]></title>
-      <url>%2F2017%2F03%2F15%2Fpost_get%2F</url>
-      <content type="text"><![CDATA[HTTP 定义了与服务器交互的不同方法 最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。 GET与POST方法有以下区别： 在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。 GET方式提交的数据最多只能有1024字节，而POST则没有此限制。 安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[异常处理方法]]></title>
-      <url>%2F2017%2F03%2F11%2Ftry%E8%AF%AD%E5%8F%A5%2F</url>
-      <content type="text"><![CDATA[1.捕获所有异常123456try: a=b b=c except Exception,e: print Exception,&quot;:&quot;,e 2.采用traceback模块查看异常1234567891011121314151617181920#引入python中的traceback模块，跟踪错误import traceback try: a=b b=c except: traceback.print_exc()#也可以将异常存储到日志文件中去import tracebacktry: a=b b=c except: f=open("c:log.txt",'a') traceback.print_exc(file=f) f.flush() f.close() 3.采用sys模块回溯最后的异常12345678#引入sys模块import sys try: a=b b=c except: info=sys.exc_info() print info[0],":",info[1]]]></content>
+      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作基本的进制函数 二进制：bin(num) 八进制：oct(num) 十六进制：hex(num) 将对应的进制的数转为十进制12#使用方法： int(str, num)int('0x10', 16) &gt;&gt;&gt;16 [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可难点在于： 如何产生与num二进制转化后，同样长度的’1’ 可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数） 最后产生：i-1= 10..0-1= 011..1 12345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num list以及dict的联合使用[list相邻元素之间的比较]判断list的相邻的两个元素之间的关系1234567891011st=[]#使用index进行循环for x in range(len(st)): judge(st[x], s[x+1])#使用另外一个列表协同处理，设置中间列表tmp=[]for x in st: while len(tmp) and judge(tmp[-1], x): ... pass tmp.append(x)]]></content>
     </entry>
 
     
@@ -66,9 +31,37 @@
 
     
     <entry>
+      <title><![CDATA[异常处理方法]]></title>
+      <url>%2F2017%2F01%2F07%2Ftry%E8%AF%AD%E5%8F%A5%2F</url>
+      <content type="text"><![CDATA[1.捕获所有异常123456try: a=b b=c except Exception,e: print Exception,&quot;:&quot;,e 2.采用traceback模块查看异常1234567891011121314151617181920#引入python中的traceback模块，跟踪错误import traceback try: a=b b=c except: traceback.print_exc()#也可以将异常存储到日志文件中去import tracebacktry: a=b b=c except: f=open("c:log.txt",'a') traceback.print_exc(file=f) f.flush() f.close() 3.采用sys模块回溯最后的异常12345678#引入sys模块import sys try: a=b b=c except: info=sys.exc_info() print info[0],":",info[1]]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[内建函数（序列相关）]]></title>
+      <url>%2F2016%2F12%2F27%2Fpython%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%8F%E5%88%97%E7%AF%87%2F</url>
+      <content type="text"><![CDATA[python常见的与序列相关的内建函数有4种 &gt;&gt;&gt; sorted()、reversed()、enumerate()、zip() 1234567891011#sorted()、reversed()是返回的一个列表对象type(sorted(s))&lt;type 'list'&gt;type(zip(s))&lt;type 'list'&gt;#enumerate()、zip()返回的是一个迭代器type(reversed(s))&lt;type 'listreverseiterator'&gt;type(enumerate(s))&lt;type 'enumerate'&gt; zip()函数zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。 [基本用法]1234567891011#按少进行匹配s1=[1,2,3]s2=[4,5,6,7]result=zip(s1.s2)# result:[(1,4),(2,5),(3,6)]#zip与*组合，形成一个行列变换zip(*result)[(1,2,3),(4,5,6)]map(list, zip(*a))# [[1,2,3],[4,5,6]] [进阶用法][1.zip打包解包列表和倍数]1234567a = [1, 2, 3]b = ['a', 'b', 'c']z = zip(a, b)# [(1, 'a'), (2, 'b'), (3, 'c')]zip(*z)# [(1, 2, 3), ('a', 'b', 'c')] [2.使用zip合并相邻的列表项]1a = [1, 2, 3, 4, 5, 6] -（1）’*’方法定义多个list1234567zip(*([iter(a)] * 2))# [(1, 2), (3, 4), (5, 6)]#zip(([iter(a)] * k))输出结果为a的k个对象，并没有详细的记过，应该是一种特殊组合group_adjacent = lambda a, k: zip(*([iter(a)] * k))group_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] -（2）使用多重循环123456zip(a[::3], a[1::3], a[2::3])# [(1, 2, 3), (4, 5, 6)]group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))roup_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] [3.使用zip和iterators生成滑动窗口 (n -grams) ]123456789101112&gt;&gt;&gt; from itertools import islice&gt;&gt;&gt; def n_grams(a, n):... z = (islice(a, i, None) for i in range(n))... return zip(*z)...&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]&gt;&gt;&gt; n_grams(a, 3)[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]&gt;&gt;&gt; n_grams(a, 2)[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]&gt;&gt;&gt; n_grams(a, 4)[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)] [4.使用zip反转字典]12345678m = &#123;'a': 1, 'b': 2, 'c': 3, 'd': 4&#125;m.items()# [('a', 1), ('c', 3), ('b', 2), ('d', 4)]zip(m.values(), m.keys())# [(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]mi = dict(zip(m.values(), m.keys()))# &#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[基本数据结构（python）]]></title>
+      <url>%2F2016%2F12%2F20%2Fpython%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B4%E7%90%86%2F</url>
+      <content type="text"><![CDATA[常用的几个数据结构有: list[], tumple(), dict{}, set() 主要对常用的方法和一些细节进行备注 list[python二维数组] 二维数组的定义如下操作只是定义了3个指向list([])的引用list[0].append(3)的方法只会让mylist=[[3][3][3]] 1mylist= [[]]*3 用如下的方式定义： 1mylist=[[0]*n, [0]*n, ...] tumple dict 种类 有序字典 无序字典12import collectionsordr_dic=collections.OrderedDict 字典的迭代字典是无序的字典默认读取的是字典元素的key 12for key in dic: print key:dic[key] （1）iter(dict)在有序字典中，读取字典的全部属性值直接读取对应的key和value （2）下标读取 123for e in dict: print e[0],e[1]#索引e[0]，也有可能是一个list（e[0][0]） （3）分开读取values(), keys() 实质上是把一个 dict 转换成了包含 value/key 的list。itervalues(), interkeys() 直接从dict中取出数据，返回的是 对象 （4）dict.items()/ dict.iteritems() 读取[index,element]组合，前者会先生成一个list set]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[静态网页爬虫抓取]]></title>
       <url>%2F2016%2F12%2F05%2F%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96%2F</url>
       <content type="text"><![CDATA[爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。 开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解） 源码地址：https://github.com/reflexzj/simple-crawler.git 一、概述简单的爬虫组成 URL管理器 网页下载器 网页解析器这三个部分组成 给出三个部件协同工作流程 二、url管理器为什么需要urlManager这个组件？ 防止重复抓取、循环抓取（最坏情况：两个URL之间相互指向） 添加新的URL时需要判断 URL管理的基本功能范围 实现方案 使用集合将待爬取的url放入集合中python中的set()方法可以去除重复元素 关系型数据库通过表和相应的标志位来实现这个功能 缓存数据库eg:redis,使用两个数据的方案（大型公司的选用方式）个人可以使用电脑的内存或者是关系型数据库 三、网页下载器将互联网上URL对应的网页下载到本地的工具 工具 urllib2Python官方的基础模块： 支持直接的URL下载 向网页提交一些需要用户输入的数据 需要登陆网页的cookie处理 代理访问功能 requests第三方插件，提供更为强大的功能 urllib2用法 1.将URL传送给urllib2.urlopen()方法123456789import urllib2 #直接请求 response = urllib2.urlopen('http://www.baidu.com') #获取状态码，如果是200，则表示获取成功 print response.getcode() #读取内容 contt = response.read() 2.添加data、http header 增强处理：向服务器提交需要用户输入的数据 将url、data、header等信息传给request，将request对象作为参数发送网页请求123456789101112import urllib2 #创建request对象 request = urllib2.request(url) #添加数据（'a'这个数据项的值为'1'） request.add_data('a','1') #添加http的header（伪装成Mozilla浏览器） request.add_header('USer-Agent','Mozilla/5.0') #发送请求获取结果 response = urllib2.urlopen(request) 3.添加特殊场景的处理登陆访问：HTTPCookieProcesser 代理访问：ProxyHandler 协议加密：HTTPSHandler URL之间相互跳转：HTTPRedirectHandler …..eg：增强cookie的处理123456789101112import urllib2, cookielib #创建cookie容器 cj = cookielib.CookieJar() #将cookieJar作为一个参数生成对应的Handler，将此Handler传给Opener opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj)) #增强处理器，为urllib2安装opener urllib2.install_opener(opener) #此时使用带有cookie的urllib2来访问网页 response = urllib2.urlopen("http://www.baidu.com/") 四、网页解析器种类介绍 1.模糊匹配解析正则表达式 将整个网页文档当成一个字符串，使用模糊匹配的方式提取数据 直观，面对复杂内容，效率底下 2.结构化解析将整个网页文档下成一个文档对象模型树DOM(document Object Model) 解析工具： 1.html.parser自带的解析工具 2.Beautiful Soup可已使用html.parser以及Ixml来作为其的解析器 3.Ixml Beautiful Soup 安装文档参考地址：https://www.crummy.com/software/BeautifulSoup/bs4/doc/在windows环境下通过python工具包自带的pip工具来安装pip程序在Scripts文件中，检查是否安装 cd python_27\Scripts安装 pip install beautifulsoup4 用法 原理根据下载好的Html网页创建一个BeatifulSoup对象，文档则会变为相应的DOM树 代码实现（1）创建BeautifulSoup对象 1234 from bs4 import BeautifulSoup#根据HTML网页字符串创建BeautifulSoup对象#对象中的参数分别表示为HTML文档字符串、HTML解析器、指定文档的编码soup= BeautifulSoup(html_doc,'html.parser',from_encoding='utf8') （2）搜索节点（find_all,find） 这两个方法具有相同的参数：d_all(name,attrs,string) find_all() 搜索所有满足条件的节点 find() 搜索第一个满足条件的节点 -方法中的三个参数代表搜索的三个方向，分为名称、属性、内容 123456789#查找所有标签为a的节点soup.find_all('a')#查找所有标签为啊，链接符合/view/123.htm形式的节点(也可以传入正则表达式)soup.find_all('a',href='/view/123.htm')soup.find_all('a',href=re.compile(r'/view/\d+\.htm'))#查找所有标签为div，class为abc，文字为Python的节点(class为python关键字，加下划线避免冲突)soup.find_all('div',class_='abc',string='Python') （3）访问节点信息 12345678910 #得到节点：&lt;a href='1.html'&gt;Python&lt;/a&gt;#获取查找到的节点标签名称node.name#获取查找到的a节点的href属性node['href']#获取查找到的a节点的链接文字node.get_text()]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[算法整理(c++)]]></title>
+      <url>%2F2016%2F10%2F13%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
+      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。 字符串[字符串逆置]统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;; 位运算[汉明距离]汉明距离：两个数进行二进制转换后，不同的位数执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125;]]></content>
     </entry>
 
     

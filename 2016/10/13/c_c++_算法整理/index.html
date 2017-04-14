@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,post,get," />
+  <meta name="keywords" content="c++,算法," />
 
 
 
@@ -88,19 +88,16 @@
 
 
 
-<meta name="description" content="HTTP 定义了与服务器交互的不同方法
-最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。">
+<meta name="description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="post&get 方法">
-<meta property="og:url" content="http://yoursite.com/2017/03/15/post_get/index.html">
+<meta property="og:title" content="算法整理(c++)">
+<meta property="og:url" content="http://yoursite.com/2016/10/13/c_c++_算法整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="HTTP 定义了与服务器交互的不同方法
-最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。">
-<meta property="og:updated_time" content="2017-04-05T14:38:55.965Z">
+<meta property="og:description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。">
+<meta property="og:updated_time" content="2017-04-14T12:36:04.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="post&get 方法">
-<meta name="twitter:description" content="HTTP 定义了与服务器交互的不同方法
-最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。">
+<meta name="twitter:title" content="算法整理(c++)">
+<meta name="twitter:description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。">
 
 
 
@@ -128,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/15/post_get/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/13/c_c++_算法整理/"/>
 
 
 
 
 
-  <title> post&get 方法 | ZhangJian's blog </title>
+  <title> 算法整理(c++) | ZhangJian's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/post_get/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/13/c_c++_算法整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -284,7 +281,7 @@
             
             
               
-                post&get 方法
+                算法整理(c++)
               
             
           </h1>
@@ -299,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T19:45:43+08:00">
-                2017-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-13T00:00:00+08:00">
+                2016-10-13
               </time>
             
 
@@ -322,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web开发/" itemprop="url" rel="index">
-                    <span itemprop="name">web开发</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -358,16 +355,15 @@
 
       
         <ul>
-<li>HTTP 定义了与服务器交互的不同方法</li>
-<li>最基本的方法是 GET 和 POST（Ajax开发，关心的只有GET请求和POST请求）。</li>
+<li>持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。<a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
-<p>GET与POST方法有以下区别：</p>
-<ul>
-<li>在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。</li>
-<li>GET方式提交的数据最多只能有1024字节，而POST则没有此限制。</li>
-<li>安全性问题。使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。</li>
-</ul>
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串逆置"><a href="#字符串逆置" class="headerlink" title="[字符串逆置]"></a>[字符串逆置]</h4><p>统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)<br>除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len=s.size();</div><div class="line">        <span class="built_in">string</span> result;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">         result[len-i<span class="number">-1</span>]=s[i]; </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>给出最优的方案<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.size() - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</div><div class="line">            swap(s[i++], s[j--]); </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>汉明距离：两个数进行二进制转换后，不同的位数<br>执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离<br>n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n=x^y</div><div class="line"><span class="keyword">while</span>(n)</div><div class="line">&#123;</div><div class="line">  ++flag;</div><div class="line">  n &amp;= n - <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -397,11 +393,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/c/" rel="tag"># c++</a>
           
-            <a href="/tags/post/" rel="tag"># post</a>
-          
-            <a href="/tags/get/" rel="tag"># get</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -414,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/11/try语句/" rel="next" title="异常处理方法">
-                <i class="fa fa-chevron-left"></i> 异常处理方法
+              <a href="/2016/10/05/main函数分析/" rel="next" title="__name__ = '__main__' 的作用">
+                <i class="fa fa-chevron-left"></i> __name__ = '__main__' 的作用
               </a>
             
           </div>
@@ -424,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/29/python算法整理/" rel="prev" title="python算法练习">
-                python算法练习 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/05/静态网页爬虫抓取/" rel="prev" title="静态网页爬虫抓取">
+                静态网页爬虫抓取 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -473,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -489,7 +492,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -500,7 +503,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -511,7 +514,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -574,6 +577,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串逆置"><span class="nav-number">1.1.</span> <span class="nav-text">[字符串逆置]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算"><span class="nav-number">2.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">[汉明距离]</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
