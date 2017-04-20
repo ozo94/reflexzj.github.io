@@ -1,76 +1,571 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
-    
-    <entry>
-      <title><![CDATA[读取（参数/控制台输入）]]></title>
-      <url>%2F2017%2F04%2F01%2Fpython%E8%AF%BB%E5%8F%96%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%95%B0%E6%8D%AE%2F</url>
-      <content type="text"><![CDATA[读取参数： 在程序编译之前，所设置的对应参数 读取数据： 执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据 参数在pycharm中，通过配置运行环境，预设好参数通过argv[]获取参数12345import sys#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数sys.argv[i]#第i个参数（j--&gt;k位）sys.argv[i][j:k] 控制台[raw_input/input] raw_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）将每行的输入看作一个字符串来处理，需要对数据进行处理 1234#如果希望读取出in型数据，则需要进行转化map(int, raw_input().split())int(raw_input().split()[0]) input([prompt]) 函数与raw_input([prompt]) 函数基本类似可以接收一个Python表达式作为输入（希望接受的是一个合法的python表达式） 1234s=input()# string，需要将输入通过引号括起来，不然会报SyntaxError错误# 输入数字会自动识别为int/float型# 输入正确的表达式，会给出执行后的结果 [sys.stdin] readline()标准输入读取一行，但是会读取换行符’\n’ 12import sysstr= sys.stdin.readline() realines()读取所有的输入（读取了所有行的输入信息），有时候我们需要处理每行读取后的’\n’ 123456#fist methodfor e in sys.stdin.readlines(): e=e.strip()#second methodfor e in sys.stdin.read().splitlines(): pass]]></content>
-    </entry>
-
+  
     
     <entry>
       <title><![CDATA[算法练习(python)]]></title>
-      <url>%2F2017%2F03%2F29%2Fpython%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新…… 主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。 字符串[字符串逆序]明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Solution(object): def reverseString(self, s): """ :type s: str :rtype: str """ return s[::-1] 进制操作基本的进制函数 二进制：bin(num) 八进制：oct(num) 十六进制：hex(num) 将对应的进制的数转为十进制12#使用方法： int(str, num)int('0x10', 16) &gt;&gt;&gt;16 [汉明距离]进行二进制转换后的异或位数（同位不同值即为一个距离）1bin(x^y).count('1') [二进制的非操作]要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可难点在于： 如何产生与num二进制转化后，同样长度的’1’ 可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数） 最后产生：i-1= 10..0-1= 011..1 12345def findComplement(self, num): i = 1 while i &lt;= num: i = i &lt;&lt; 1 return (i - 1) ^ num list以及dict的联合使用[list相邻元素之间的比较]判断list的相邻的两个元素之间的关系1234567891011st=[]#使用index进行循环for x in range(len(st)): judge(st[x], s[x+1])#使用另外一个列表协同处理，设置中间列表tmp=[]for x in st: while len(tmp) and judge(tmp[-1], x): ... pass tmp.append(x)]]></content>
+      <url>http://yoursite.com/2017/03/29/python%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……</li>
+<li>主要的题目来源：leetcode( <a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a> )。 当然，在牛客网上也有对应的leetcode题库。<a id="more"></a>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串逆序"><a href="#字符串逆序" class="headerlink" title="[字符串逆序]"></a>[字符串逆序]</h4><p>明显的字符串切片（list也可以进行切片操作）<br>备注一下倒叙切片的语法 s[-4:-1]<br>倒数第一个元素的序号为-1（符合数学习惯）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="进制操作"><a href="#进制操作" class="headerlink" title="进制操作"></a>进制操作</h3><p>基本的进制函数</p>
+<ul>
+<li>二进制：bin(num)</li>
+<li>八进制：oct(num)</li>
+<li>十六进制：hex(num)</li>
+</ul>
+<p>将对应的进制的数转为十进制<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#使用方法： int(str, num)</span></div><div class="line">int(<span class="string">'0x10'</span>, <span class="number">16</span>) &gt;&gt;&gt;<span class="number">16</span></div></pre></td></tr></table></figure></p>
+<h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>进行二进制转换后的异或位数（同位不同值即为一个距离）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="二进制的非操作"><a href="#二进制的非操作" class="headerlink" title="[二进制的非操作]"></a>[二进制的非操作]</h4><p>要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可<br>难点在于：</p>
+<ul>
+<li>如何产生与num二进制转化后，同样长度的’1’</li>
+<li>可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数）</li>
+<li>最后产生：i-1= 10..0-1= 011..1</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="list以及dict的联合使用"><a href="#list以及dict的联合使用" class="headerlink" title="list以及dict的联合使用"></a>list以及dict的联合使用</h3><h4 id="list相邻元素之间的比较"><a href="#list相邻元素之间的比较" class="headerlink" title="[list相邻元素之间的比较]"></a>[list相邻元素之间的比较]</h4><p>判断list的相邻的两个元素之间的关系<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">st=[]</div><div class="line"><span class="comment">#使用index进行循环</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(st)):</div><div class="line">    judge(st[x], s[x+<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="comment">#使用另外一个列表协同处理，设置中间列表tmp=[]</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> st:</div><div class="line">    <span class="keyword">while</span> len(tmp) <span class="keyword">and</span> judge(tmp[<span class="number">-1</span>], x):</div><div class="line">        ...</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    tmp.append(x)</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> python编程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[openedx的基本配置]]></title>
-      <url>%2F2017%2F03%2F08%2Fopenedx%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
-      <content type="text"><![CDATA[搭建好openedx后，我们需要对edx的一些基本功能进行配置 edx文档参考手册官方网站（包括API调用、开发者手册）：http://docs.edx.org/ openedx的配置主要参考安装配置手册： http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/index.html 原博客参考：https://shanbin.name/openedx-concise-configuration-guide/ 配置SMTP主要涉及/edx/app/edxapp/下的4个json文件 lms.env.json 1234567891011121314151617#设置成你的smtp邮箱“DEFAULT_FROM_EMAIL”: “your email”, #内容修改成你的smtp主机，比如你的邮箱设置的QQ邮箱则是smtp.qq.com“EMAIL_HOST”: “smtp.qq.com”, #端口一般是25 “EMAIL_PORT”: 25, #你的平台域名，可填ip“LMS_BASE”: “example.com”, #内容修改成你的edX平台名字“PLATFORM_NAME”: “OPENEDX”, #域名或ip,激活邮箱时调用 “SITE_NAME”: “localhost”, cms.env.json 12345678910#设置成你的smtp邮箱“BULK_EMAIL_DEFAULT_FROM_EMAIL”: “your email”, #设置成你的smtp邮箱“DEFAULT_FROM_EMAIL”: “your email”, “EMAIL_HOST”: “smtp.qq.com”, “EMAIL_PORT”: 25, “LMS_BASE”: “example.com”, “SITE_NAME”: “localhost”, lms.auth.json 12345#smtp邮箱密码“EMAIL_HOST_PASSWORD”: “password”, #邮箱“EMAIL_HOST_USER”: “email”, cms.authe.json 12345#smtp邮箱密码“EMAIL_HOST_PASSWORD”: “password”, #邮箱 “EMAIL_HOST_USER”: “email”, 管理命令 添加管理员用户找到 .manage.py 所在的目录文件执行命令 1sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings=aws createsuperuser 列出所有的manage.py参数命令 12sudo -u www-data /edx/app/edxapp/venvs/edxapp/bin/python/edx/app/edxapp/edx-platform/manage.py lms –-settings=aws helpn 重启edxapp 1sudo /edx/bin/supervisorctl restart edxapp: 查看服务器状态 1sudo /edx/bin/supervisorctl status 文件编译在edxapp账户下对lms模块进行编译，编译结束后要重启edxapp(cms编译时进行对应修改即可) 切换edxapp账户 1sudo -H -u edxapp bash 编译静态文件 123source /edx/app/edxapp/edxapp_envcd /edx/app/edxapp/edx-platformpaver update_assets lms --settings=aws 重启edxapp 1sudo /edx/bin/supervisorctl restart edxapp:]]></content>
+      <url>http://yoursite.com/2017/03/08/openedx%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<ul>
+<li>搭建好openedx后，我们需要对edx的一些基本功能进行配置</li>
+<li>edx文档参考手册官方网站（包括API调用、开发者手册）：<a href="http://docs.edx.org/" target="_blank" rel="external">http://docs.edx.org/</a></li>
+<li>openedx的配置主要参考安装配置手册：<br>  <a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/index.html</a></li>
+<li>原博客参考：<a href="https://shanbin.name/openedx-concise-configuration-guide/" target="_blank" rel="external">https://shanbin.name/openedx-concise-configuration-guide/</a><a id="more"></a>
+</li>
+</ul>
+<hr>
+<h4 id="配置SMTP"><a href="#配置SMTP" class="headerlink" title="配置SMTP"></a>配置SMTP</h4><p>主要涉及/edx/app/edxapp/下的4个json文件</p>
+<ul>
+<li><p>lms.env.json </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#设置成你的smtp邮箱</div><div class="line">“DEFAULT_FROM_EMAIL”: “your email”, </div><div class="line"></div><div class="line">#内容修改成你的smtp主机，比如你的邮箱设置的QQ邮箱则是smtp.qq.com</div><div class="line">“EMAIL_HOST”: “smtp.qq.com”, </div><div class="line"></div><div class="line">#端口一般是25 </div><div class="line">“EMAIL_PORT”: 25, </div><div class="line"></div><div class="line">#你的平台域名，可填ip</div><div class="line">“LMS_BASE”: “example.com”, </div><div class="line"></div><div class="line">#内容修改成你的edX平台名字</div><div class="line">“PLATFORM_NAME”: “OPENEDX”, </div><div class="line"></div><div class="line">#域名或ip,激活邮箱时调用 </div><div class="line">“SITE_NAME”: “localhost”,</div></pre></td></tr></table></figure>
+</li>
+<li><p>cms.env.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#设置成你的smtp邮箱</div><div class="line">“BULK_EMAIL_DEFAULT_FROM_EMAIL”: “your email”, </div><div class="line"></div><div class="line">#设置成你的smtp邮箱</div><div class="line">“DEFAULT_FROM_EMAIL”: “your email”, </div><div class="line"></div><div class="line">“EMAIL_HOST”: “smtp.qq.com”, </div><div class="line">“EMAIL_PORT”: 25, </div><div class="line">“LMS_BASE”: “example.com”, </div><div class="line">“SITE_NAME”: “localhost”,</div></pre></td></tr></table></figure>
+</li>
+<li><p>lms.auth.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#smtp邮箱密码</div><div class="line">“EMAIL_HOST_PASSWORD”: “password”, </div><div class="line"></div><div class="line">#邮箱</div><div class="line">“EMAIL_HOST_USER”: “email”,</div></pre></td></tr></table></figure>
+</li>
+<li><p>cms.authe.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#smtp邮箱密码</div><div class="line">“EMAIL_HOST_PASSWORD”: “password”, </div><div class="line"></div><div class="line">#邮箱    </div><div class="line">“EMAIL_HOST_USER”: “email”,</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="管理命令"><a href="#管理命令" class="headerlink" title="管理命令"></a>管理命令</h4><ul>
+<li><p>添加管理员用户<br>找到 .manage.py 所在的目录文件<br>执行命令</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo -u www-data /edx/bin/python.edxapp ./manage.py lms --settings=aws createsuperuser</div></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有的manage.py参数命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo -u www-data /edx/app/edxapp/venvs/edxapp/bin/python</div><div class="line">/edx/app/edxapp/edx-platform/manage.py lms –-settings=aws helpn</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启edxapp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /edx/bin/supervisorctl restart edxapp:</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看服务器状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /edx/bin/supervisorctl status</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="文件编译"><a href="#文件编译" class="headerlink" title="文件编译"></a>文件编译</h4><p>在edxapp账户下对lms模块进行编译，编译结束后要重启edxapp(cms编译时进行对应修改即可)</p>
+<ul>
+<li><p>切换edxapp账户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo -H -u edxapp bash</div></pre></td></tr></table></figure>
+</li>
+<li><p>编译静态文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source /edx/app/edxapp/edxapp_env</div><div class="line">cd /edx/app/edxapp/edx-platform</div><div class="line">paver update_assets lms --settings=aws</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启edxapp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /edx/bin/supervisorctl restart edxapp:</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> openEdx </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> edx </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[openedx搭建笔记]]></title>
-      <url>%2F2017%2F03%2F01%2Fopenedx%E6%90%AD%E5%BB%BA%2F</url>
-      <content type="text"><![CDATA[小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台 openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。 git安装的方法由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。 根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 edx/configuration 、edx/edx-platform 这两个开源项目 本人使用了12.04的安装平台，具体的安装方法可以参考：https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation 这里罗列了一些手动安装过程中会出现的一些问题 由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令 安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中1sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot; 整理了一些错误报告（1） cannot import name _unicode py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键） sudo apt-get install python-pymongo 已经安装了还是不行，选择安装最新版本的 sudo pip uninstall pymongo bson sudo pip install pymongo --upgrade （2）pip软件包的警告 SNIMissingWarning: An HTTPS request has been made,….see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning. 解决方案pip install pyopenssl ndg-httpsclient pyasn1 （3）用户权限问题 The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. 可以参考linux权限辅助的处理方案 （4）安装mongo服务器时候 “msg”: “Failed to update apt cache.” 删除 /var/lib/apt/lists下所有缓存文件sudo rm -rf * 更新apt列表sudo apt-get update ova镜像挂载挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置主要是配置网络IPedustack网站给出的指引方案可以参考：http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/ run文件安装bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。附上地址：https://bitnami.com/stack/edx该文件是在ubuntu系统下进行安装： 安装openedx添加权限后安装 12sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run./bitnami-edx-20160414-4-linux-x64-installer.run 安装配置安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）如果在图形界面中配置，则很简单附上dos界面的配置 修改主机名/ip地址 1sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip) 备份 12$ /home/azureuser/edx-20160414-4/ctlscript.sh stop$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4 启动openedx 1$ /home/azureuser/edx-20160414-4/ctlscript.sh start box文件github上放出的最新的box镜像环境要求：vagrant+vitualbox参考地址：http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置操作流程 新建一个文件夹 导入对应的box文件 12vagrant box add (name) (file_directory)vagrant init (name) 修改配置文件 打开网络地址（包括本地网络和外网地址） 12config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot; 配置映射文件本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）以当前文件目录为起始点 1config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot; 启动、结束、重启 123vagrant upvagrant haltvagrant reload]]></content>
+      <url>http://yoursite.com/2017/03/01/openedx%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<ul>
+<li>小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台</li>
+<li>openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h3 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h3><p>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。</p>
+<ul>
+<li>根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 <em>edx/configuration 、edx/edx-platform</em> 这两个开源项目</li>
+</ul>
+<p>本人使用了12.04的安装平台，具体的安装方法可以参考：<a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation" target="_blank" rel="external">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></p>
+<h4 id="这里罗列了一些手动安装过程中会出现的一些问题"><a href="#这里罗列了一些手动安装过程中会出现的一些问题" class="headerlink" title="这里罗列了一些手动安装过程中会出现的一些问题"></a>这里罗列了一些手动安装过程中会出现的一些问题</h4><ul>
+<li>由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令</li>
+</ul>
+<p>安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot;</div></pre></td></tr></table></figure></p>
+<h5 id="整理了一些错误报告"><a href="#整理了一些错误报告" class="headerlink" title="整理了一些错误报告"></a>整理了一些错误报告</h5><p>（1） cannot import name _unicode</p>
+<ul>
+<li><p>py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键）</p>
+<pre><code>sudo apt-get install python-pymongo
+</code></pre></li>
+<li><p>已经安装了还是不行，选择安装最新版本的</p>
+<pre><code>sudo pip uninstall pymongo bson
+sudo pip install pymongo --upgrade
+</code></pre></li>
+</ul>
+<p>（2）pip软件包的警告<br>    SNIMissingWarning: An HTTPS request has been made,….see <a href="https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning" target="_blank" rel="external">https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning</a>. </p>
+<ul>
+<li>解决方案<pre><code>pip install pyopenssl ndg-httpsclient pyasn1
+</code></pre></li>
+</ul>
+<p>（3）用户权限问题<br>    The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. </p>
+<p>可以参考linux权限辅助的处理方案</p>
+<p>（4）安装mongo服务器时候<br>    “msg”: “Failed to update apt cache.”</p>
+<ul>
+<li>删除 /var/lib/apt/lists下所有缓存文件<pre><code>sudo rm -rf  *
+</code></pre></li>
+<li>更新apt列表<pre><code>sudo apt-get update
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="ova镜像挂载"><a href="#ova镜像挂载" class="headerlink" title="ova镜像挂载"></a>ova镜像挂载</h3><p>挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置<br>主要是配置网络IP<br>edustack网站给出的指引方案<br>可以参考：<a href="http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/" target="_blank" rel="external">http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</a></p>
+<hr>
+<h3 id="run文件安装"><a href="#run文件安装" class="headerlink" title="run文件安装"></a>run文件安装</h3><p>bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。<br>附上地址：<a href="https://bitnami.com/stack/edx" target="_blank" rel="external">https://bitnami.com/stack/edx</a><br>该文件是在ubuntu系统下进行安装：</p>
+<ul>
+<li><p>安装openedx<br>添加权限后安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run</div><div class="line">./bitnami-edx-20160414-4-linux-x64-installer.run</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装配置<br>安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）<br>如果在图形界面中配置，则很简单<br>附上dos界面的配置<br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png" alt="none"><br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png" alt="none"></p>
+</li>
+<li><p>修改主机名/ip地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip)</div></pre></td></tr></table></figure>
+</li>
+<li><p>备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh stop</div><div class="line">$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动openedx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh start</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="box文件"><a href="#box文件" class="headerlink" title="box文件"></a>box文件</h3><p>github上放出的最新的box镜像<br>环境要求：vagrant+vitualbox<br>参考地址：<a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html</a><br>安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置<br>操作流程</p>
+<ul>
+<li>新建一个文件夹</li>
+<li><p>导入对应的box文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vagrant box add (name) (file_directory)</div><div class="line">vagrant init (name)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件</p>
+<ul>
+<li><p>打开网络地址（包括本地网络和外网地址）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</div><div class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置映射文件<br>本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）<br>以当前文件目录为起始点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>启动、结束、重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vagrant up</div><div class="line">vagrant halt</div><div class="line">vagrant reload</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> openEdx </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> edx </tag>
+            
+            <tag> vagrant </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[异常处理方法]]></title>
-      <url>%2F2017%2F01%2F07%2Ftry%E8%AF%AD%E5%8F%A5%2F</url>
-      <content type="text"><![CDATA[1.捕获所有异常123456try: a=b b=c except Exception,e: print Exception,&quot;:&quot;,e 2.采用traceback模块查看异常1234567891011121314151617181920#引入python中的traceback模块，跟踪错误import traceback try: a=b b=c except: traceback.print_exc()#也可以将异常存储到日志文件中去import tracebacktry: a=b b=c except: f=open("c:log.txt",'a') traceback.print_exc(file=f) f.flush() f.close() 3.采用sys模块回溯最后的异常12345678#引入sys模块import sys try: a=b b=c except: info=sys.exc_info() print info[0],":",info[1]]]></content>
+      <url>http://yoursite.com/2017/01/07/try%E8%AF%AD%E5%8F%A5/</url>
+      <content type="html"><![CDATA[<h3 id="1-捕获所有异常"><a href="#1-捕获所有异常" class="headerlink" title="1.捕获所有异常"></a>1.捕获所有异常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">try:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line">except Exception,e:  </div><div class="line">    print Exception,&quot;:&quot;,e</div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="2-采用traceback模块查看异常"><a href="#2-采用traceback模块查看异常" class="headerlink" title="2.采用traceback模块查看异常"></a>2.采用traceback模块查看异常</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入python中的traceback模块，跟踪错误</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    traceback.print_exc()</div><div class="line"></div><div class="line"><span class="comment">#也可以将异常存储到日志文件中去</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback</div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    f=open(<span class="string">"c:log.txt"</span>,<span class="string">'a'</span>)  </div><div class="line">    traceback.print_exc(file=f)  </div><div class="line">    f.flush()  </div><div class="line">    f.close()</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-采用sys模块回溯最后的异常"><a href="#3-采用sys模块回溯最后的异常" class="headerlink" title="3.采用sys模块回溯最后的异常"></a>3.采用sys模块回溯最后的异常</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入sys模块</span></div><div class="line"><span class="keyword">import</span> sys  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    info=sys.exc_info()  </div><div class="line">    <span class="keyword">print</span> info[<span class="number">0</span>],<span class="string">":"</span>,info[<span class="number">1</span>]</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[内建函数（序列相关）]]></title>
-      <url>%2F2016%2F12%2F27%2Fpython%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%8F%E5%88%97%E7%AF%87%2F</url>
-      <content type="text"><![CDATA[python常见的与序列相关的内建函数有4种 &gt;&gt;&gt; sorted()、reversed()、enumerate()、zip() 1234567891011#sorted()、reversed()是返回的一个列表对象type(sorted(s))&lt;type 'list'&gt;type(zip(s))&lt;type 'list'&gt;#enumerate()、zip()返回的是一个迭代器type(reversed(s))&lt;type 'listreverseiterator'&gt;type(enumerate(s))&lt;type 'enumerate'&gt; zip()函数zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。 [基本用法]1234567891011#按少进行匹配s1=[1,2,3]s2=[4,5,6,7]result=zip(s1.s2)# result:[(1,4),(2,5),(3,6)]#zip与*组合，形成一个行列变换zip(*result)[(1,2,3),(4,5,6)]map(list, zip(*a))# [[1,2,3],[4,5,6]] [进阶用法][1.zip打包解包列表和倍数]1234567a = [1, 2, 3]b = ['a', 'b', 'c']z = zip(a, b)# [(1, 'a'), (2, 'b'), (3, 'c')]zip(*z)# [(1, 2, 3), ('a', 'b', 'c')] [2.使用zip合并相邻的列表项]1a = [1, 2, 3, 4, 5, 6] -（1）’*’方法定义多个list1234567zip(*([iter(a)] * 2))# [(1, 2), (3, 4), (5, 6)]#zip(([iter(a)] * k))输出结果为a的k个对象，并没有详细的记过，应该是一种特殊组合group_adjacent = lambda a, k: zip(*([iter(a)] * k))group_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] -（2）使用多重循环123456zip(a[::3], a[1::3], a[2::3])# [(1, 2, 3), (4, 5, 6)]group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))roup_adjacent(a, 3)# [(1, 2, 3), (4, 5, 6)] [3.使用zip和iterators生成滑动窗口 (n -grams) ]123456789101112&gt;&gt;&gt; from itertools import islice&gt;&gt;&gt; def n_grams(a, n):... z = (islice(a, i, None) for i in range(n))... return zip(*z)...&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]&gt;&gt;&gt; n_grams(a, 3)[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]&gt;&gt;&gt; n_grams(a, 2)[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]&gt;&gt;&gt; n_grams(a, 4)[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)] [4.使用zip反转字典]12345678m = &#123;'a': 1, 'b': 2, 'c': 3, 'd': 4&#125;m.items()# [('a', 1), ('c', 3), ('b', 2), ('d', 4)]zip(m.values(), m.keys())# [(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]mi = dict(zip(m.values(), m.keys()))# &#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;]]></content>
+      <url>http://yoursite.com/2016/12/27/python%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%8F%E5%88%97%E7%AF%87/</url>
+      <content type="html"><![CDATA[<ul>
+<li>python常见的与序列相关的内建函数有4种 &gt;&gt;&gt; sorted()、reversed()、enumerate()、zip()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#sorted()、reversed()是返回的一个列表对象</span></div><div class="line">type(sorted(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line">type(zip(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">#enumerate()、zip()返回的是一个迭代器</span></div><div class="line">type(reversed(s))</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line">type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="zip-函数"><a href="#zip-函数" class="headerlink" title="zip()函数"></a>zip()函数</h3><p>zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="[基本用法]"></a>[基本用法]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#按少进行匹配</span></div><div class="line">s1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">s2=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</div><div class="line">result=zip(s1.s2)</div><div class="line"><span class="comment"># result:[(1,4),(2,5),(3,6)]</span></div><div class="line"></div><div class="line"><span class="comment">#zip与*组合，形成一个行列变换</span></div><div class="line">zip(*result)</div><div class="line">[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)]</div><div class="line">map(list, zip(*a))</div><div class="line"><span class="comment"># [[1,2,3],[4,5,6]]</span></div></pre></td></tr></table></figure>
+<h4 id="进阶用法"><a href="#进阶用法" class="headerlink" title="[进阶用法]"></a>[进阶用法]</h4><h4 id="1-zip打包解包列表和倍数"><a href="#1-zip打包解包列表和倍数" class="headerlink" title="[1.zip打包解包列表和倍数]"></a>[1.zip打包解包列表和倍数]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">b = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</div><div class="line"></div><div class="line">z = zip(a, b)</div><div class="line"><span class="comment"># [(1, 'a'), (2, 'b'), (3, 'c')]</span></div><div class="line">zip(*z)</div><div class="line"><span class="comment"># [(1, 2, 3), ('a', 'b', 'c')]</span></div></pre></td></tr></table></figure>
+<h4 id="2-使用zip合并相邻的列表项"><a href="#2-使用zip合并相邻的列表项" class="headerlink" title="[2.使用zip合并相邻的列表项]"></a>[2.使用zip合并相邻的列表项]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div></pre></td></tr></table></figure>
+<p>-（1）’*’方法定义多个list<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">zip(*([iter(a)] * <span class="number">2</span>))</div><div class="line"><span class="comment"># [(1, 2), (3, 4), (5, 6)]</span></div><div class="line"></div><div class="line"><span class="comment">#zip(([iter(a)] * k))输出结果为a的k个对象，并没有详细的记过，应该是一种特殊组合</span></div><div class="line">group_adjacent = <span class="keyword">lambda</span> a, k: zip(*([iter(a)] * k))</div><div class="line">group_adjacent(a, <span class="number">3</span>)</div><div class="line"><span class="comment"># [(1, 2, 3), (4, 5, 6)]</span></div></pre></td></tr></table></figure></p>
+<p>-（2）使用多重循环<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">zip(a[::<span class="number">3</span>], a[<span class="number">1</span>::<span class="number">3</span>], a[<span class="number">2</span>::<span class="number">3</span>])</div><div class="line"><span class="comment"># [(1, 2, 3), (4, 5, 6)]</span></div><div class="line"></div><div class="line">group_adjacent = <span class="keyword">lambda</span> a, k: zip(*(a[i::k] <span class="keyword">for</span> i <span class="keyword">in</span> range(k)))</div><div class="line">roup_adjacent(a, <span class="number">3</span>)</div><div class="line"><span class="comment"># [(1, 2, 3), (4, 5, 6)]</span></div></pre></td></tr></table></figure></p>
+<h4 id="3-使用zip和iterators生成滑动窗口-n-grams"><a href="#3-使用zip和iterators生成滑动窗口-n-grams" class="headerlink" title="[3.使用zip和iterators生成滑动窗口 (n -grams) ]"></a>[3.使用zip和iterators生成滑动窗口 (n -grams) ]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> itertools <span class="keyword">import</span> islice</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">n_grams</span><span class="params">(a, n)</span>:</span></div><div class="line"><span class="meta">... </span>    z = (islice(a, i, <span class="keyword">None</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(n))</div><div class="line"><span class="meta">... </span>    <span class="keyword">return</span> zip(*z)</div><div class="line">...</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>n_grams(a, <span class="number">3</span>)</div><div class="line">[(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), (<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>), (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>n_grams(a, <span class="number">2</span>)</div><div class="line">[(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">3</span>), (<span class="number">3</span>, <span class="number">4</span>), (<span class="number">4</span>, <span class="number">5</span>), (<span class="number">5</span>, <span class="number">6</span>)]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>n_grams(a, <span class="number">4</span>)</div><div class="line">[(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)]</div></pre></td></tr></table></figure>
+<h4 id="4-使用zip反转字典"><a href="#4-使用zip反转字典" class="headerlink" title="[4.使用zip反转字典]"></a>[4.使用zip反转字典]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">m = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">4</span>&#125;</div><div class="line"></div><div class="line">m.items()</div><div class="line"><span class="comment"># [('a', 1), ('c', 3), ('b', 2), ('d', 4)]</span></div><div class="line">zip(m.values(), m.keys())</div><div class="line"><span class="comment"># [(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]</span></div><div class="line">mi = dict(zip(m.values(), m.keys()))</div><div class="line"><span class="comment"># &#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;</span></div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[基本数据结构（python）]]></title>
-      <url>%2F2016%2F12%2F20%2Fpython%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[常用的几个数据结构有: list[], tumple(), dict{}, set() 主要对常用的方法和一些细节进行备注 list[python二维数组] 二维数组的定义如下操作只是定义了3个指向list([])的引用list[0].append(3)的方法只会让mylist=[[3][3][3]] 1mylist= [[]]*3 用如下的方式定义： 1mylist=[[0]*n, [0]*n, ...] tumple dict 种类 有序字典 无序字典12import collectionsordr_dic=collections.OrderedDict 字典的迭代字典是无序的字典默认读取的是字典元素的key 12for key in dic: print key:dic[key] （1）iter(dict)在有序字典中，读取字典的全部属性值直接读取对应的key和value （2）下标读取 123for e in dict: print e[0],e[1]#索引e[0]，也有可能是一个list（e[0][0]） （3）分开读取values(), keys() 实质上是把一个 dict 转换成了包含 value/key 的list。itervalues(), interkeys() 直接从dict中取出数据，返回的是 对象 （4）dict.items()/ dict.iteritems() 读取[index,element]组合，前者会先生成一个list set]]></content>
+      <url>http://yoursite.com/2016/12/20/python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<ul>
+<li>常用的几个数据结构有: list[], tumple(), dict{}, set()</li>
+<li>主要对常用的方法和一些细节进行备注<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="python二维数组"><a href="#python二维数组" class="headerlink" title="[python二维数组]"></a>[python二维数组]</h3><ul>
+<li><p>二维数组的定义<br>如下操作只是定义了3个指向list([])的引用<br>list[0].append(3)的方法只会让mylist=[[3][3][3]]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>用如下的方式定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="tumple"><a href="#tumple" class="headerlink" title="tumple"></a>tumple</h2><hr>
+<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><ul>
+<li><p>种类</p>
+<ul>
+<li>有序字典</li>
+<li>无序字典<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">ordr_dic=collections.OrderedDict</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>字典的迭代<br>字典是无序的<br>字典默认读取的是字典元素的key</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic:</div><div class="line">  <span class="keyword">print</span> key:dic[key]</div></pre></td></tr></table></figure>
+<ul>
+<li><p>（1）iter(dict)<br>在有序字典中，读取字典的全部属性值<br>直接读取对应的key和value</p>
+</li>
+<li><p>（2）下标读取</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">print</span> e[<span class="number">0</span>],e[<span class="number">1</span>]</div><div class="line"><span class="comment">#索引e[0]，也有可能是一个list（e[0][0]）</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>（3）分开读取<br>values(), keys()<br>   实质上是把一个 dict 转换成了包含 value/key 的list。<br>itervalues(), interkeys()<br>   直接从dict中取出数据，返回的是 <dictionary-valueiterator> 对象</dictionary-valueiterator></p>
+</li>
+<li><p>（4）dict.items()/ dict.iteritems()<br>   读取[index,element]组合，前者会先生成一个list</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2>]]></content>
+      
+        <categories>
+            
+            <category> python语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
     </entry>
-
+    
+    <entry>
+      <title><![CDATA[数据/参数读取（python）]]></title>
+      <url>http://yoursite.com/2016/12/06/python%E8%AF%BB%E5%8F%96%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%95%B0%E6%8D%AE/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>读取参数：<br>  在程序编译之前，所设置的对应参数</li>
+<li>读取数据：<br>  执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据<a id="more"></a>
+</li>
+</ul>
+</blockquote>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>在pycharm中，通过配置运行环境，预设好参数<br><img src="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG" alt="none"><br>通过argv[]获取参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="comment">#"i=0"时，表示代码本身文件路径，"id =1"代表第一个参数</span></div><div class="line">sys.argv[i]</div><div class="line"><span class="comment">#第i个参数（j--&gt;k位）</span></div><div class="line">sys.argv[i][j:k]</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h3><h4 id="raw-input-input"><a href="#raw-input-input" class="headerlink" title="[raw_input/input]"></a>[raw_input/input]</h4><ul>
+<li><p>raw_input([prompt])<br>函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）<br>将每行的输入看作一个字符串来处理，需要对数据进行处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果希望读取出in型数据，则需要进行转化</span></div><div class="line">map(int, raw_input().split())</div><div class="line"></div><div class="line">int(raw_input().split()[<span class="number">0</span>])</div></pre></td></tr></table></figure>
+</li>
+<li><p>input([prompt]) 函数<br>与raw_input([prompt]) 函数基本类似<br>可以接收一个Python表达式作为输入（希望接受的是一个合法的python表达式）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s=input()</div><div class="line"><span class="comment"># string，需要将输入通过引号括起来，不然会报SyntaxError错误</span></div><div class="line"><span class="comment"># 输入数字会自动识别为int/float型</span></div><div class="line"><span class="comment"># 输入正确的表达式，会给出执行后的结果</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="sys-stdin"><a href="#sys-stdin" class="headerlink" title="[sys.stdin]"></a>[sys.stdin]</h4><ul>
+<li><p>readline()<br>标准输入读取一行，但是会读取换行符’\n’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">str= sys.stdin.readline()</div></pre></td></tr></table></figure>
+</li>
+<li><p>realines()<br>读取所有的输入（读取了所有行的输入信息），有时候我们需要处理每行读取后的’\n’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#fist method</span></div><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> sys.stdin.readlines():</div><div class="line">    e=e.strip()</div><div class="line"><span class="comment">#second method</span></div><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> sys.stdin.read().splitlines():</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> python语法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
     
     <entry>
       <title><![CDATA[静态网页爬虫抓取]]></title>
-      <url>%2F2016%2F12%2F05%2F%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96%2F</url>
-      <content type="text"><![CDATA[爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。 开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解） 源码地址：https://github.com/reflexzj/simple-crawler.git 一、概述简单的爬虫组成 URL管理器 网页下载器 网页解析器这三个部分组成 给出三个部件协同工作流程 二、url管理器为什么需要urlManager这个组件？ 防止重复抓取、循环抓取（最坏情况：两个URL之间相互指向） 添加新的URL时需要判断 URL管理的基本功能范围 实现方案 使用集合将待爬取的url放入集合中python中的set()方法可以去除重复元素 关系型数据库通过表和相应的标志位来实现这个功能 缓存数据库eg:redis,使用两个数据的方案（大型公司的选用方式）个人可以使用电脑的内存或者是关系型数据库 三、网页下载器将互联网上URL对应的网页下载到本地的工具 工具 urllib2Python官方的基础模块： 支持直接的URL下载 向网页提交一些需要用户输入的数据 需要登陆网页的cookie处理 代理访问功能 requests第三方插件，提供更为强大的功能 urllib2用法 1.将URL传送给urllib2.urlopen()方法123456789import urllib2 #直接请求 response = urllib2.urlopen('http://www.baidu.com') #获取状态码，如果是200，则表示获取成功 print response.getcode() #读取内容 contt = response.read() 2.添加data、http header 增强处理：向服务器提交需要用户输入的数据 将url、data、header等信息传给request，将request对象作为参数发送网页请求123456789101112import urllib2 #创建request对象 request = urllib2.request(url) #添加数据（'a'这个数据项的值为'1'） request.add_data('a','1') #添加http的header（伪装成Mozilla浏览器） request.add_header('USer-Agent','Mozilla/5.0') #发送请求获取结果 response = urllib2.urlopen(request) 3.添加特殊场景的处理登陆访问：HTTPCookieProcesser 代理访问：ProxyHandler 协议加密：HTTPSHandler URL之间相互跳转：HTTPRedirectHandler …..eg：增强cookie的处理123456789101112import urllib2, cookielib #创建cookie容器 cj = cookielib.CookieJar() #将cookieJar作为一个参数生成对应的Handler，将此Handler传给Opener opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj)) #增强处理器，为urllib2安装opener urllib2.install_opener(opener) #此时使用带有cookie的urllib2来访问网页 response = urllib2.urlopen("http://www.baidu.com/") 四、网页解析器种类介绍 1.模糊匹配解析正则表达式 将整个网页文档当成一个字符串，使用模糊匹配的方式提取数据 直观，面对复杂内容，效率底下 2.结构化解析将整个网页文档下成一个文档对象模型树DOM(document Object Model) 解析工具： 1.html.parser自带的解析工具 2.Beautiful Soup可已使用html.parser以及Ixml来作为其的解析器 3.Ixml Beautiful Soup 安装文档参考地址：https://www.crummy.com/software/BeautifulSoup/bs4/doc/在windows环境下通过python工具包自带的pip工具来安装pip程序在Scripts文件中，检查是否安装 cd python_27\Scripts安装 pip install beautifulsoup4 用法 原理根据下载好的Html网页创建一个BeatifulSoup对象，文档则会变为相应的DOM树 代码实现（1）创建BeautifulSoup对象 1234 from bs4 import BeautifulSoup#根据HTML网页字符串创建BeautifulSoup对象#对象中的参数分别表示为HTML文档字符串、HTML解析器、指定文档的编码soup= BeautifulSoup(html_doc,'html.parser',from_encoding='utf8') （2）搜索节点（find_all,find） 这两个方法具有相同的参数：d_all(name,attrs,string) find_all() 搜索所有满足条件的节点 find() 搜索第一个满足条件的节点 -方法中的三个参数代表搜索的三个方向，分为名称、属性、内容 123456789#查找所有标签为a的节点soup.find_all('a')#查找所有标签为啊，链接符合/view/123.htm形式的节点(也可以传入正则表达式)soup.find_all('a',href='/view/123.htm')soup.find_all('a',href=re.compile(r'/view/\d+\.htm'))#查找所有标签为div，class为abc，文字为Python的节点(class为python关键字，加下划线避免冲突)soup.find_all('div',class_='abc',string='Python') （3）访问节点信息 12345678910 #得到节点：&lt;a href='1.html'&gt;Python&lt;/a&gt;#获取查找到的节点标签名称node.name#获取查找到的a节点的href属性node['href']#获取查找到的a节点的链接文字node.get_text()]]></content>
+      <url>http://yoursite.com/2016/12/05/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96/</url>
+      <content type="html"><![CDATA[<p><img src="http://omouah54e.bkt.clouddn.com/sipder/mindimage%E9%9D%99%E6%80%81%E7%88%AC%E8%99%AB.png" alt=""></p>
+<p><blockquote class="blockquote-center"><br>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。<br>开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）<br>源码地址：<a href="https://github.com/reflexzj/simple-crawler.git" target="_blank" rel="external">https://github.com/reflexzj/simple-crawler.git</a><br></blockquote><br><a id="more"></a></p>
+<hr>
+<h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><h4 id="简单的爬虫组成"><a href="#简单的爬虫组成" class="headerlink" title="简单的爬虫组成"></a>简单的爬虫组成</h4><ul>
+<li>URL管理器</li>
+<li>网页下载器</li>
+<li>网页解析器这三个部分组成</li>
+</ul>
+<h4 id="给出三个部件协同工作流程"><a href="#给出三个部件协同工作流程" class="headerlink" title="给出三个部件协同工作流程"></a>给出三个部件协同工作流程</h4><p><img src="http://omouah54e.bkt.clouddn.com/image/spidersipder-sequence.bmp" alt="none"></p>
+<hr>
+<h3 id="二、url管理器"><a href="#二、url管理器" class="headerlink" title="二、url管理器"></a>二、url管理器</h3><p>为什么需要urlManager这个组件？</p>
+<ul>
+<li>防止重复抓取、循环抓取（最坏情况：两个URL之间相互指向）</li>
+<li>添加新的URL时需要判断</li>
+</ul>
+<h4 id="URL管理的基本功能范围"><a href="#URL管理的基本功能范围" class="headerlink" title="URL管理的基本功能范围"></a>URL管理的基本功能范围</h4><p><img src="http://omouah54e.bkt.clouddn.com/image/spider/urlmanager.bmp" alt="none"></p>
+<h4 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h4><ul>
+<li><h5 id="使用集合将待爬取的url放入集合中"><a href="#使用集合将待爬取的url放入集合中" class="headerlink" title="使用集合将待爬取的url放入集合中"></a>使用集合将待爬取的url放入集合中</h5><p>python中的set()方法可以去除重复元素</p>
+</li>
+<li><h5 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h5><p>通过表和相应的标志位来实现这个功能</p>
+</li>
+<li><h5 id="缓存数据库"><a href="#缓存数据库" class="headerlink" title="缓存数据库"></a>缓存数据库</h5><p>eg:redis,使用两个数据的方案（大型公司的选用方式）<br>个人可以使用电脑的内存或者是关系型数据库</p>
+</li>
+</ul>
+<hr>
+<h3 id="三、网页下载器"><a href="#三、网页下载器" class="headerlink" title="三、网页下载器"></a>三、网页下载器</h3><p>将互联网上URL对应的网页下载到本地的工具</p>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ul>
+<li><h5 id="urllib2"><a href="#urllib2" class="headerlink" title="urllib2"></a>urllib2</h5><p>Python官方的基础模块：</p>
+<ul>
+<li>支持直接的URL下载</li>
+<li>向网页提交一些需要用户输入的数据</li>
+<li>需要登陆网页的cookie处理</li>
+<li>代理访问功能</li>
+</ul>
+</li>
+<li><h5 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h5><p>第三方插件，提供更为强大的功能</p>
+</li>
+</ul>
+<h4 id="urllib2用法"><a href="#urllib2用法" class="headerlink" title="urllib2用法"></a>urllib2用法</h4><ul>
+<li><h5 id="1-将URL传送给urllib2-urlopen-方法"><a href="#1-将URL传送给urllib2-urlopen-方法" class="headerlink" title="1.将URL传送给urllib2.urlopen()方法"></a>1.将URL传送给urllib2.urlopen()方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">    <span class="comment">#直接请求</span></div><div class="line">    response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#获取状态码，如果是200，则表示获取成功</span></div><div class="line">    <span class="keyword">print</span> response.getcode()</div><div class="line"></div><div class="line">    <span class="comment">#读取内容</span></div><div class="line">    contt = response.read()</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="2-添加data、http-header"><a href="#2-添加data、http-header" class="headerlink" title="2.添加data、http header"></a>2.添加data、http header</h5><ul>
+<li>增强处理：向服务器提交需要用户输入的数据</li>
+<li>将url、data、header等信息传给request，将request对象作为参数发送网页请求<br><img src="http://omouah54e.bkt.clouddn.com/image/spider/urllib2-dhh.bmp" alt="none"><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">    <span class="comment">#创建request对象</span></div><div class="line">    request = urllib2.request(url)</div><div class="line"></div><div class="line">    <span class="comment">#添加数据（'a'这个数据项的值为'1'）</span></div><div class="line">    request.add_data(<span class="string">'a'</span>,<span class="string">'1'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#添加http的header（伪装成Mozilla浏览器）</span></div><div class="line">    request.add_header(<span class="string">'USer-Agent'</span>,<span class="string">'Mozilla/5.0'</span>)</div><div class="line"></div><div class="line">    <span class="comment">#发送请求获取结果</span></div><div class="line">    response = urllib2.urlopen(request)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="3-添加特殊场景的处理"><a href="#3-添加特殊场景的处理" class="headerlink" title="3.添加特殊场景的处理"></a>3.添加特殊场景的处理</h5><p>登陆访问：HTTPCookieProcesser</p>
+<ul>
+<li>代理访问：ProxyHandler</li>
+<li>协议加密：HTTPSHandler</li>
+<li>URL之间相互跳转：HTTPRedirectHandler</li>
+<li>…..<br><br><br><img src="http://omouah54e.bkt.clouddn.com/image/spider/urllib2-dhh.bmp" alt="none"><br>eg：增强cookie的处理<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2, cookielib</div><div class="line">     <span class="comment">#创建cookie容器</span></div><div class="line">     cj = cookielib.CookieJar()</div><div class="line"></div><div class="line">     <span class="comment">#将cookieJar作为一个参数生成对应的Handler，将此Handler传给Opener</span></div><div class="line">     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))</div><div class="line"></div><div class="line">     <span class="comment">#增强处理器，为urllib2安装opener</span></div><div class="line">     urllib2.install_opener(opener)</div><div class="line"></div><div class="line">     <span class="comment">#此时使用带有cookie的urllib2来访问网页</span></div><div class="line">     response = urllib2.urlopen(<span class="string">"http://www.baidu.com/"</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="四、网页解析器"><a href="#四、网页解析器" class="headerlink" title="四、网页解析器"></a>四、网页解析器</h3><h4 id="种类介绍"><a href="#种类介绍" class="headerlink" title="种类介绍"></a>种类介绍</h4><ul>
+<li><h5 id="1-模糊匹配解析"><a href="#1-模糊匹配解析" class="headerlink" title="1.模糊匹配解析"></a>1.模糊匹配解析</h5><p>正则表达式</p>
+<ul>
+<li>将整个网页文档当成一个字符串，使用模糊匹配的方式提取数据</li>
+<li>直观，面对复杂内容，效率底下</li>
+</ul>
+</li>
+<li><h5 id="2-结构化解析"><a href="#2-结构化解析" class="headerlink" title="2.结构化解析"></a>2.结构化解析</h5><p>将整个网页文档下成一个文档对象模型树<br>DOM(document Object Model)</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/page-editor.bmp" alt="none"></p>
+<p>解析工具：</p>
+<ul>
+<li>1.html.parser<br>自带的解析工具</li>
+<li>2.Beautiful Soup<br>可已使用html.parser以及Ixml来作为其的解析器</li>
+<li>3.Ixml</li>
+</ul>
+</li>
+</ul>
+<h4 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a>Beautiful Soup</h4><ul>
+<li><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>文档参考地址：<br><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a><br>在windows环境下通过python工具包自带的pip工具来安装<br>pip程序在Scripts文件中，检查是否安装<br> cd python_27\Scripts<br>安装<br> pip install beautifulsoup4</p>
+</li>
+<li><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
+<li><h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>根据下载好的Html网页创建一个BeatifulSoup对象，文档则会变为相应的DOM树</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/image/spider/DOM1.bmp" alt="none"></p>
+</li>
+<li><h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><p>（1）创建BeautifulSoup对象    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="comment">#根据HTML网页字符串创建BeautifulSoup对象</span></div><div class="line"><span class="comment">#对象中的参数分别表示为HTML文档字符串、HTML解析器、指定文档的编码</span></div><div class="line">soup= BeautifulSoup(html_doc,<span class="string">'html.parser'</span>,from_encoding=<span class="string">'utf8'</span>)</div></pre></td></tr></table></figure>
+<p>（2）搜索节点（find_all,find）</p>
+<ul>
+<li>这两个方法具有相同的参数：d_all(name,attrs,string)</li>
+<li>find_all() 搜索所有满足条件的节点</li>
+<li><p>find() 搜索第一个满足条件的节点    -方法中的三个参数代表搜索的三个方向，分为名称、属性、内容</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/image/spider/DOM2.bmp" alt="none"></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查找所有标签为a的节点</span></div><div class="line">soup.find_all(<span class="string">'a'</span>)</div><div class="line"></div><div class="line"><span class="comment">#查找所有标签为啊，链接符合/view/123.htm形式的节点(也可以传入正则表达式)</span></div><div class="line">soup.find_all(<span class="string">'a'</span>,href=<span class="string">'/view/123.htm'</span>)</div><div class="line">soup.find_all(<span class="string">'a'</span>,href=re.compile(<span class="string">r'/view/\d+\.htm'</span>))</div><div class="line"></div><div class="line"><span class="comment">#查找所有标签为div，class为abc，文字为Python的节点(class为python关键字，加下划线避免冲突)</span></div><div class="line">soup.find_all(<span class="string">'div'</span>,class_=<span class="string">'abc'</span>,string=<span class="string">'Python'</span>)</div></pre></td></tr></table></figure>
+<p>（3）访问节点信息</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">#得到节点：&lt;a href='1.html'&gt;Python&lt;/a&gt;</span></div><div class="line"></div><div class="line"><span class="comment">#获取查找到的节点标签名称</span></div><div class="line">node.name</div><div class="line"></div><div class="line"><span class="comment">#获取查找到的a节点的href属性</span></div><div class="line">node[<span class="string">'href'</span>]</div><div class="line"></div><div class="line"><span class="comment">#获取查找到的a节点的链接文字</span></div><div class="line">node.get_text()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 爬虫 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> spider </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[算法整理(c++)]]></title>
-      <url>%2F2016%2F10%2F13%2Fc_c%2B%2B_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86%2F</url>
-      <content type="text"><![CDATA[持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。 字符串[字符串逆置]统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。 1234567891011class Solution &#123;public: string reverseString(string s) &#123; int len=s.size(); string result; for(int i=len-1; i&gt;=0; i--)&#123; result[len-i-1]=s[i]; &#125; return result; &#125;&#125;; 给出最优的方案1234567891011class Solution &#123;public: string reverseString(string s) &#123; int i = 0, j = s.size() - 1; while(i &lt; j)&#123; swap(s[i++], s[j--]); &#125; return s; &#125;&#125;; 位运算[汉明距离]汉明距离：两个数进行二进制转换后，不同的位数执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）123456n=x^ywhile(n)&#123; ++flag; n &amp;= n - 1;&#125;]]></content>
+      <url>http://yoursite.com/2016/10/13/c_c++_%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<ul>
+<li>持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆。。。。<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串逆置"><a href="#字符串逆置" class="headerlink" title="[字符串逆置]"></a>[字符串逆置]</h4><p>统计字符串的长度length()? size()(其实这两个的功能是一样的，c++更倾向于用size(),用于STL中)<br>除了考虑时间复杂度，空间复杂度的问题需不需要考虑？（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len=s.size();</div><div class="line">        <span class="built_in">string</span> result;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">         result[len-i<span class="number">-1</span>]=s[i]; </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>给出最优的方案<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.size() - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</div><div class="line">            swap(s[i++], s[j--]); </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>汉明距离：两个数进行二进制转换后，不同的位数<br>执行异或操作之后，n转化为二进制格式，其中”1”的个数即为汉明距离<br>n&amp;n-1（每次操作都会消除一个低位的”1”,借位会消除所在位置的”1”）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n=x^y</div><div class="line"><span class="keyword">while</span>(n)</div><div class="line">&#123;</div><div class="line">  ++flag;</div><div class="line">  n &amp;= n - <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 算法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+        
     </entry>
-
     
     <entry>
       <title><![CDATA[__name__ = '__main__' 的作用]]></title>
-      <url>%2F2016%2F10%2F05%2Fmain%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90%2F</url>
-      <content type="text"><![CDATA[给一个模块12345#module.pydef main(): print "we are in %s"%__name__if __name__ == '__main__': main() 这个函数定义了一个main函数，执行后打印出”we are in main“,说明if语句中的内容被执行了，调用了main() 从另外一个模块中调用main()方法123#anothermodle.pyfrom module import mainmain() 执行的结果是：we are in module 没有显示”we are in main“,也就是说模块name = ‘main‘ 下面的函数没有执行。 分析直接执行某个.py文件的时候，该文件中那么”name == ‘main‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时name的值就是这个py文件的名字而不是main。 这个功能还有一个用处：调试代码的时候，在”if name == ‘main‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。]]></content>
+      <url>http://yoursite.com/2016/10/05/main%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h3 id="给一个模块"><a href="#给一个模块" class="headerlink" title="给一个模块"></a>给一个模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</p>
+<h3 id="从另外一个模块中调用main-方法"><a href="#从另外一个模块中调用main-方法" class="headerlink" title="从另外一个模块中调用main()方法"></a>从另外一个模块中调用main()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#anothermodle.py</span></div><div class="line"><span class="keyword">from</span> module <span class="keyword">import</span> main</div><div class="line">main()</div></pre></td></tr></table></figure>
+<p>执行的结果是：we are in module</p>
+<p>没有显示”we are in <strong>main</strong>“,也就是说模块<strong>name</strong> = ‘<strong>main</strong>‘ 下面的函数没有执行。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>直接执行某个.py文件的时候，该文件中那么”<strong>name</strong> == ‘<strong>main</strong>‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时<strong>name</strong>的值就是这个py文件的名字而不是<strong>main</strong>。</p>
+<p>这个功能还有一个用处：调试代码的时候，在”if <strong>name</strong> == ‘<strong>main</strong>‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python编程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> pyhton </tag>
+            
+        </tags>
+        
     </entry>
-
     
   
   
