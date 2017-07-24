@@ -9,10 +9,14 @@
       <content type="html"><![CDATA[<h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><blockquote>
 <p>数据挖掘往小处说，就是对数据的处理归纳，得出有用信息的一个过程。通过各种机器学习算法，模型训练的过程中，发现即使用的是相同的算法，相同的参数，得到的数据模型往往是不稳定的。  </p>
 </blockquote>
-<p>项目主要用到的包是gensim ，官方地址：<a href="http://radimrehurek.com/gensim/index.html" target="_blank" rel="external">http://radimrehurek.com/gensim/index.html</a><br>中文文档的对照地址：<a href="http://blog.csdn.net/questionfish/article/details/46715795#" target="_blank" rel="external">http://blog.csdn.net/questionfish/article/details/46715795#</a><br>项目地址：<a href="https://github.com/reflexzj/data_mining_learning" target="_blank" rel="external">https://github.com/reflexzj/data_mining_learning</a></p>
+<ul>
+<li><a href="http://radimrehurek.com/gensim/index.html" target="_blank" rel="external">项目主要用到的包gensim的官方地址</a> </li>
+<li><a href="http://blog.csdn.net/questionfish/article/details/46715795#" target="_blank" rel="external">中文文档的对照地址</a>  </li>
+<li><a href="https://github.com/reflexzj/data_mining_learning" target="_blank" rel="external">项目地址</a></li>
+</ul>
 <h3 id="本次的主要流程图如下："><a href="#本次的主要流程图如下：" class="headerlink" title="本次的主要流程图如下："></a>本次的主要流程图如下：</h3><p><img src="http://omouah54e.bkt.clouddn.com/LDA_svm/PROCESS.gif" alt="none"></p>
 <a id="more"></a>
-<p><strong>数据的爬取</strong><br>爬取数据时，选择较为干净的数据源，可以将数据整理成对应的结构化数据<br>本次，走完了一个简单的数据挖掘流程，主要爬取了知网上的九类学科的期刊文档。<br><strong>数据预处理</strong><br>质量较高的句子信息，考虑jieba分词模型李：中英文的分类、去除标点符号、去除停用词<br>高质量的结构化数据，将数据整理为csv模式的数据结构<br><strong>生成语料库</strong><br>对所有文档中所有的不同的单词进行统计，整理到一个字典中去（统计维度）<br>产生稀疏向量文档<br><strong>特征选择</strong><br>根据词再本篇以及所有的文档中的词频来计算出特征值<br><strong>LDA模型建立</strong><br>主题模型，反馈出每篇文章中不同主题的比重<br>选择多少的主题？<br><strong>SVM模型选择</strong><br>SVM模型的使用主要涉及到模型参数的调整</p>
+<p><strong>数据的爬取</strong><br>&ensp;&ensp;爬取数据时，选择较为干净的数据源，可以将数据整理成对应的结构化数据<br>&ensp;&ensp;本次，走完了一个简单的数据挖掘流程，主要爬取了知网上的九类学科的期刊文档。<br><strong>数据预处理</strong><br>&ensp;&ensp;质量较高的句子信息，考虑jieba分词模型李：中英文的分类、去除标点符号、去除停用词<br>&ensp;&ensp;高质量的结构化数据，将数据整理为csv模式的数据结构<br><strong>生成语料库</strong><br>&ensp;&ensp;对所有文档中所有的不同的单词进行统计，整理到一个字典中去（统计维度）<br>&ensp;&ensp;产生稀疏向量文档<br><strong>特征选择</strong><br>&ensp;&ensp;根据词再本篇以及所有的文档中的词频来计算出特征值<br><strong>LDA模型建立</strong><br>&ensp;&ensp;主题模型，反馈出每篇文章中不同主题的比重<br>&ensp;&ensp;选择多少的主题？<br><strong>SVM模型选择</strong><br>&ensp;&ensp;SVM模型的使用主要涉及到模型参数的调整</p>
 <hr>
 <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="1-文件读取"><a href="#1-文件读取" class="headerlink" title="1. 文件读取"></a>1. 文件读取</h3><blockquote>
 <p>数据以多级文件夹的形式来分类存储的，首先我们要将这些文本读入到一个txt文件夹中去（不管一个基础的txt源文件中有多少行，统一到result.txt文件中后，只对应到一行）</p>
@@ -221,9 +225,9 @@
         
         <tags>
             
-            <tag> python </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> python </tag>
             
         </tags>
         
@@ -571,13 +575,13 @@ sudo pip install pymongo --upgrade
     <entry>
       <title><![CDATA[静态网页爬虫抓取]]></title>
       <url>http://yoursite.com/2016/12/05/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%93%E5%8F%96/</url>
-      <content type="html"><![CDATA[<p><img src="http://omouah54e.bkt.clouddn.com/sipder/mindimage/%E9%9D%99%E6%80%81%E7%88%AC%E8%99%AB.gif" alt=""></p>
+      <content type="html"><![CDATA[<blockquote>
+<p>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）</p>
+</blockquote>
 <ul>
-<li>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。</li>
-<li>开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）</li>
-<li>源码地址：<a href="https://github.com/reflexzj/simple-crawler.git" target="_blank" rel="external">https://github.com/reflexzj/simple-crawler.git</a></li>
+<li><a href="https://github.com/reflexzj/simple-crawler.git" target="_blank" rel="external">源码地址</a></li>
 </ul>
-<a id="more"></a>
+<p><img src="http://omouah54e.bkt.clouddn.com/sipder/mindimage/%E9%9D%99%E6%80%81%E7%88%AC%E8%99%AB.gif" alt=""><br><a id="more"></a></p>
 <hr>
 <h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><h4 id="简单的爬虫组成"><a href="#简单的爬虫组成" class="headerlink" title="简单的爬虫组成"></a>简单的爬虫组成</h4><ul>
 <li>URL管理器</li>
