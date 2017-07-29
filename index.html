@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,7 +57,15 @@
   
 
   
+    
 
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=source code pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +110,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -364,9 +372,9 @@
 <p>数据挖掘往小处说，就是对数据的处理归纳，得出有用信息的一个过程。通过各种机器学习算法，模型训练的过程中，发现即使用的是相同的算法，相同的参数，得到的数据模型往往是不稳定的。  </p>
 </blockquote>
 <ul>
-<li><a href="http://radimrehurek.com/gensim/index.html">项目主要用到的包gensim的官方地址</a> </li>
-<li><a href="http://blog.csdn.net/questionfish/article/details/46715795#">中文文档的对照地址</a>  </li>
-<li><a href="https://github.com/reflexzj/data_mining_learning">项目地址</a></li>
+<li>项目主要用到的包gensim的官方地址：<br><a href="http://radimrehurek.com/gensim/index.html">http://radimrehurek.com/gensim/index.html</a>) </li>
+<li>中文文档的对照地址：<br><a href="http://blog.csdn.net/questionfish/article/details/46715795#">http://blog.csdn.net/questionfish/article/details/46715795#</a>  </li>
+<li>项目地址：<br><a href="https://github.com/reflexzj/data_mining_learning">https://github.com/reflexzj/data_mining_learning</a></li>
 </ul>
 <h3 id="本次的主要流程图如下："><a href="#本次的主要流程图如下：" class="headerlink" title="本次的主要流程图如下："></a>本次的主要流程图如下：</h3><p><img src="http://omouah54e.bkt.clouddn.com/LDA_svm/PROCESS.gif" alt="none"></p>
           <!--noindex-->
@@ -938,9 +946,14 @@
 
       
         
-          <ul>
-<li>小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台</li>
-<li>openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。
+          <blockquote>
+<p>本次小组实训任务，在开源项目openedx的基础上，搭建自己的MOOC平台<br>openedx这个项目已经进行很久了，github上有持续更新，目前平台上的各种功能已经比较完善了。<br>介绍了多种openedx的安装方法：git安装、ova镜像、run文件、官方box文件  </p>
+</blockquote>
+<h2 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h2><ul>
+<li>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。   </li>
+<li>根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 <em>edx/configuration 、edx/edx-platform</em> 这两个开源项目</li>
+<li>本人使用了12.04的安装平台，具体的安装方法可以参考：<br><a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/01/openedx搭建/#more" rel="contents">
@@ -1218,11 +1231,10 @@
 
       
         
-          <ul>
-<li>python常见的与序列相关的内建函数有4种 </li>
-<li>sorted()、reversed()、enumerate()、zip()</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#sorted()、reversed()是返回的一个列表对象</span></div><div class="line">type(sorted(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line">type(zip(s))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">#enumerate()、zip()返回的是一个迭代器</span></div><div class="line">type(reversed(s))</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line">type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure>
+          <blockquote>
+<p>python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。</p>
+</blockquote>
+<p><strong>给出代码测试</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(sorted(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(zip(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(reversed(s))	</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/12/27/python内建函数序列篇/#more" rel="contents">
@@ -1500,9 +1512,12 @@
 
       
         
-          <ul>
-<li>[读取参数]：在程序编译之前，所设置的对应参数</li>
-<li>[读取数据]：执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据
+          <blockquote>
+<p>主要区分参数读取和数据读取这两个概念  </p>
+</blockquote>
+<ul>
+<li><strong>读取参数：</strong> 在程序编译之前，所设置的对应参数  </li>
+<li><strong>读取数据：</strong> 执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/12/06/python读取控制台数据/#more" rel="contents">
@@ -1644,7 +1659,7 @@
 <p>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）</p>
 </blockquote>
 <ul>
-<li><a href="https://github.com/reflexzj/simple-crawler.git">源码地址</a></li>
+<li>源码地址：<br><a href="https://github.com/reflexzj/simple-crawler.git">https://github.com/reflexzj/simple-crawler.git</a></li>
 </ul>
 <p><img src="http://omouah54e.bkt.clouddn.com/sipder/mindimage/%E9%9D%99%E6%80%81%E7%88%AC%E8%99%AB.gif" alt=""><br>
           <!--noindex-->
@@ -1815,7 +1830,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -1894,6 +1909,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

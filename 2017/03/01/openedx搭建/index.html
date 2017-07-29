@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,7 +57,15 @@
   
 
   
+    
 
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=source code pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -86,21 +94,30 @@
 
 
 
-<meta name="description" content="小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台
-openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。">
+<meta name="description" content="本次小组实训任务，在开源项目openedx的基础上，搭建自己的MOOC平台openedx这个项目已经进行很久了，github上有持续更新，目前平台上的各种功能已经比较完善了。介绍了多种openedx的安装方法：git安装、ova镜像、run文件、官方box文件  
+
+git安装的方法
+由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。   
+根据你的ubuntu系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openedx搭建笔记">
 <meta property="og:url" content="http://yoursite.com/2017/03/01/openedx搭建/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台
-openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。">
+<meta property="og:description" content="本次小组实训任务，在开源项目openedx的基础上，搭建自己的MOOC平台openedx这个项目已经进行很久了，github上有持续更新，目前平台上的各种功能已经比较完善了。介绍了多种openedx的安装方法：git安装、ova镜像、run文件、官方box文件  
+
+git安装的方法
+由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。   
+根据你的ubuntu系">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png">
-<meta property="og:updated_time" content="2017-04-05T14:38:10.322Z">
+<meta property="og:updated_time" content="2017-07-29T09:11:14.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="openedx搭建笔记">
-<meta name="twitter:description" content="小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台
-openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。">
+<meta name="twitter:description" content="本次小组实训任务，在开源项目openedx的基础上，搭建自己的MOOC平台openedx这个项目已经进行很久了，github上有持续更新，目前平台上的各种功能已经比较完善了。介绍了多种openedx的安装方法：git安装、ova镜像、run文件、官方box文件  
+
+git安装的方法
+由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。   
+根据你的ubuntu系">
 <meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png">
 
 
@@ -109,7 +126,7 @@ openedx这个项目已经进行很久了，github上有持续更新，目前，�
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -340,85 +357,58 @@ openedx这个项目已经进行很久了，github上有持续更新，目前，�
       
 
       
-        <ul>
-<li>小组实训任务：在开源项目openedx的基础上，搭建自己的MOOC平台</li>
-<li>openedx这个项目已经进行很久了，github上有持续更新，目前，平台上的各种功能已经比较完善了。<a id="more"></a>
-</li>
-</ul>
-<hr>
-<h3 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h3><p>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。</p>
-<ul>
+        <blockquote>
+<p>本次小组实训任务，在开源项目openedx的基础上，搭建自己的MOOC平台<br>openedx这个项目已经进行很久了，github上有持续更新，目前平台上的各种功能已经比较完善了。<br>介绍了多种openedx的安装方法：git安装、ova镜像、run文件、官方box文件  </p>
+</blockquote>
+<h2 id="git安装的方法"><a href="#git安装的方法" class="headerlink" title="git安装的方法"></a>git安装的方法</h2><ul>
+<li>由于外网的原因，openedx的直接安装一般不太可能成功，优先选择手动安装的方法。   </li>
 <li>根据你的ubuntu系统来选择安装（目前支持ubuntu12.04LTS, ubuntu16.04LTS两个版本，配置要求不同（内存，最低硬盘容量要求）），可以参考gihub上的 <em>edx/configuration 、edx/edx-platform</em> 这两个开源项目</li>
+<li>本人使用了12.04的安装平台，具体的安装方法可以参考：<br><a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation" target="_blank" rel="external">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></li>
 </ul>
-<p>本人使用了12.04的安装平台，具体的安装方法可以参考：<a href="https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation" target="_blank" rel="external">https://openedx.atlassian.net/wiki/display/OpenOPS/Native+Open+edX+Ubuntu+12.04+64+bit+Installation</a></p>
-<h4 id="这里罗列了一些手动安装过程中会出现的一些问题"><a href="#这里罗列了一些手动安装过程中会出现的一些问题" class="headerlink" title="这里罗列了一些手动安装过程中会出现的一些问题"></a>这里罗列了一些手动安装过程中会出现的一些问题</h4><ul>
-<li>由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令</li>
-</ul>
-<p>安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot;</div></pre></td></tr></table></figure></p>
-<h5 id="整理了一些错误报告"><a href="#整理了一些错误报告" class="headerlink" title="整理了一些错误报告"></a>整理了一些错误报告</h5><p>（1） cannot import name _unicode</p>
-<ul>
-<li><p>py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键）</p>
-<pre><code>sudo apt-get install python-pymongo
-</code></pre></li>
-<li><p>已经安装了还是不行，选择安装最新版本的</p>
-<pre><code>sudo pip uninstall pymongo bson
-sudo pip install pymongo --upgrade
-</code></pre></li>
-</ul>
-<p>（2）pip软件包的警告<br>    SNIMissingWarning: An HTTPS request has been made,….see <a href="https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning" target="_blank" rel="external">https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning</a>. </p>
-<ul>
-<li>解决方案<pre><code>pip install pyopenssl ndg-httpsclient pyasn1
-</code></pre></li>
-</ul>
-<p>（3）用户权限问题<br>    The directory ‘/home/onemind/.cache/pip/http’ or its parent directory is not owned by the current user and the cache has been disabled. </p>
+<a id="more"></a>
+<p><strong>这里罗列了一些手动安装过程中会出现的一些问题</strong><br>由于接触ubuntu不多，需要明白一个原则：每一步的命令执行没有问题之后，才能接着执行下面的命令<br>安装过程中的问题，主要集中在检查配置文件，向git请求下载的过程之中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ansible-playbook -c local ./edx_sandbox.yml -i &quot;localhost,&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="整理了一些错误报告"><a href="#整理了一些错误报告" class="headerlink" title="整理了一些错误报告"></a>整理了一些错误报告</h3><p><strong>（1） cannot import name _unicode</strong><br>py对应的mongo数据库没有安装成功（python链接mongo数据库的中间键）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-pymongo</div></pre></td></tr></table></figure></p>
+<p>已经安装了还是不行，选择安装最新版本的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo pip uninstall pymongo bson</div><div class="line">sudo pip install pymongo --upgrade</div></pre></td></tr></table></figure></p>
+<p><strong>（2）pip软件包的警告</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SNIMissingWarning: An HTTPS request has been made,.... see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.</div></pre></td></tr></table></figure></p>
+<p>安装依赖包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install pyopenssl ndg-httpsclient pyasn1</div></pre></td></tr></table></figure></p>
+<p><strong>（3）用户权限问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The directory &apos;/home/onemind/.cache/pip/http&apos; or its parent directory is not owned by the current user and the cache has been disabled.</div></pre></td></tr></table></figure></p>
 <p>可以参考linux权限辅助的处理方案</p>
-<p>（4）安装mongo服务器时候<br>    “msg”: “Failed to update apt cache.”</p>
+<p><strong>（4）安装mongo服务器时候</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;msg&quot;: &quot;Failed to update apt cache.&quot;</div></pre></td></tr></table></figure></p>
+<p>删除 /var/lib/apt/lists下所有缓存文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf  *</div></pre></td></tr></table></figure></p>
+<p>更新apt列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="ova镜像挂载"><a href="#ova镜像挂载" class="headerlink" title="ova镜像挂载"></a>ova镜像挂载</h2><blockquote>
+<p>挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置（将镜像文件挂载到WMware中去，后期主要是配置网络IP）  </p>
+</blockquote>
 <ul>
-<li>删除 /var/lib/apt/lists下所有缓存文件<pre><code>sudo rm -rf  *
-</code></pre></li>
-<li>更新apt列表<pre><code>sudo apt-get update
-</code></pre></li>
+<li>edustack网站给出的指引方案</li>
+<li>可以参考：<br><a href="http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/" target="_blank" rel="external">http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</a></li>
 </ul>
 <hr>
-<h3 id="ova镜像挂载"><a href="#ova镜像挂载" class="headerlink" title="ova镜像挂载"></a>ova镜像挂载</h3><p>挂载打包好的opeedx OVA镜像，可以免除繁琐的下载过程，但需要后期的配置<br>主要是配置网络IP<br>edustack网站给出的指引方案<br>可以参考：<a href="http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/" target="_blank" rel="external">http://edustack.org/manual/edx/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</a></p>
+<h2 id="run文件安装"><a href="#run文件安装" class="headerlink" title="run文件安装"></a>run文件安装</h2><blockquote>
+<p>bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。  </p>
+</blockquote>
+<ul>
+<li>附上地址：<a href="https://bitnami.com/stack/edx" target="_blank" rel="external">https://bitnami.com/stack/edx</a></li>
+</ul>
+<p><strong>该文件是在ubuntu系统下进行安装：</strong></p>
+<p><strong>（1）安装openedx（添加权限后安装）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run</div><div class="line">./bitnami-edx-20160414-4-linux-x64-installer.run</div></pre></td></tr></table></figure></p>
+<p><strong>（2）安装配置</strong><br>安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证），如果在图形界面中配置，则很简单。<br>附上dos界面的配置：</p>
+<p><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png" alt="none"><br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png" alt="none"></p>
+<p><strong>（3）修改主机名/ip地址</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip)</div></pre></td></tr></table></figure></p>
+<p><strong>（4）备份</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh stop</div><div class="line">$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4</div></pre></td></tr></table></figure></p>
+<p><strong>（5）启动openedx</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh start</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="run文件安装"><a href="#run文件安装" class="headerlink" title="run文件安装"></a>run文件安装</h3><p>bitnami开源项目托管网站打包了openedx的开源项目。当然，打包的项目不可能是最新的开发版了。<br>附上地址：<a href="https://bitnami.com/stack/edx" target="_blank" rel="external">https://bitnami.com/stack/edx</a><br>该文件是在ubuntu系统下进行安装：</p>
+<h2 id="box文件"><a href="#box文件" class="headerlink" title="box文件"></a>box文件</h2><p>github上放出的最新的box镜像</p>
 <ul>
-<li><p>安装openedx<br>添加权限后安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 bitnami-edx-20160414-4-linux-x64-installer.run</div><div class="line">./bitnami-edx-20160414-4-linux-x64-installer.run</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装配置<br>安装过程中，需要配置ip，托管邮箱等（用以发送邮件验证）<br>如果在图形界面中配置，则很简单<br>附上dos界面的配置<br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall1.png" alt="none"><br><img src="http://omouah54e.bkt.clouddn.com/opendx/configure/edx-insatall2.png" alt="none"></p>
-</li>
-<li><p>修改主机名/ip地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo installdir/apps/edx/bnconfig --machine_hostname NEW_DOMAIN(服务器ip)</div></pre></td></tr></table></figure>
-</li>
-<li><p>备份</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh stop</div><div class="line">$ tar -pczvf application-backup.tar.gz /home/azureuser/edx-20160414-4</div></pre></td></tr></table></figure>
-</li>
-<li><p>启动openedx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /home/azureuser/edx-20160414-4/ctlscript.sh start</div></pre></td></tr></table></figure>
-</li>
+<li>环境要求：vagrant+vitualbox</li>
+<li>参考地址：<br><a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html</a></li>
+<li>安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置</li>
 </ul>
-<hr>
-<h3 id="box文件"><a href="#box文件" class="headerlink" title="box文件"></a>box文件</h3><p>github上放出的最新的box镜像<br>环境要求：vagrant+vitualbox<br>参考地址：<a href="http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html" target="_blank" rel="external">http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/installation/index.html</a><br>安装vagrant(ubuntu/windows平台都有)，安装完成后自动，重启会自动完成所有的路径配置<br>操作流程</p>
-<ul>
-<li>新建一个文件夹</li>
-<li><p>导入对应的box文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vagrant box add (name) (file_directory)</div><div class="line">vagrant init (name)</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置文件</p>
-<ul>
-<li><p>打开网络地址（包括本地网络和外网地址）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</div><div class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置映射文件<br>本地文件夹–&gt;映射文件夹（虚拟机中产生对应的文件夹）<br>以当前文件目录为起始点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>启动、结束、重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vagrant up</div><div class="line">vagrant halt</div><div class="line">vagrant reload</div></pre></td></tr></table></figure></li>
-</ul>
+<h3 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h3><p><strong>新建一个文件夹，导入对应的box文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vagrant box add (name) (file_directory)</div><div class="line">vagrant init (name)</div></pre></td></tr></table></figure></p>
+<p><strong>修改配置文件</strong><br>（1）打开网络地址（包括本地网络和外网地址）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</div><div class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</div></pre></td></tr></table></figure></p>
+<p>（2）配置映射文件<br>本地文件夹 —&gt; 映射文件夹（虚拟机中对应的文件夹，会自动生成），配置中以当前文件目录为起始点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">config.vm.synced_folder &quot;./data&quot;, &quot;/vagrant_data&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>启动、结束、重启</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vagrant up</div><div class="line">vagrant halt</div><div class="line">vagrant reload</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -605,7 +595,7 @@ sudo pip install pymongo --upgrade
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git安装的方法"><span class="nav-number">1.</span> <span class="nav-text">git安装的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里罗列了一些手动安装过程中会出现的一些问题"><span class="nav-number">1.1.</span> <span class="nav-text">这里罗列了一些手动安装过程中会出现的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#整理了一些错误报告"><span class="nav-number">1.1.1.</span> <span class="nav-text">整理了一些错误报告</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ova镜像挂载"><span class="nav-number">2.</span> <span class="nav-text">ova镜像挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run文件安装"><span class="nav-number">3.</span> <span class="nav-text">run文件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box文件"><span class="nav-number">4.</span> <span class="nav-text">box文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git安装的方法"><span class="nav-number">1.</span> <span class="nav-text">git安装的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整理了一些错误报告"><span class="nav-number">1.1.</span> <span class="nav-text">整理了一些错误报告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ova镜像挂载"><span class="nav-number">2.</span> <span class="nav-text">ova镜像挂载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run文件安装"><span class="nav-number">3.</span> <span class="nav-text">run文件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#box文件"><span class="nav-number">4.</span> <span class="nav-text">box文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作流程"><span class="nav-number">4.1.</span> <span class="nav-text">操作流程</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -643,7 +633,7 @@ sudo pip install pymongo --upgrade
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -722,6 +712,13 @@ sudo pip install pymongo --upgrade
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
