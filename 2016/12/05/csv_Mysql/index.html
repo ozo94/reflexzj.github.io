@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,mysql," />
+  <meta name="keywords" content="mysql,csv," />
 
 
 
@@ -94,19 +94,36 @@
 
 
 
-<meta name="description" content="python与mysql数据库的连接是通过一个统一的规范的接口实现的（DB APT）">
+<meta name="description" content="如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？
+
+获取数据一般有如下几个方法：  
+
+1.使用爬虫获取网络上对应的数据并进行结构化处理，写到csv、txt文件中去
+2.网页上下载对应的csv文件或者txt文件（某些网站提供了源数据）
+3.某些网站的web api，可以直接获得了比较清晰的json数据流了豆瓣图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作mysql数据库（python）">
-<meta property="og:url" content="http://yoursite.com/2017/04/26/python操作mysql数据库/index.html">
+<meta property="og:title" content="csv文件到Mysql数据库">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/csv_Mysql/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="python与mysql数据库的连接是通过一个统一的规范的接口实现的（DB APT）">
+<meta property="og:description" content="如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？
+
+获取数据一般有如下几个方法：  
+
+1.使用爬虫获取网络上对应的数据并进行结构化处理，写到csv、txt文件中去
+2.网页上下载对应的csv文件或者txt文件（某些网站提供了源数据）
+3.某些网站的web api，可以直接获得了比较清晰的json数据流了豆瓣图">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp">
-<meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E5%9B%BE%E7%89%87.bmp">
-<meta property="og:updated_time" content="2017-04-26T14:00:03.673Z">
+<meta property="og:updated_time" content="2017-08-06T09:04:46.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="操作mysql数据库（python）">
-<meta name="twitter:description" content="python与mysql数据库的连接是通过一个统一的规范的接口实现的（DB APT）">
+<meta name="twitter:title" content="csv文件到Mysql数据库">
+<meta name="twitter:description" content="如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？
+
+获取数据一般有如下几个方法：  
+
+1.使用爬虫获取网络上对应的数据并进行结构化处理，写到csv、txt文件中去
+2.网页上下载对应的csv文件或者txt文件（某些网站提供了源数据）
+3.某些网站的web api，可以直接获得了比较清晰的json数据流了豆瓣图">
 <meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp">
 
 
@@ -115,7 +132,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -135,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/26/python操作mysql数据库/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/05/csv_Mysql/"/>
 
 
 
 
 
-  <title>操作mysql数据库（python） | ZhangJian's blog</title>
+  <title>csv文件到Mysql数据库 | ZhangJian's blog</title>
   
 
 
@@ -260,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/26/python操作mysql数据库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/csv_Mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="reflex_zj">
@@ -277,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">操作mysql数据库（python）</h1>
+          <h1 class="post-title" itemprop="name headline">csv文件到Mysql数据库</h1>
         
 
         <div class="post-meta">
@@ -289,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-26T16:10:03+08:00">
-                2017-04-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-05T00:00:00+08:00">
+                2016-12-05
               </time>
             
 
@@ -312,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -323,8 +340,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
+                  <a href="/categories/数据库/数据处理/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理</span>
                   </a>
                 </span>
 
@@ -357,13 +374,50 @@
       
 
       
-        <ul>
-<li>python与mysql数据库的连接是通过一个统一的规范的接口实现的（DB APT）<a id="more"></a>
+        <blockquote>
+<p>如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？</p>
+</blockquote>
+<p><strong>获取数据一般有如下几个方法：</strong>  </p>
+<ul>
+<li>1.使用爬虫获取网络上对应的数据并进行结构化处理，写到csv、txt文件中去</li>
+<li>2.网页上下载对应的csv文件或者txt文件（某些网站提供了源数据）</li>
+<li><p>3.某些网站的web api，可以直接获得了比较清晰的json数据流了<br>豆瓣图书API：<a href="https://developers.douban.com/" target="_blank" rel="external">https://developers.douban.com/</a><br>代码示例：获取小王子图书的主页信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">'https://api.douban.com/v2/book/1084336'</span>)</div><div class="line">print(r.text)</div></pre></td></tr></table></figure>
+</li>
+<li><p>4.一些语料库的可以直接使用<br>NTTK语料库: <a href="http://www.nltk.org/" target="_blank" rel="external">http://www.nltk.org/</a></p>
 </li>
 </ul>
 <hr>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>数据库在一整套的程序中扮演这什么角色？<br><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp" alt=""></p>
-<h3 id="中间层（DB-API）"><a href="#中间层（DB-API）" class="headerlink" title="中间层（DB API）"></a>中间层（DB API）</h3><p>Python应用程序（包含sql）与底层数据库之间的连接，需要提供接口，而各个厂商提供自己的接口程序（Mysql,oracle…）<br><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp" alt=""><br>基于这个原因，设计了python访问数据库的统一规范接口(DB API)(基于ORM模型的思想)<br>参考文档<a href="https://www.python.org/dev/peps/pep-0249/" target="_blank" rel="external">https://www.python.org/dev/peps/pep-0249/</a><br>整个接口包含多个对象内容：（重点内容）<br><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E5%9B%BE%E7%89%87.bmp" alt=""></p>
+<a id="more"></a>
+<h2 id="execle-text-gt-csv"><a href="#execle-text-gt-csv" class="headerlink" title="execle/text -&gt; csv"></a>execle/text -&gt; csv</h2><blockquote>
+<p>在mysql数据中，文本格式一般是utf-8。而一般在处理时候，得到的execle/text文档是gbk，gb2312,所以在做csv转换时一定要注意编码问题。</p>
+</blockquote>
+<h3 id="基于python2-x"><a href="#基于python2-x" class="headerlink" title="基于python2.x"></a>基于python2.x</h3><p>字符串在Python内部的表示是unicode编码。<br>因此，在做编码转换时，通常需要以unicode作为中间编码，最后转成utf-8写入csv。</p>
+<ul>
+<li><p>（1）文本转码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">file = open(<span class="string">'path/to/file'</span>, <span class="string">'r'</span>)</div><div class="line"><span class="keyword">for</span> content <span class="keyword">in</span> file:</div><div class="line">  data = content.decode(<span class="string">'gbk'</span>).encode(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>（2）替换整个python的脚本编码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">reload(sys)   </div><div class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="基于python3-x"><a href="#基于python3-x" class="headerlink" title="基于python3.x"></a>基于python3.x</h3><p>python3.x的默认编码为utf-8，省去了开头的脚本转码过程<br>在3.x中 open方法也得到了更新，可以在创建文档时指定编码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input_txt = open(<span class="string">'input.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'gbk'</span>)</div><div class="line">input_csv = pd.read_csv(<span class="string">'input.csv'</span>, encoding=<span class="string">'gbk'</span>)</div><div class="line"></div><div class="line">output = open(<span class="string">'core_lab.csv'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="判断一个文档的编码"><a href="#判断一个文档的编码" class="headerlink" title="判断一个文档的编码"></a>判断一个文档的编码</h3><p>调用chardet包，会读取字符流中所有的内容，然后给出置信度最好的编码名称<br>高级用法: <a href="http://chardet.readthedocs.io/en/latest/usage.html" target="_blank" rel="external">http://chardet.readthedocs.io/en/latest/usage.html</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> chardet</div><div class="line"></div><div class="line">result = chardet.detect(data)</div><div class="line">    <span class="keyword">return</span> result[<span class="string">'encoding'</span>]</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="mysql数据库介绍"><a href="#mysql数据库介绍" class="headerlink" title="mysql数据库介绍"></a>mysql数据库介绍</h2><blockquote>
+<p>很多情况下，获得结构化数据后，需要存入数据库后调用，并进行动态化的展示。通常使用MYsql数据库，python与mysql数据库的连接是通过一个统一的规范的接口实现的（DB APT），需要安装对应的中间层包。</p>
+</blockquote>
+<ul>
+<li>中间层官方提供的包过于老了，只有32位，且不支持python3.x：<br><a href="https://pypi.python.org/pypi/MySQL-python/1.2.5" target="_blank" rel="external">https://pypi.python.org/pypi/MySQL-python/1.2.5</a></li>
+<li>提供一个多所大学联合提供的python扩展包下载地址，在这儿能找到64位的：<br><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python" target="_blank" rel="external">http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python</a></li>
+</ul>
+<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp" alt=""></p>
+<h3 id="中间层（DB-API）"><a href="#中间层（DB-API）" class="headerlink" title="中间层（DB API）"></a>中间层（DB API）</h3><ul>
+<li>Python应用程序（包含sql）与底层数据库之间的连接，需要提供接口，而各个厂商提供自己的接口程序（Mysql,oracle…）  </li>
+<li>基于这个原因，设计了python访问数据库的统一规范接口(DB API)，这是基于ORM模型的思想。  </li>
+<li>参考文档：<a href="https://www.python.org/dev/peps/pep-0249/" target="_blank" rel="external">https://www.python.org/dev/peps/pep-0249/</a> ，整个接口包含多个对象内容。</li>
+</ul>
+<p><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp" alt=""></p>
 
       
     </div>
@@ -393,9 +447,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
             <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/csv/" rel="tag"># csv</a>
           
         </div>
       
@@ -408,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/29/python算法整理/" rel="next" title="算法练习(python)">
-                <i class="fa fa-chevron-left"></i> 算法练习(python)
+              <a href="/2016/12/05/静态网页爬虫抓取/" rel="next" title="简易爬虫">
+                <i class="fa fa-chevron-left"></i> 简易爬虫
               </a>
             
           </div>
@@ -418,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/09/LDA-SVM/" rel="prev" title="数据挖掘流程初步学习（LDA-SVM）">
-                数据挖掘流程初步学习（LDA-SVM） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/06/python读取控制台数据/" rel="prev" title="python中数据/参数读取">
+                python中数据/参数读取 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -515,7 +569,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -550,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中间层（DB-API）"><span class="nav-number">1.1.</span> <span class="nav-text">中间层（DB API）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#execle-text-gt-csv"><span class="nav-number">1.</span> <span class="nav-text">execle/text -> csv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python2-x"><span class="nav-number">1.1.</span> <span class="nav-text">基于python2.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python3-x"><span class="nav-number">1.2.</span> <span class="nav-text">基于python3.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断一个文档的编码"><span class="nav-number">1.3.</span> <span class="nav-text">判断一个文档的编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库介绍"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑结构"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间层（DB-API）"><span class="nav-number">2.2.</span> <span class="nav-text">中间层（DB API）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -588,7 +642,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -667,13 +721,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

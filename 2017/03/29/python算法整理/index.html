@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -94,19 +94,16 @@
 
 
 
-<meta name="description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……
-主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
+<meta name="description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法练习(python)">
+<meta property="og:title" content="熟悉python基本算法">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/python算法整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……
-主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
-<meta property="og:updated_time" content="2017-04-26T14:03:31.294Z">
+<meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
+<meta property="og:updated_time" content="2017-08-06T09:27:44.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法练习(python)">
-<meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……
-主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
+<meta name="twitter:title" content="熟悉python基本算法">
+<meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
 
 
 
@@ -114,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -140,7 +137,7 @@
 
 
 
-  <title>算法练习(python) | ZhangJian's blog</title>
+  <title>熟悉python基本算法 | ZhangJian's blog</title>
   
 
 
@@ -276,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法练习(python)</h1>
+          <h1 class="post-title" itemprop="name headline">熟悉python基本算法</h1>
         
 
         <div class="post-meta">
@@ -345,23 +342,17 @@
       
 
       
-        <ul>
-<li>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法。持续更新……</li>
-<li>主要的题目来源：leetcode( <a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a> )。 当然，在牛客网上也有对应的leetcode题库。<a id="more"></a>
-</li>
-</ul>
+        <blockquote>
+<p>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……<br>主要的题目来源：leetcode( <a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a> )。 当然，在牛客网上也有对应的leetcode题库。</p>
+</blockquote>
+<a id="more"></a>
 <hr>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串逆序"><a href="#字符串逆序" class="headerlink" title="[字符串逆序]"></a>[字符串逆序]</h4><p>明显的字符串切片（list也可以进行切片操作）<br>备注一下倒叙切片的语法 s[-4:-1]<br>倒数第一个元素的序号为-1（符合数学习惯）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure></p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="字符串逆序"><a href="#字符串逆序" class="headerlink" title="字符串逆序"></a>字符串逆序</h3><p>明显的字符串切片（list也可以进行切片操作）<br>备注一下倒叙切片的语法 <strong>s[-4:-1]</strong><br>倒数第一个元素的序号为-1（符合数学习惯）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="进制操作"><a href="#进制操作" class="headerlink" title="进制操作"></a>进制操作</h3><p>基本的进制函数</p>
-<ul>
-<li>二进制：bin(num)</li>
-<li>八进制：oct(num)</li>
-<li>十六进制：hex(num)</li>
-</ul>
+<h2 id="进制操作"><a href="#进制操作" class="headerlink" title="进制操作"></a>进制操作</h2><p><strong>基本的进制函数</strong><br>二进制：bin(num)<br>八进制：oct(num)<br>十六进制：hex(num)  </p>
 <p>将对应的进制的数转为十进制<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#使用方法： int(str, num)</span></div><div class="line">int(<span class="string">'0x10'</span>, <span class="number">16</span>) &gt;&gt;&gt;<span class="number">16</span></div></pre></td></tr></table></figure></p>
-<h4 id="汉明距离"><a href="#汉明距离" class="headerlink" title="[汉明距离]"></a>[汉明距离]</h4><p>进行二进制转换后的异或位数（同位不同值即为一个距离）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
-<h4 id="二进制的非操作"><a href="#二进制的非操作" class="headerlink" title="[二进制的非操作]"></a>[二进制的非操作]</h4><p>要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可<br>难点在于：</p>
+<h3 id="汉明距离"><a href="#汉明距离" class="headerlink" title="汉明距离"></a>汉明距离</h3><p>进行二进制转换后的异或位数（同位不同值即为一个距离）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin(x^y).count(<span class="string">'1'</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="二进制的非操作"><a href="#二进制的非操作" class="headerlink" title="二进制的非操作"></a>二进制的非操作</h3><p>要想’0’,’1’发生互换，对应位置与’1’进行异或操作即可<br>难点在于：</p>
 <ul>
 <li>如何产生与num二进制转化后，同样长度的’1’</li>
 <li>可以不断将i=1 左移（相当于乘以2，可以循环与二进制转化后相同数目的次数）</li>
@@ -369,8 +360,8 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">findComplement</span><span class="params">(self, num)</span>:</span></div><div class="line">        i = <span class="number">1</span></div><div class="line">        <span class="keyword">while</span> i &lt;= num:</div><div class="line">            i = i &lt;&lt; <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> (i - <span class="number">1</span>) ^ num</div></pre></td></tr></table></figure>
 <hr>
-<h3 id="list以及dict的联合使用"><a href="#list以及dict的联合使用" class="headerlink" title="list以及dict的联合使用"></a>list以及dict的联合使用</h3><h4 id="list相邻元素之间的比较"><a href="#list相邻元素之间的比较" class="headerlink" title="[list相邻元素之间的比较]"></a>[list相邻元素之间的比较]</h4><p>判断list的相邻的两个元素之间的关系<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">st=[]</div><div class="line"><span class="comment">#使用index进行循环</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(st)):</div><div class="line">    judge(st[x], s[x+<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="comment">#使用另外一个列表协同处理，设置中间列表tmp=[]</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> st:</div><div class="line">    <span class="keyword">while</span> len(tmp) <span class="keyword">and</span> judge(tmp[<span class="number">-1</span>], x):</div><div class="line">        ...</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    tmp.append(x)</div></pre></td></tr></table></figure></p>
-
+<h2 id="list以及dict的联合使用"><a href="#list以及dict的联合使用" class="headerlink" title="list以及dict的联合使用"></a>list以及dict的联合使用</h2><h3 id="list相邻元素之间的比较"><a href="#list相邻元素之间的比较" class="headerlink" title="list相邻元素之间的比较"></a>list相邻元素之间的比较</h3><p>判断list的相邻的两个元素之间的关系<br>使用另外一个列表协同处理，设置中间列表tmp=[]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">st=[]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(st)):</div><div class="line">    judge(st[x], s[x+<span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> st:</div><div class="line">    <span class="keyword">while</span> len(tmp) <span class="keyword">and</span> judge(tmp[<span class="number">-1</span>], x):</div><div class="line">        ...</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    tmp.append(x)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -424,8 +415,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/26/python操作mysql数据库/" rel="prev" title="操作mysql数据库（python）">
-                操作mysql数据库（python） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/09/LDA-SVM/" rel="prev" title="数据挖掘流程初步学习（LDA-SVM）">
+                数据挖掘流程初步学习（LDA-SVM） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +512,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -556,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串逆序"><span class="nav-number">1.1.</span> <span class="nav-text">[字符串逆序]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制操作"><span class="nav-number">2.</span> <span class="nav-text">进制操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">[汉明距离]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制的非操作"><span class="nav-number">2.2.</span> <span class="nav-text">[二进制的非操作]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list以及dict的联合使用"><span class="nav-number">3.</span> <span class="nav-text">list以及dict的联合使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#list相邻元素之间的比较"><span class="nav-number">3.1.</span> <span class="nav-text">[list相邻元素之间的比较]</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串逆序"><span class="nav-number">1.1.</span> <span class="nav-text">字符串逆序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进制操作"><span class="nav-number">2.</span> <span class="nav-text">进制操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#汉明距离"><span class="nav-number">2.1.</span> <span class="nav-text">汉明距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制的非操作"><span class="nav-number">2.2.</span> <span class="nav-text">二进制的非操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list以及dict的联合使用"><span class="nav-number">3.</span> <span class="nav-text">list以及dict的联合使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#list相邻元素之间的比较"><span class="nav-number">3.1.</span> <span class="nav-text">list相邻元素之间的比较</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -594,7 +585,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -673,13 +664,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

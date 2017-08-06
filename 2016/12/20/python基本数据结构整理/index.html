@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -94,19 +94,16 @@
 
 
 
-<meta name="description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
-主要对常用的方法和一些细节进行备注">
+<meta name="description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本数据结构（python）">
+<meta property="og:title" content="基本数据结构">
 <meta property="og:url" content="http://yoursite.com/2016/12/20/python基本数据结构整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
-主要对常用的方法和一些细节进行备注">
-<meta property="og:updated_time" content="2017-04-14T12:35:18.586Z">
+<meta property="og:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注">
+<meta property="og:updated_time" content="2017-08-06T09:28:32.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基本数据结构（python）">
-<meta name="twitter:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()
-主要对常用的方法和一些细节进行备注">
+<meta name="twitter:title" content="基本数据结构">
+<meta name="twitter:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注">
 
 
 
@@ -114,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -140,7 +137,7 @@
 
 
 
-  <title>基本数据结构（python） | ZhangJian's blog</title>
+  <title>基本数据结构 | ZhangJian's blog</title>
   
 
 
@@ -276,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基本数据结构（python）</h1>
+          <h1 class="post-title" itemprop="name headline">基本数据结构</h1>
         
 
         <div class="post-meta">
@@ -345,45 +342,24 @@
       
 
       
-        <ul>
-<li>常用的几个数据结构有: list[], tumple(), dict{}, set()</li>
-<li>主要对常用的方法和一些细节进行备注<a id="more"></a>
-</li>
-</ul>
+        <blockquote>
+<p>常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注</p>
+</blockquote>
+<a id="more"></a>
 <hr>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="python二维数组"><a href="#python二维数组" class="headerlink" title="[python二维数组]"></a>[python二维数组]</h3><ul>
-<li><p>二维数组的定义<br>如下操作只是定义了3个指向list([])的引用<br>list[0].append(3)的方法只会让mylist=[[3][3][3]]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>用如下的方式定义：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="python二维数组"><a href="#python二维数组" class="headerlink" title="python二维数组"></a>python二维数组</h3><p><strong>二维数组的定义</strong><br>如下操作只是定义了3个指向list的引用，指向一个地址空间<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div><div class="line"></div><div class="line">&gt;&gt;&gt;mylist[<span class="number">0</span>].append(<span class="number">3</span>)</div><div class="line">mylist=[[<span class="number">3</span>][<span class="number">3</span>][<span class="number">3</span>]]</div></pre></td></tr></table></figure></p>
+<p>用如下的方式定义：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="tumple"><a href="#tumple" class="headerlink" title="tumple"></a>tumple</h2><hr>
-<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><ul>
-<li><p>种类</p>
-<ul>
-<li>有序字典</li>
-<li>无序字典<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">ordr_dic=collections.OrderedDict</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>字典的迭代<br>字典是无序的<br>字典默认读取的是字典元素的key</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic:</div><div class="line">  <span class="keyword">print</span> key:dic[key]</div></pre></td></tr></table></figure>
-<ul>
-<li><p>（1）iter(dict)<br>在有序字典中，读取字典的全部属性值<br>直接读取对应的key和value</p>
-</li>
-<li><p>（2）下标读取</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">print</span> e[<span class="number">0</span>],e[<span class="number">1</span>]</div><div class="line"><span class="comment">#索引e[0]，也有可能是一个list（e[0][0]）</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>（3）分开读取<br>values(), keys()<br>   实质上是把一个 dict 转换成了包含 value/key 的list。<br>itervalues(), interkeys()<br>   直接从dict中取出数据，返回的是 <dictionary-valueiterator> 对象</dictionary-valueiterator></p>
-</li>
-<li><p>（4）dict.items()/ dict.iteritems()<br>   读取[index,element]组合，前者会先生成一个list</p>
-</li>
-</ul>
-</li>
-</ul>
+<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><blockquote>
+<p>种类包括有序字典和无序字典  </p>
+<h3 id="有序字典"><a href="#有序字典" class="headerlink" title="有序字典"></a>有序字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">ordr_dic=collections.OrderedDict</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="字典的迭代"><a href="#字典的迭代" class="headerlink" title="字典的迭代"></a>字典的迭代</h3><p><strong>字典是无序的，字典默认读取的是字典元素的key</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic:</div><div class="line">  <span class="keyword">print</span> key:dic[key]</div></pre></td></tr></table></figure></p>
+<p>（1）iter(dict)<br>在有序字典中，读取字典的全部属性值<br>直接读取对应的key和value  </p>
+<p>（2）下标读取<br>字典的下标可以也是元组（list不行，key要求不变性）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">print</span> e[<span class="number">0</span>],e[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
+<p>（3）分开读取<br><strong>values(), keys()</strong><br>实质上是把一个 dict 转换成了包含 value/key 的list。<br><strong>itervalues(), interkeys()</strong><br>直接从dict中取出数据，返回的是 <dictionary-valueiterator> 对象  </dictionary-valueiterator></p>
+<p>（4）dict.items()/ dict.iteritems()<br>读取[index,element]组合，前者会先生成一个list</p>
 <hr>
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2>
       
@@ -427,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/06/python读取控制台数据/" rel="next" title="数据/参数读取（python）">
-                <i class="fa fa-chevron-left"></i> 数据/参数读取（python）
+              <a href="/2016/12/06/python读取控制台数据/" rel="next" title="python中数据/参数读取">
+                <i class="fa fa-chevron-left"></i> python中数据/参数读取
               </a>
             
           </div>
@@ -437,8 +413,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/27/python内建函数序列篇/" rel="prev" title="内建函数（序列相关）">
-                内建函数（序列相关） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/27/python内建函数序列篇/" rel="prev" title="python中序列相关的内建函数">
+                python中序列相关的内建函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -534,7 +510,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -569,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python二维数组"><span class="nav-number">1.1.</span> <span class="nav-text">[python二维数组]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tumple"><span class="nav-number">2.</span> <span class="nav-text">tumple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dict"><span class="nav-number">3.</span> <span class="nav-text">dict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python二维数组"><span class="nav-number">1.1.</span> <span class="nav-text">python二维数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tumple"><span class="nav-number">2.</span> <span class="nav-text">tumple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dict"><span class="nav-number">3.</span> <span class="nav-text">dict</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序字典"><span class="nav-number">3.1.</span> <span class="nav-text">有序字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典的迭代"><span class="nav-number">3.2.</span> <span class="nav-text">字典的迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li></ol></div>
             
 
           </div>
@@ -607,7 +583,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -686,13 +662,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
