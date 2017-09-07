@@ -5,11 +5,12 @@
   
 
 
-<html class="theme-next mist use-motion" lang="en">
+<html class="theme-next gemini use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
@@ -21,6 +22,7 @@
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -49,6 +51,11 @@
   
 
   
+    
+    
+  
+
+  
 
   
 
@@ -58,14 +65,8 @@
 
   
     
-
     
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=source code pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -75,7 +76,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="mysql,csv," />
@@ -87,7 +88,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -114,7 +115,7 @@
 3.某些网站的web api，可以直接获得了比较清晰的json数据流了豆瓣图">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp">
-<meta property="og:updated_time" content="2017-08-06T09:04:46.242Z">
+<meta property="og:updated_time" content="2017-09-07T07:47:29.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="csv文件到Mysql数据库">
 <meta name="twitter:description" content="如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？
@@ -132,10 +133,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -168,12 +171,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -183,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,12 +226,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Archives
+            About
           </a>
         </li>
       
@@ -245,6 +242,36 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            Schedule
           </a>
         </li>
       
@@ -276,7 +303,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/csv_Mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,6 +399,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -418,30 +452,23 @@
 <li>参考文档：<a href="https://www.python.org/dev/peps/pep-0249/" target="_blank" rel="external">https://www.python.org/dev/peps/pep-0249/</a> ，整个接口包含多个对象内容。</li>
 </ul>
 <p><img src="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp" alt=""></p>
+<h2 id="mysql数据库的连接"><a href="#mysql数据库的连接" class="headerlink" title="mysql数据库的连接"></a>mysql数据库的连接</h2><h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><blockquote>
+<p>安装完对应的mysql-python模块后，使用传统的方式连接数据库</p>
+<h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_connect</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">  config = &#123;</div><div class="line">    <span class="string">'host'</span>: <span class="string">'localhost'</span>,</div><div class="line">    <span class="string">'port'</span>: <span class="number">3306</span>,</div><div class="line">    <span class="string">'user'</span>: <span class="string">'root'</span>,</div><div class="line">    <span class="string">'passwd'</span>: <span class="string">'root'</span>,</div><div class="line">    <span class="string">'db'</span>: <span class="string">'professor'</span>,</div><div class="line">    <span class="string">'charset'</span>: <span class="string">'utf8'</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    conn = MySQLdb.connect(**config)</div><div class="line">    <span class="keyword">return</span> conn</div></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h4><p>执行增删改查的工作，需要设置游标，改变数据库的操作（插入、更新）则需要提交改变<br>具体的sql语句去查对应的语法，下面给出一些示例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># define the coursor</span></div><div class="line">cursor = conn.cursor()</div><div class="line"></div><div class="line"><span class="comment"># query data by conditions</span></div><div class="line">sql = <span class="string">"SELECT * FROM table \</span></div><div class="line">                WHERE name = '%s' AND age = '%d'" % (name, age)</div><div class="line"></div><div class="line"><span class="comment"># update the data</span></div><div class="line">sql = <span class="string">"update table set web = '%s'\</span></div><div class="line">                   WHERE Name = '%s'" % (web, name)</div><div class="line"></div><div class="line"><span class="comment"># excute sql and commit it to database</span></div><div class="line">cursor.execute(sql)</div><div class="line">conn.commit()</div></pre></td></tr></table></figure></p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -483,6 +510,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -534,19 +565,22 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://omouah54e.bkt.clouddn.com/SELF/id.jpg"
-               alt="reflex_zj" />
-          <p class="site-author-name" itemprop="name">reflex_zj</p>
-           
-              <p class="site-description motion-element" itemprop="description">technology backup!</p>
           
+            <img class="site-author-image" itemprop="image"
+              src="http://omouah54e.bkt.clouddn.com/SELF/id.jpg"
+              alt="reflex_zj" />
+          
+            <p class="site-author-name" itemprop="name">reflex_zj</p>
+            <p class="site-description motion-element" itemprop="description">technology backup!</p>
         </div>
+
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives/">
+            
                 <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">posts</span>
               </a>
@@ -604,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#execle-text-gt-csv"><span class="nav-number">1.</span> <span class="nav-text">execle/text -> csv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python2-x"><span class="nav-number">1.1.</span> <span class="nav-text">基于python2.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python3-x"><span class="nav-number">1.2.</span> <span class="nav-text">基于python3.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断一个文档的编码"><span class="nav-number">1.3.</span> <span class="nav-text">判断一个文档的编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库介绍"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑结构"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间层（DB-API）"><span class="nav-number">2.2.</span> <span class="nav-text">中间层（DB API）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#execle-text-gt-csv"><span class="nav-number">1.</span> <span class="nav-text">execle/text -> csv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python2-x"><span class="nav-number">1.1.</span> <span class="nav-text">基于python2.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于python3-x"><span class="nav-number">1.2.</span> <span class="nav-text">基于python3.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断一个文档的编码"><span class="nav-number">1.3.</span> <span class="nav-text">判断一个文档的编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库介绍"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑结构"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间层（DB-API）"><span class="nav-number">2.2.</span> <span class="nav-text">中间层（DB API）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库的连接"><span class="nav-number">3.</span> <span class="nav-text">mysql数据库的连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本方法"><span class="nav-number">3.1.</span> <span class="nav-text">基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接数据库"><span class="nav-number">3.1.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增删改查"><span class="nav-number">3.1.2.</span> <span class="nav-text">增删改查</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -632,22 +666,25 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">reflex_zj</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -713,25 +750,36 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -756,6 +804,8 @@
 
 
   
+
+
 
 
 
