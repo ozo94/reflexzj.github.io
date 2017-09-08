@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="pyhton," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="主要讨论主函数中 name = ‘main‘ 写法意义">
+<meta name="description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Main主函数">
+<meta property="og:title" content="【python】Main主函数">
 <meta property="og:url" content="http://yoursite.com/2016/10/05/main函数分析/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="主要讨论主函数中 name = ‘main‘ 写法意义">
-<meta property="og:updated_time" content="2017-04-26T14:58:02.043Z">
+<meta property="og:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
+<meta property="og:updated_time" content="2017-09-08T06:34:02.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Main主函数">
-<meta name="twitter:description" content="主要讨论主函数中 name = ‘main‘ 写法意义">
+<meta name="twitter:title" content="【python】Main主函数">
+<meta name="twitter:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>Main主函数 | ZhangJian's blog</title>
+  <title>【python】Main主函数 | ZhangJian's blog</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Main主函数</h1>
+          <h1 class="post-title" itemprop="name headline">【python】Main主函数</h1>
         
 
         <div class="post-meta">
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python编程/" itemprop="url" rel="index">
-                    <span itemprop="name">python编程</span>
+                  <a href="/categories/python学习备注/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习备注</span>
                   </a>
                 </span>
 
@@ -376,17 +376,26 @@
       
 
       
-        <ul>
-<li>主要讨论主函数中 <strong>name</strong> = ‘<strong>main</strong>‘ 写法意义<a id="more"></a>
+        <blockquote>
+<p>在对应的py文件中，主函数中 <strong>name</strong> = ‘<strong>main</strong>‘ 写法有何意义？</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>给一个模块</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure></p>
+<ul>
+<li>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</li>
+</ul>
+<p><strong>从另外一个模块中调用main()方法</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#anothermodle.py</span></div><div class="line"><span class="keyword">from</span> module <span class="keyword">import</span> main</div><div class="line">main()</div></pre></td></tr></table></figure></p>
+<ul>
+<li>执行的结果是：we are in module</li>
+<li>没有显示”we are in <strong>main</strong>“,也就是说模块<strong>name</strong> = ‘<strong>main</strong>‘ 下面的函数没有执行。</li>
+</ul>
+<p><strong>分析</strong>  </p>
+<ul>
+<li><p>直接执行某个.py文件的时候，该文件中那么”<strong>name</strong> == ‘<strong>main</strong>‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时<strong>name</strong>的值就是这个py文件的名字而不是<strong>main</strong>。</p>
+</li>
+<li><p>这个功能还有一个用处：<br>调试代码的时候，在”if <strong>name</strong> == ‘<strong>main</strong>‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。</p>
 </li>
 </ul>
-<h4 id="给一个模块"><a href="#给一个模块" class="headerlink" title="[给一个模块]"></a>[给一个模块]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure>
-<p>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</p>
-<h4 id="从另外一个模块中调用main-方法"><a href="#从另外一个模块中调用main-方法" class="headerlink" title="[从另外一个模块中调用main()方法]"></a>[从另外一个模块中调用main()方法]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#anothermodle.py</span></div><div class="line"><span class="keyword">from</span> module <span class="keyword">import</span> main</div><div class="line">main()</div></pre></td></tr></table></figure>
-<p>执行的结果是：we are in module</p>
-<p>没有显示”we are in <strong>main</strong>“,也就是说模块<strong>name</strong> = ‘<strong>main</strong>‘ 下面的函数没有执行。</p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>直接执行某个.py文件的时候，该文件中那么”<strong>name</strong> == ‘<strong>main</strong>‘“是True,但是如果从另外一个.py文件通过import导入该文件的时候，这时<strong>name</strong>的值就是这个py文件的名字而不是<strong>main</strong>。</p>
-<p>这个功能还有一个用处：调试代码的时候，在”if <strong>name</strong> == ‘<strong>main</strong>‘“中加入一些的调试代码，可以让外部模块调用的时候不执行调试代码，但是如果想排查问题的时候，直接执行该模块文件，调试代码能够正常运行。</p>
 
       
     </div>
@@ -404,7 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/pyhton/" rel="tag"># pyhton</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -423,8 +432,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/13/c_c++_算法整理/" rel="prev" title="算法整理(c++)">
-                算法整理(c++) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/13/c_c++_算法整理/" rel="prev" title="【c++】算法整理">
+                【c++】算法整理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -477,17 +486,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -505,7 +505,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -516,7 +516,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -527,7 +527,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -552,22 +552,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#给一个模块"><span class="nav-number">1.</span> <span class="nav-text">[给一个模块]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从另外一个模块中调用main-方法"><span class="nav-number">2.</span> <span class="nav-text">[从另外一个模块中调用main()方法]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number"></span> <span class="nav-text">分析</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

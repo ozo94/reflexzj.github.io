@@ -98,14 +98,14 @@
 <meta name="description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
 python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异常处理方法(python)">
+<meta property="og:title" content="【python】异常处理方法">
 <meta property="og:url" content="http://yoursite.com/2017/01/07/try语句/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
 <meta property="og:description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
 python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
-<meta property="og:updated_time" content="2017-04-26T14:09:51.722Z">
+<meta property="og:updated_time" content="2017-09-08T06:34:42.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异常处理方法(python)">
+<meta name="twitter:title" content="【python】异常处理方法">
 <meta name="twitter:description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
 python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
 
@@ -143,7 +143,7 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
 
 
 
-  <title>异常处理方法(python) | ZhangJian's blog</title>
+  <title>【python】异常处理方法 | ZhangJian's blog</title>
   
 
 
@@ -307,7 +307,7 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
 
         
         
-          <h1 class="post-title" itemprop="name headline">异常处理方法(python)</h1>
+          <h1 class="post-title" itemprop="name headline">【python】异常处理方法</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python语法/" itemprop="url" rel="index">
-                    <span itemprop="name">python语法</span>
+                  <a href="/categories/python语法分析/" itemprop="url" rel="index">
+                    <span itemprop="name">python语法分析</span>
                   </a>
                 </span>
 
@@ -379,16 +379,16 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
       
 
       
-        <ul>
+        <blockquote>
+<ul>
 <li>try/catch语句用以处理python编程过程中可能出现的异常情况</li>
-<li>python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免<a id="more"></a>
-</li>
+<li>python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免</li>
 </ul>
-<h4 id="捕获所有异常"><a href="#捕获所有异常" class="headerlink" title="[捕获所有异常]"></a>[捕获所有异常]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span> Exception,e:  </div><div class="line">    <span class="keyword">print</span> Exception,<span class="string">":"</span>,e</div></pre></td></tr></table></figure>
-<hr>
-<h4 id="采用traceback模块查看异常"><a href="#采用traceback模块查看异常" class="headerlink" title="[采用traceback模块查看异常]"></a>[采用traceback模块查看异常]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入python中的traceback模块，跟踪错误</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    traceback.print_exc()</div><div class="line"></div><div class="line"><span class="comment">#也可以将异常存储到日志文件中去</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback</div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    f=open(<span class="string">"c:log.txt"</span>,<span class="string">'a'</span>)  </div><div class="line">    traceback.print_exc(file=f)  </div><div class="line">    f.flush()  </div><div class="line">    f.close()</div></pre></td></tr></table></figure>
-<hr>
-<h4 id="采用sys模块回溯最后的异常"><a href="#采用sys模块回溯最后的异常" class="headerlink" title="[采用sys模块回溯最后的异常]"></a>[采用sys模块回溯最后的异常]</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入sys模块</span></div><div class="line"><span class="keyword">import</span> sys  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    info=sys.exc_info()  </div><div class="line">    <span class="keyword">print</span> info[<span class="number">0</span>],<span class="string">":"</span>,info[<span class="number">1</span>]</div></pre></td></tr></table></figure>
+</blockquote>
+<a id="more"></a>
+<p><strong>捕获所有异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span> Exception,e:  </div><div class="line">    <span class="keyword">print</span> Exception,<span class="string">":"</span>,e</div></pre></td></tr></table></figure></p>
+<p><strong>采用traceback模块查看异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入python中的traceback模块，跟踪错误</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    traceback.print_exc()</div><div class="line"></div><div class="line"><span class="comment">#也可以将异常存储到日志文件中去</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback</div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    f=open(<span class="string">"c:log.txt"</span>,<span class="string">'a'</span>)  </div><div class="line">    traceback.print_exc(file=f)  </div><div class="line">    f.flush()  </div><div class="line">    f.close()</div></pre></td></tr></table></figure></p>
+<p><strong>采用sys模块回溯最后的异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入sys模块</span></div><div class="line"><span class="keyword">import</span> sys  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    info=sys.exc_info()  </div><div class="line">    <span class="keyword">print</span> info[<span class="number">0</span>],<span class="string">":"</span>,info[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -419,8 +419,8 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/27/python内建函数序列篇/" rel="next" title="python中序列相关的内建函数">
-                <i class="fa fa-chevron-left"></i> python中序列相关的内建函数
+              <a href="/2016/12/27/python内建函数序列篇/" rel="next" title="【python】序列相关的内建函数">
+                <i class="fa fa-chevron-left"></i> 【python】序列相关的内建函数
               </a>
             
           </div>
@@ -429,8 +429,8 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/01/openedx搭建/" rel="prev" title="openedx搭建笔记">
-                openedx搭建笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/01/openedx搭建/" rel="prev" title="【openEdx】环境搭建笔记">
+                【openEdx】环境搭建笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,17 +483,8 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -511,7 +502,7 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -522,7 +513,7 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -533,7 +524,7 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -558,22 +549,6 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获所有异常"><span class="nav-number">1.</span> <span class="nav-text">[捕获所有异常]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用traceback模块查看异常"><span class="nav-number">2.</span> <span class="nav-text">[采用traceback模块查看异常]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采用sys模块回溯最后的异常"><span class="nav-number">3.</span> <span class="nav-text">[采用sys模块回溯最后的异常]</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
