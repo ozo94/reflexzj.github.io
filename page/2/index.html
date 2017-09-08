@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/静态网页爬虫抓取/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/csv_Mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="reflex_zj">
@@ -306,7 +306,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/05/静态网页爬虫抓取/" itemprop="url">【python】简易爬虫</a></h1>
+                <a class="post-title-link" href="/2016/12/05/csv_Mysql/" itemprop="url">【Mysql】csv文件同步至Mysql数据库</a></h1>
         
 
         <div class="post-meta">
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">爬虫</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -380,15 +380,22 @@
       
         
           <blockquote>
-<p>爬虫是一种自动抓取互联网信息的程序，可以取互联网中有价值的数据。传统的人工方式，通过URL之间的联系来获取网页，覆盖面小，效率低下。开发一个最简易的爬虫（爬去静态网页，没有使用框架，效率很低，仅作为对爬虫的入门了解）</p>
+<p>如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？</p>
 </blockquote>
+<p><strong>获取数据一般有如下几个方法：</strong>  </p>
 <ul>
-<li>源码地址：<a href="https://github.com/reflexzj/simple-crawler.git">https://github.com/reflexzj/simple-crawler.git</a></li>
+<li>1.使用爬虫获取网络上对应的数据并进行结构化处理，写到csv、txt文件中去</li>
+<li>2.网页上下载对应的csv文件或者txt文件（某些网站提供了源数据）</li>
+<li><p>3.某些网站的web api，可以直接获得了比较清晰的json数据流了<br>豆瓣图书API：<a href="https://developers.douban.com/">https://developers.douban.com/</a><br>代码示例：获取小王子图书的主页信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">r = requests.get(<span class="string">'https://api.douban.com/v2/book/1084336'</span>)</div><div class="line">print(r.text)</div></pre></td></tr></table></figure>
+</li>
+<li><p>4.一些语料库的可以直接使用<br>NTTK语料库: <a href="http://www.nltk.org/">http://www.nltk.org/</a></p>
+</li>
 </ul>
-<p><img src="http://omouah54e.bkt.clouddn.com/sipder/mindimage/%E9%9D%99%E6%80%81%E7%88%AC%E8%99%AB.gif" alt=""><br>
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/12/05/静态网页爬虫抓取/#more" rel="contents">
+            <a class="btn" href="/2016/12/05/csv_Mysql/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -532,8 +539,10 @@
       
         
           <blockquote>
-<p>持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆</p>
+<p>大学时期比较系统的学习了c++的编码，最近使用python较多，有些遗忘。c++代码比较底层，能够帮助更好地理解一些算法的机制问题。持续整理，从简单的算法开始，与原来记忆中的知识体系形成一个对照，帮助复习和记忆……</p>
 </blockquote>
+<hr>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="字符串逆置"><a href="#字符串逆置" class="headerlink" title="字符串逆置"></a>字符串逆置</h3><p><strong>统计字符串的长度length()/size()</strong><br>其实这两个的功能是一样的，c++更倾向于用size(),用于STL中<br><strong>除了考虑时间复杂度，空间复杂度的问题需不需要考虑？</strong><br>（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/10/13/c_c++_算法整理/#more" rel="contents">
@@ -682,6 +691,10 @@
           <blockquote>
 <p>在对应的py文件中，主函数中 <strong>name</strong> = ‘<strong>main</strong>‘ 写法有何意义？</p>
 </blockquote>
+<p><strong>给一个模块</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure></p>
+<ul>
+<li>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/10/05/main函数分析/#more" rel="contents">

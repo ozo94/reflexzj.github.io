@@ -95,16 +95,25 @@
 
 
 
-<meta name="description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
+<meta name="description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。
+
+
+字符串字符串逆序明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Soluti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】熟悉基本算法">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/python算法整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
-<meta property="og:updated_time" content="2017-09-08T06:15:46.149Z">
+<meta property="og:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。
+
+
+字符串字符串逆序明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Soluti">
+<meta property="og:updated_time" content="2017-09-08T07:41:36.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】熟悉基本算法">
-<meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。">
+<meta name="twitter:description" content="从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……主要的题目来源：leetcode( https://leetcode.com/ )。 当然，在牛客网上也有对应的leetcode题库。
+
+
+字符串字符串逆序明显的字符串切片（list也可以进行切片操作）备注一下倒叙切片的语法 s[-4:-1]倒数第一个元素的序号为-1（符合数学习惯）1234567class Soluti">
 
 
 
@@ -379,9 +388,9 @@
         <blockquote>
 <p>从基础算法开始，一道道的刷过去，争取早日熟悉python的语法，持续更新……<br>主要的题目来源：leetcode( <a href="https://leetcode.com/" target="_blank" rel="external">https://leetcode.com/</a> )。 当然，在牛客网上也有对应的leetcode题库。</p>
 </blockquote>
-<a id="more"></a>
 <hr>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="字符串逆序"><a href="#字符串逆序" class="headerlink" title="字符串逆序"></a>字符串逆序</h3><p>明显的字符串切片（list也可以进行切片操作）<br>备注一下倒叙切片的语法 <strong>s[-4:-1]</strong><br>倒数第一个元素的序号为-1（符合数学习惯）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseString</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: str</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> s[::<span class="number">-1</span>]</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <hr>
 <h2 id="进制操作"><a href="#进制操作" class="headerlink" title="进制操作"></a>进制操作</h2><p><strong>基本的进制函数</strong><br>二进制：bin(num)<br>八进制：oct(num)<br>十六进制：hex(num)  </p>
 <p>将对应的进制的数转为十进制<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#使用方法： int(str, num)</span></div><div class="line">int(<span class="string">'0x10'</span>, <span class="number">16</span>) &gt;&gt;&gt;<span class="number">16</span></div></pre></td></tr></table></figure></p>

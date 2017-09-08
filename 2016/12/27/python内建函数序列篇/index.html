@@ -95,22 +95,22 @@
 
 
 
-<meta name="description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。
+<meta name="description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。  
 
-给出代码测试12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; t">
+其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; type(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】序列相关的内建函数">
 <meta property="og:url" content="http://yoursite.com/2016/12/27/python内建函数序列篇/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。
+<meta property="og:description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。  
 
-给出代码测试12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; t">
-<meta property="og:updated_time" content="2017-09-08T06:16:19.436Z">
+其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; type(">
+<meta property="og:updated_time" content="2017-09-08T07:46:27.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】序列相关的内建函数">
-<meta name="twitter:description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。
+<meta name="twitter:description" content="python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。  
 
-给出代码测试12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; t">
+其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。12345678&amp;gt;&amp;gt;&amp;gt; type(sorted(s))	&amp;lt;type &apos;list&apos;&amp;gt;&amp;gt;&amp;gt;&amp;gt; type(">
 
 
 
@@ -383,9 +383,9 @@
 
       
         <blockquote>
-<p>python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。<br>其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。</p>
+<p>python常见的与序列相关的内建函数有4种：sorted()、reversed()、enumerate()、zip()。  </p>
 </blockquote>
-<p><strong>给出代码测试</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(sorted(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(zip(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(reversed(s))	</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>其中sorted()、reversed()是返回的一个列表对象，而enumerate()、zip()返回的是一个迭代器。</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(sorted(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(zip(s))	</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(reversed(s))	</div><div class="line">&lt;type <span class="string">'listreverseiterator'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(enumerate(s))</div><div class="line">&lt;type <span class="string">'enumerate'</span>&gt;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="zip-函数"><a href="#zip-函数" class="headerlink" title="zip()函数"></a>zip()函数</h2><p>zip([seql, …])接受一系列可迭代对象作为参数，将对象中对应的元素打包成tuple，然后返回由这些tuples组成的list。<br>若传入参数的长度不等，则返回list的长度和参数中长度最短的对象相同。<br>两个字符串载匹配是按少匹配，zip与*组合，形成一个行列变换。</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">s2=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>result=zip(s1.s2)</div><div class="line">result:[(<span class="number">1</span>,<span class="number">4</span>),(<span class="number">2</span>,<span class="number">5</span>),(<span class="number">3</span>,<span class="number">6</span>)]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>zip(*result)</div><div class="line">[(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>map(list, zip(*a))</div><div class="line">[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]</div></pre></td></tr></table></figure>

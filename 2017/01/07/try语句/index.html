@@ -96,18 +96,24 @@
 
 
 <meta name="description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
-python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
+python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免
+
+捕获所有异常12345try:      a=b      b=c  except Exception,e:      print Exception,&quot;:&quot;,e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】异常处理方法">
 <meta property="og:url" content="http://yoursite.com/2017/01/07/try语句/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
 <meta property="og:description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
-python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
-<meta property="og:updated_time" content="2017-09-08T06:34:42.379Z">
+python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免
+
+捕获所有异常12345try:      a=b      b=c  except Exception,e:      print Exception,&quot;:&quot;,e">
+<meta property="og:updated_time" content="2017-09-08T07:45:35.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】异常处理方法">
 <meta name="twitter:description" content="try/catch语句用以处理python编程过程中可能出现的异常情况
-python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免">
+python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免
+
+捕获所有异常12345try:      a=b      b=c  except Exception,e:      print Exception,&quot;:&quot;,e">
 
 
 
@@ -379,14 +385,12 @@ python是一个高度应用（解释型）语言，在运用过程中的种种�
       
 
       
-        <blockquote>
-<ul>
+        <ul>
 <li>try/catch语句用以处理python编程过程中可能出现的异常情况</li>
 <li>python是一个高度应用（解释型）语言，在运用过程中的种种疏漏有时难以避免</li>
 </ul>
-</blockquote>
-<a id="more"></a>
 <p><strong>捕获所有异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span> Exception,e:  </div><div class="line">    <span class="keyword">print</span> Exception,<span class="string">":"</span>,e</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><strong>采用traceback模块查看异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入python中的traceback模块，跟踪错误</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    traceback.print_exc()</div><div class="line"></div><div class="line"><span class="comment">#也可以将异常存储到日志文件中去</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> traceback</div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    f=open(<span class="string">"c:log.txt"</span>,<span class="string">'a'</span>)  </div><div class="line">    traceback.print_exc(file=f)  </div><div class="line">    f.flush()  </div><div class="line">    f.close()</div></pre></td></tr></table></figure></p>
 <p><strong>采用sys模块回溯最后的异常</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#引入sys模块</span></div><div class="line"><span class="keyword">import</span> sys  </div><div class="line"><span class="keyword">try</span>:  </div><div class="line">    a=b  </div><div class="line">    b=c  </div><div class="line"><span class="keyword">except</span>:  </div><div class="line">    info=sys.exc_info()  </div><div class="line">    <span class="keyword">print</span> info[<span class="number">0</span>],<span class="string">":"</span>,info[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
 

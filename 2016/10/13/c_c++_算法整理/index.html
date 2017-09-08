@@ -95,16 +95,25 @@
 
 
 
-<meta name="description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆">
+<meta name="description" content="大学时期比较系统的学习了c++的编码，最近使用python较多，有些遗忘。c++代码比较底层，能够帮助更好地理解一些算法的机制问题。持续整理，从简单的算法开始，与原来记忆中的知识体系形成一个对照，帮助复习和记忆……
+
+
+字符串字符串逆置统计字符串的长度length()/size()其实这两个的功能是一样的，c++更倾向于用size(),用于STL中除了考虑时间复杂度，空间复杂度的问题需不需要考虑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【c++】算法整理">
 <meta property="og:url" content="http://yoursite.com/2016/10/13/c_c++_算法整理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆">
-<meta property="og:updated_time" content="2017-09-08T05:59:34.331Z">
+<meta property="og:description" content="大学时期比较系统的学习了c++的编码，最近使用python较多，有些遗忘。c++代码比较底层，能够帮助更好地理解一些算法的机制问题。持续整理，从简单的算法开始，与原来记忆中的知识体系形成一个对照，帮助复习和记忆……
+
+
+字符串字符串逆置统计字符串的长度length()/size()其实这两个的功能是一样的，c++更倾向于用size(),用于STL中除了考虑时间复杂度，空间复杂度的问题需不需要考虑">
+<meta property="og:updated_time" content="2017-09-08T07:37:24.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【c++】算法整理">
-<meta name="twitter:description" content="持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆">
+<meta name="twitter:description" content="大学时期比较系统的学习了c++的编码，最近使用python较多，有些遗忘。c++代码比较底层，能够帮助更好地理解一些算法的机制问题。持续整理，从简单的算法开始，与原来记忆中的知识体系形成一个对照，帮助复习和记忆……
+
+
+字符串字符串逆置统计字符串的长度length()/size()其实这两个的功能是一样的，c++更倾向于用size(),用于STL中除了考虑时间复杂度，空间复杂度的问题需不需要考虑">
 
 
 
@@ -377,11 +386,11 @@
 
       
         <blockquote>
-<p>持续整理，从简单的算法开始。与原来记忆中的知识体系形成一个对照，帮助复习和记忆</p>
+<p>大学时期比较系统的学习了c++的编码，最近使用python较多，有些遗忘。c++代码比较底层，能够帮助更好地理解一些算法的机制问题。持续整理，从简单的算法开始，与原来记忆中的知识体系形成一个对照，帮助复习和记忆……</p>
 </blockquote>
-<a id="more"></a>
 <hr>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="字符串逆置"><a href="#字符串逆置" class="headerlink" title="字符串逆置"></a>字符串逆置</h3><p><strong>统计字符串的长度length()/size()</strong><br>其实这两个的功能是一样的，c++更倾向于用size(),用于STL中<br><strong>除了考虑时间复杂度，空间复杂度的问题需不需要考虑？</strong><br>（这可是c++啊，新建一个字符串，逆序存入的方法，真是给大学算法老师丢脸了。）不出所料地，出现了 Runtime Error 的错误。</p>
+<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len=s.size();</div><div class="line">        <span class="built_in">string</span> result;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">         result[len-i<span class="number">-1</span>]=s[i]; </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>给出最优的方案：从两头开始向中间移动指针<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.size() - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</div><div class="line">            swap(s[i++], s[j--]); </div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <hr>
@@ -429,8 +438,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/05/静态网页爬虫抓取/" rel="prev" title="【python】简易爬虫">
-                【python】简易爬虫 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/05/csv_Mysql/" rel="prev" title="【Mysql】csv文件同步至Mysql数据库">
+                【Mysql】csv文件同步至Mysql数据库 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

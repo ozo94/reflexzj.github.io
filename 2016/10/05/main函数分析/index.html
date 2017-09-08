@@ -95,16 +95,28 @@
 
 
 
-<meta name="description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
+<meta name="description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？
+
+给一个模块12345#module.pydef main():  print &quot;we are in %s&quot;%__name__if __name__ == &apos;__main__&apos;:  main()
+
+这个函数定义了一个main函数，执行后打印出”we are in main“,说明if语句中的内容被执行了，调用了main()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】Main主函数">
 <meta property="og:url" content="http://yoursite.com/2016/10/05/main函数分析/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
-<meta property="og:updated_time" content="2017-09-08T06:34:02.047Z">
+<meta property="og:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？
+
+给一个模块12345#module.pydef main():  print &quot;we are in %s&quot;%__name__if __name__ == &apos;__main__&apos;:  main()
+
+这个函数定义了一个main函数，执行后打印出”we are in main“,说明if语句中的内容被执行了，调用了main()">
+<meta property="og:updated_time" content="2017-09-08T07:30:38.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】Main主函数">
-<meta name="twitter:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？">
+<meta name="twitter:description" content="在对应的py文件中，主函数中 name = ‘main‘ 写法有何意义？
+
+给一个模块12345#module.pydef main():  print &quot;we are in %s&quot;%__name__if __name__ == &apos;__main__&apos;:  main()
+
+这个函数定义了一个main函数，执行后打印出”we are in main“,说明if语句中的内容被执行了，调用了main()">
 
 
 
@@ -379,11 +391,11 @@
         <blockquote>
 <p>在对应的py文件中，主函数中 <strong>name</strong> = ‘<strong>main</strong>‘ 写法有何意义？</p>
 </blockquote>
-<a id="more"></a>
 <p><strong>给一个模块</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#module.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">print</span> <span class="string">"we are in %s"</span>%__name__</div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">  main()</div></pre></td></tr></table></figure></p>
 <ul>
 <li>这个函数定义了一个main函数，执行后打印出”we are in <strong>main</strong>“,说明if语句中的内容被执行了，调用了main()</li>
 </ul>
+<a id="more"></a>
 <p><strong>从另外一个模块中调用main()方法</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#anothermodle.py</span></div><div class="line"><span class="keyword">from</span> module <span class="keyword">import</span> main</div><div class="line">main()</div></pre></td></tr></table></figure></p>
 <ul>
 <li>执行的结果是：we are in module</li>
