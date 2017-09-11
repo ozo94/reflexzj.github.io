@@ -98,7 +98,7 @@
 <meta name="description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注
 
 
-listpython二维数组二维数组的定义如下操作只是定义了3个指向list的引用，指向一个地址空间1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;mylist[0].append(3)mylist=[[3][3][3]]">
+列表（list）讨论python中二维数组的概念（基于list）python的二位数组在严格意义上并不存在，只是list列表的多层嵌套如下操作只是定义了3个指向list的引用，但是每层都只是指向一个地址空间的1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】基本数据结构">
 <meta property="og:url" content="http://yoursite.com/2016/12/20/python基本数据结构整理/index.html">
@@ -106,14 +106,14 @@ listpython二维数组二维数组的定义如下操作只是定义了3个指向
 <meta property="og:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注
 
 
-listpython二维数组二维数组的定义如下操作只是定义了3个指向list的引用，指向一个地址空间1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;mylist[0].append(3)mylist=[[3][3][3]]">
-<meta property="og:updated_time" content="2017-09-08T07:47:07.358Z">
+列表（list）讨论python中二维数组的概念（基于list）python的二位数组在严格意义上并不存在，只是list列表的多层嵌套如下操作只是定义了3个指向list的引用，但是每层都只是指向一个地址空间的1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;m">
+<meta property="og:updated_time" content="2017-09-11T13:32:38.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】基本数据结构">
 <meta name="twitter:description" content="常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注
 
 
-listpython二维数组二维数组的定义如下操作只是定义了3个指向list的引用，指向一个地址空间1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;mylist[0].append(3)mylist=[[3][3][3]]">
+列表（list）讨论python中二维数组的概念（基于list）python的二位数组在严格意义上并不存在，只是list列表的多层嵌套如下操作只是定义了3个指向list的引用，但是每层都只是指向一个地址空间的1234mylist= [[]]*3&amp;gt;&amp;gt;&amp;gt;m">
 
 
 
@@ -389,22 +389,31 @@ listpython二维数组二维数组的定义如下操作只是定义了3个指向
 <p>常用的几个数据结构有: list[], tumple(), dict{}, set()，主要对常用的方法和一些细节进行备注</p>
 </blockquote>
 <hr>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="python二维数组"><a href="#python二维数组" class="headerlink" title="python二维数组"></a>python二维数组</h3><p><strong>二维数组的定义</strong><br>如下操作只是定义了3个指向list的引用，指向一个地址空间<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div><div class="line"></div><div class="line">&gt;&gt;&gt;mylist[<span class="number">0</span>].append(<span class="number">3</span>)</div><div class="line">mylist=[[<span class="number">3</span>][<span class="number">3</span>][<span class="number">3</span>]]</div></pre></td></tr></table></figure></p>
+<h2 id="列表（list）"><a href="#列表（list）" class="headerlink" title="列表（list）"></a>列表（list）</h2><p><strong>讨论python中二维数组的概念（基于list）</strong><br>python的二位数组在严格意义上并不存在，只是list列表的多层嵌套<br>如下操作只是定义了3个指向list的引用，但是每层都只是指向一个地址空间的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mylist= [[]]*<span class="number">3</span></div><div class="line"></div><div class="line">&gt;&gt;&gt;mylist[<span class="number">0</span>].append(<span class="number">3</span>)</div><div class="line">[[<span class="number">3</span>], [<span class="number">3</span>], [<span class="number">3</span>]]</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>用如下的方式定义：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[<span class="number">0</span>]*n, [<span class="number">0</span>]*n, ...]</div></pre></td></tr></table></figure></p>
+<p>每层子list都需要额外的申请空间，才能模拟出二位数组的效果<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mylist=[[], [], ...]</div></pre></td></tr></table></figure></p>
+<p><strong>迭代</strong><br>变量可以通过list来复制（list自身完全迭代，保证变量数于list中元素个数匹配）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">testLsit = [1 , 2]</div><div class="line">i ,j = test</div><div class="line">&gt;&gt;&gt;print i,j</div><div class="line">1,2</div></pre></td></tr></table></figure></p>
 <hr>
-<h2 id="tumple"><a href="#tumple" class="headerlink" title="tumple"></a>tumple</h2><hr>
-<h2 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h2><blockquote>
+<h2 id="字典（dict）"><a href="#字典（dict）" class="headerlink" title="字典（dict）"></a>字典（dict）</h2><blockquote>
 <p>种类包括有序字典和无序字典  </p>
 <h3 id="有序字典"><a href="#有序字典" class="headerlink" title="有序字典"></a>有序字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">ordr_dic=collections.OrderedDict</div></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="字典的迭代"><a href="#字典的迭代" class="headerlink" title="字典的迭代"></a>字典的迭代</h3><p><strong>字典是无序的，字典默认读取的是字典元素的key</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic:</div><div class="line">  <span class="keyword">print</span> key:dic[key]</div></pre></td></tr></table></figure></p>
-<p>（1）iter(dict)<br>在有序字典中，读取字典的全部属性值<br>直接读取对应的key和value  </p>
-<p>（2）下标读取<br>字典的下标可以也是元组（list不行，key要求不变性）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> e <span class="keyword">in</span> dict:</div><div class="line">    <span class="keyword">print</span> e[<span class="number">0</span>],e[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
-<p>（3）分开读取<br><strong>values(), keys()</strong><br>实质上是把一个 dict 转换成了包含 value/key 的list。<br><strong>itervalues(), interkeys()</strong><br>直接从dict中取出数据，返回的是 <dictionary-valueiterator> 对象  </dictionary-valueiterator></p>
-<p>（4）dict.items()/ dict.iteritems()<br>读取[index,element]组合，前者会先生成一个list</p>
+<h3 id="字典的迭代"><a href="#字典的迭代" class="headerlink" title="字典的迭代"></a>字典的迭代</h3><p><strong>字典是无序的，返回字典的keys，values的列表</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dict.keys()</div><div class="line">dict.values()</div><div class="line">dict.items()</div></pre></td></tr></table></figure></p>
+<p><strong>字典中内建迭代器（<strong>iter</strong>），迭代元素为key。除了通过key来索引获得字典中值外，也可以使用自带的一些函数。</strong>  </p>
+<p><strong>（1）default：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict:</div><div class="line">  <span class="keyword">print</span> key + <span class="string">':'</span> + dic[key]</div></pre></td></tr></table></figure></p>
+<p><strong>（2）extension：</strong><br>Python 还引进了三个新的内建字典方法来定义迭代:<br>通过keys迭代，返回keys<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myDict.iterkeys()</div></pre></td></tr></table></figure></p>
+<p>通过values迭代<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myDict.itervalues()</div></pre></td></tr></table></figure></p>
+<p>通过(key,value)形式来迭代</p>
+<pre><code class="python">myDict.iteritems()
+</code></pre>
+<p><strong>iterkeys(), keys()等3组方法的区别</strong>  </p>
+<ul>
+<li>interkeys()方法直接从dict中取出数据，返回的是 <strong>dictionary-valueiterator</strong> 对象  </li>
+<li>keys()方法返回的是<strong>list</strong>对象，是一个对iterkeys()包装的过程</li>
+</ul>
 <hr>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2>
+<h2 id="集合（set）"><a href="#集合（set）" class="headerlink" title="集合（set）"></a>集合（set）</h2><hr>
+<h2 id="元组（tumple）"><a href="#元组（tumple）" class="headerlink" title="元组（tumple）"></a>元组（tumple）</h2>
       
     </div>
     
@@ -585,7 +594,7 @@ listpython二维数组二维数组的定义如下操作只是定义了3个指向
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python二维数组"><span class="nav-number">1.1.</span> <span class="nav-text">python二维数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tumple"><span class="nav-number">2.</span> <span class="nav-text">tumple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dict"><span class="nav-number">3.</span> <span class="nav-text">dict</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序字典"><span class="nav-number">3.1.</span> <span class="nav-text">有序字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典的迭代"><span class="nav-number">3.2.</span> <span class="nav-text">字典的迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表（list）"><span class="nav-number">1.</span> <span class="nav-text">列表（list）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典（dict）"><span class="nav-number">2.</span> <span class="nav-text">字典（dict）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序字典"><span class="nav-number">2.1.</span> <span class="nav-text">有序字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典的迭代"><span class="nav-number">2.2.</span> <span class="nav-text">字典的迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合（set）"><span class="nav-number">3.</span> <span class="nav-text">集合（set）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组（tumple）"><span class="nav-number">4.</span> <span class="nav-text">元组（tumple）</span></a></li></ol></div>
             
 
           </div>
