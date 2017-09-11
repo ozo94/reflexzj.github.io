@@ -96,21 +96,26 @@
 
 
 <meta name="description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
-修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.7.13.exe">
+
+不使用虚拟环境修改执行文件名
+win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【python】python多版本环境管理">
 <meta property="og:url" content="http://yoursite.com/2017/05/26/python版本管理/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
 <meta property="og:description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
-修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.7.13.exe">
-<meta property="og:updated_time" content="2017-09-08T07:48:43.258Z">
+
+不使用虚拟环境修改执行文件名
+win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
+<meta property="og:image" content="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png">
+<meta property="og:updated_time" content="2017-09-11T12:00:48.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】python多版本环境管理">
 <meta name="twitter:description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
-修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.7.13.exe">
+
+不使用虚拟环境修改执行文件名
+win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
+<meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png">
 
 
 
@@ -383,10 +388,38 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
 
       
         <p>当系统中有python2.x和python3.x等多个版本的环境时，如何管理？<br>（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装<br>（2）使用vitualenv,conda等虚拟环境</p>
-<h2 id="修改执行文件名"><a href="#修改执行文件名" class="headerlink" title="修改执行文件名"></a>修改执行文件名</h2><blockquote>
+<hr>
+<h2 id="不使用虚拟环境"><a href="#不使用虚拟环境" class="headerlink" title="不使用虚拟环境"></a>不使用虚拟环境</h2><h3 id="修改执行文件名"><a href="#修改执行文件名" class="headerlink" title="修改执行文件名"></a>修改执行文件名</h3><blockquote>
 <p>win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下<br>python.exe为python2.7.13.exe），使用pip安装第三方库。</p>
 </blockquote>
 <a id="more"></a>
+<ul>
+<li>cmd命令窗口输入pip -V（或pip -version）查看默认调用的pip的路径</li>
+<li>不能直接使用pip install 命令安装对应python2.7.13版本的第三方库</li>
+</ul>
+<p><img src="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png" alt="none">    </p>
+<p><strong>方法：</strong><br>其中 <strong>-m</strong> 参数相当于import，意味当作模块启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python2.7.13 -m pip install XXXX</div></pre></td></tr></table></figure></p>
+<p><strong>备注：</strong>  </p>
+<ul>
+<li>安装了Python2.7.13后重命名了Python27文件夹下python.exe为python2.7.13.exe</li>
+<li>同时对其他不同的版本的也适用（python27，Anaconda）</li>
+</ul>
+<h3 id="官方方法"><a href="#官方方法" class="headerlink" title="官方方法"></a>官方方法</h3><blockquote>
+<p>官方提供了python2.x和python3.x这两个环境的转换方法</p>
+</blockquote>
+<p>知乎链接：<a href="https://www.zhihu.com/question/21653286" target="_blank" rel="external">https://www.zhihu.com/question/21653286</a>  </p>
+<p><strong>对于Linux</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo pip install sth</div><div class="line"></div><div class="line"><span class="comment"># 或者明确版本</span></div><div class="line">sudo pip2 install sth</div><div class="line">sudo pip3 install sth</div><div class="line">sudo python2 -m pip install sth</div><div class="line">sudo /path/to/python -m pip install sth</div></pre></td></tr></table></figure></p>
+<p><strong>对于 Windows NT</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 如果仅安装 python2</span></div><div class="line">pip install sth</div><div class="line"></div><div class="line"><span class="comment"># 如果安装有 python3, 则需要明确 pip 版本</span></div><div class="line">py <span class="number">-2</span> -m pip install sth</div><div class="line">py <span class="number">-3</span> -m pip install sth</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="使用虚拟环境"><a href="#使用虚拟环境" class="headerlink" title="使用虚拟环境"></a>使用虚拟环境</h2><blockquote>
+<p>使用虚拟环境的好处在于：对于不同的项目，可以定制出所需要的python环境。主要介绍vitualenv和conda这两种虚拟环境工具。</p>
+</blockquote>
+<h3 id="vitualenv"><a href="#vitualenv" class="headerlink" title="vitualenv"></a>vitualenv</h3><p>文档参考地址：<a href="http://virtualenv-chinese-docs.readthedocs.io/en/latest/#id12" target="_blank" rel="external">http://virtualenv-chinese-docs.readthedocs.io/en/latest/#id12</a></p>
+<p>安装vitualenv工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install virtualenv</div></pre></td></tr></table></figure></p>
+<p>创建一个子环境，以系统中默认的python环境为蓝本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ mkdir myproject</div><div class="line">$ cd myproject</div><div class="line">$ virtualenv venv</div><div class="line">New python executable in venv/bin/python</div><div class="line">Installing distribute............done.</div><div class="line"></div><div class="line"># choose other python envs</div><div class="line">$ virtualenv -p path\to\python\python.exe envname</div></pre></td></tr></table></figure></p>
+<p>激活环境后，在对应的环境中安装所需要的包，即完成了子环境的定制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ venv\scripts\activate</div></pre></td></tr></table></figure></p>
+<h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><p>详细参考：<a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/22678445</a></p>
+
       
     </div>
     
@@ -567,7 +600,7 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改执行文件名"><span class="nav-number">1.</span> <span class="nav-text">修改执行文件名</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不使用虚拟环境"><span class="nav-number">1.</span> <span class="nav-text">不使用虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改执行文件名"><span class="nav-number">1.1.</span> <span class="nav-text">修改执行文件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官方方法"><span class="nav-number">1.2.</span> <span class="nav-text">官方方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">使用虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vitualenv"><span class="nav-number">2.1.</span> <span class="nav-text">vitualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-number">2.2.</span> <span class="nav-text">conda</span></a></li></ol></li></ol></div>
             
 
           </div>
