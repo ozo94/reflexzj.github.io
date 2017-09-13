@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="mysql,csv," />
+  <meta name="keywords" content="mysql,csv,编码," />
 
 
 
@@ -115,7 +115,7 @@
 3.某些网站的web api，可以直接获得了比较清晰的json数据流了豆瓣图">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.bmp">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYTHON/MYSQL/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A5%E5%8F%A3.bmp">
-<meta property="og:updated_time" content="2017-09-08T06:02:30.754Z">
+<meta property="og:updated_time" content="2017-09-13T08:49:40.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Mysql】csv文件同步至Mysql数据库">
 <meta name="twitter:description" content="如何获取想要的数据，并进行结构化，这是数据挖掘的基础（也是后期数据的基础）。之后，如何对这些数据进行清洗（去重，补全），如何进行存储？
@@ -415,6 +415,11 @@
 <h2 id="execle-text-gt-csv"><a href="#execle-text-gt-csv" class="headerlink" title="execle/text -&gt; csv"></a>execle/text -&gt; csv</h2><blockquote>
 <p>在mysql数据中，文本格式一般是utf-8。而一般在处理时候，得到的execle/text文档是gbk，gb2312,所以在做csv转换时一定要注意编码问题。</p>
 </blockquote>
+<ul>
+<li>python编码，是指python内设置的解码方式，如果不设定的话，python2默认是ascii解码，在源码文件开头（一定是第一行）：#-<em>-coding:UTF-8-</em>-，源码文件的设置解码方式是UTF-8</li>
+<li>unicode是python中的字符集，utf-8是unicode的一种实现，又称unicode为内码</li>
+<li>python2.x中有string和unicode两种字符串，string字符串就是按照python编码的，unicode字符串则是unicode字符集</li>
+</ul>
 <h3 id="基于python2-x"><a href="#基于python2-x" class="headerlink" title="基于python2.x"></a>基于python2.x</h3><p>字符串在Python内部的表示是unicode编码。<br>因此，在做编码转换时，通常需要以unicode作为中间编码，最后转成utf-8写入csv。</p>
 <ul>
 <li><p>（1）文本转码</p>
@@ -467,6 +472,8 @@
           
             <a href="/tags/csv/" rel="tag"># csv</a>
           
+            <a href="/tags/编码/" rel="tag"># 编码</a>
+          
         </div>
       
 
@@ -478,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/13/c_c++_算法整理/" rel="next" title="【c++】算法整理">
-                <i class="fa fa-chevron-left"></i> 【c++】算法整理
+              <a href="/2016/12/05/静态网页爬虫抓取/" rel="next" title="【python】简易爬虫">
+                <i class="fa fa-chevron-left"></i> 【python】简易爬虫
               </a>
             
           </div>
@@ -488,8 +495,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/05/静态网页爬虫抓取/" rel="prev" title="【python】简易爬虫">
-                【python】简易爬虫 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/06/python读取控制台数据/" rel="prev" title="【python】数据、参数读取">
+                【python】数据、参数读取 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,7 +577,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -592,7 +599,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

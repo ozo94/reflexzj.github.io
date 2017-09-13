@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,版本管理," />
+  <meta name="keywords" content="python,open,文件读取,编码,unicode," />
 
 
 
@@ -95,27 +95,34 @@
 
 
 
-<meta name="description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
+<meta name="description" content="通过python默认的包来读取文件内容，主要使用open方法。在读取文件时，如何获取文件名，如何处理中文路径？
 
-不使用虚拟环境修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
+
+文件路径读取
+使用python中os模块，可以一次性读取了所有的文本内容，也可以读取单个文件夹下的所有内容。 
+
+读取文件夹（1）读取文件路径下的所有文件，以子文件夹为单位，逐个完成读取os.walk方法以最小的子文件夹为单位，读取该文件夹下所有的内容（文件路径，好像不区分正反斜杠">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【python】python多版本环境管理">
-<meta property="og:url" content="http://yoursite.com/2017/05/26/python版本管理/index.html">
+<meta property="og:title" content="【python】文件路径读取总汇">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/文件读取/index.html">
 <meta property="og:site_name" content="ZhangJian's blog">
-<meta property="og:description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
+<meta property="og:description" content="通过python默认的包来读取文件内容，主要使用open方法。在读取文件时，如何获取文件名，如何处理中文路径？
 
-不使用虚拟环境修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
-<meta property="og:image" content="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png">
-<meta property="og:updated_time" content="2017-09-11T12:00:48.412Z">
+
+文件路径读取
+使用python中os模块，可以一次性读取了所有的文本内容，也可以读取单个文件夹下的所有内容。 
+
+读取文件夹（1）读取文件路径下的所有文件，以子文件夹为单位，逐个完成读取os.walk方法以最小的子文件夹为单位，读取该文件夹下所有的内容（文件路径，好像不区分正反斜杠">
+<meta property="og:updated_time" content="2017-09-13T10:58:43.205Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【python】python多版本环境管理">
-<meta name="twitter:description" content="当系统中有python2.x和python3.x等多个版本的环境时，如何管理？（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装（2）使用vitualenv,conda等虚拟环境
+<meta name="twitter:title" content="【python】文件路径读取总汇">
+<meta name="twitter:description" content="通过python默认的包来读取文件内容，主要使用open方法。在读取文件时，如何获取文件名，如何处理中文路径？
 
-不使用虚拟环境修改执行文件名
-win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下python.exe为python2.">
-<meta name="twitter:image" content="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png">
+
+文件路径读取
+使用python中os模块，可以一次性读取了所有的文本内容，也可以读取单个文件夹下的所有内容。 
+
+读取文件夹（1）读取文件路径下的所有文件，以子文件夹为单位，逐个完成读取os.walk方法以最小的子文件夹为单位，读取该文件夹下所有的内容（文件路径，好像不区分正反斜杠">
 
 
 
@@ -145,13 +152,13 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/26/python版本管理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/13/文件读取/"/>
 
 
 
 
 
-  <title>【python】python多版本环境管理 | ZhangJian's blog</title>
+  <title>【python】文件路径读取总汇 | ZhangJian's blog</title>
   
 
 
@@ -298,7 +305,7 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/python版本管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/文件读取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="reflex_zj">
@@ -315,7 +322,7 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
 
         
         
-          <h1 class="post-title" itemprop="name headline">【python】python多版本环境管理</h1>
+          <h1 class="post-title" itemprop="name headline">【python】文件路径读取总汇</h1>
         
 
         <div class="post-meta">
@@ -327,8 +334,8 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-26T00:00:00+08:00">
-                2017-05-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-13T10:29:07+08:00">
+                2017-09-13
               </time>
             
 
@@ -387,38 +394,35 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
       
 
       
-        <p>当系统中有python2.x和python3.x等多个版本的环境时，如何管理？<br>（1）修改执行文件（python.exe）的名称，pip安装包时去对应的模块下安装<br>（2）使用vitualenv,conda等虚拟环境</p>
-<hr>
-<h2 id="不使用虚拟环境"><a href="#不使用虚拟环境" class="headerlink" title="不使用虚拟环境"></a>不使用虚拟环境</h2><h3 id="修改执行文件名"><a href="#修改执行文件名" class="headerlink" title="修改执行文件名"></a>修改执行文件名</h3><blockquote>
-<p>win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命名了Python27文件夹下<br>python.exe为python2.7.13.exe），使用pip安装第三方库。</p>
+        <blockquote>
+<p>通过python默认的包来读取文件内容，主要使用open方法。在读取文件时，如何获取文件名，如何处理中文路径？</p>
 </blockquote>
+<hr>
+<h2 id="文件路径读取"><a href="#文件路径读取" class="headerlink" title="文件路径读取"></a>文件路径读取</h2><blockquote>
+<p>使用python中os模块，可以一次性读取了所有的文本内容，也可以读取单个文件夹下的所有内容。 </p>
+</blockquote>
+<h3 id="读取文件夹"><a href="#读取文件夹" class="headerlink" title="读取文件夹"></a>读取文件夹</h3><p><strong>（1）读取文件路径下的所有文件，以子文件夹为单位，逐个完成读取</strong><br>os.walk方法以最小的子文件夹为单位，读取该文件夹下所有的内容（文件路径，好像不区分正反斜杠，默认反斜杠）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">rootdir = <span class="string">'../data_01/'</span></div><div class="line"><span class="keyword">for</span> parent, dirnames, filenames <span class="keyword">in</span> os.walk(rootdir):</div><div class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</div><div class="line">        path = os.path.join(parent,filename)</div><div class="line">        <span class="keyword">print</span> path</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
+<p><strong>（2）遍历指定目录，显示目录下的所有文件名</strong><br>逐层读取，实现walk()方法所提供的功能</p>
 <ul>
-<li>cmd命令窗口输入pip -V（或pip -version）查看默认调用的pip的路径</li>
-<li>不能直接使用pip install 命令安装对应python2.7.13版本的第三方库</li>
+<li>读取多层的目录结构下的文件  </li>
+<li>循环读取结构目录下的所有文件（清楚目录结构，目录的结构层次不能深）</li>
 </ul>
-<p><img src="http://omouah54e.bkt.clouddn.com/python_main/1088437-20170121203717343-1254801597.png" alt="none">    </p>
-<p><strong>方法：</strong><br>其中 <strong>-m</strong> 参数相当于import，意味当作模块启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python2.7.13 -m pip install XXXX</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">eachFile</span><span class="params">(filepach)</span>:</span></div><div class="line">    files = []</div><div class="line">    pathDir = os.listdir(filepach)</div><div class="line">    <span class="keyword">for</span> allDir <span class="keyword">in</span> pathDir:</div><div class="line">        <span class="comment"># child = os.path.join("%s%s" %(filepach, allDir))</span></div><div class="line">        <span class="comment"># print child.decode('gbk')</span></div><div class="line">        files.append(filepach+allDir)</div><div class="line">    <span class="keyword">print</span> files</div><div class="line">    <span class="keyword">return</span> files</div></pre></td></tr></table></figure>
+<h3 id="路径格式问题"><a href="#路径格式问题" class="headerlink" title="路径格式问题"></a>路径格式问题</h3><h4 id="路径格式"><a href="#路径格式" class="headerlink" title="路径格式"></a>路径格式</h4><p><strong>（1）使用斜杠“/”:</strong><br>不用反斜杠就不会产生歧义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;c:/test.txt&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>（2）将反斜杠符号转义:</strong><br>因为反斜杠是转义符，所以两个”\“就表示一个反斜杠符号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;c:\\test.txt&quot;</div></pre></td></tr></table></figure></p>
+<p><strong>（3）使用Python的raw string:</strong><br>python下在字符串前面加上字母r，表示后面是一个原始字符串raw string。raw string主要是为正则表达式而不是windows路径设计的，所以这种做法尽量少用，可能会出问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">r&quot;c:\test.txt&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="中文路径"><a href="#中文路径" class="headerlink" title="中文路径"></a>中文路径</h4><p>对中文的文件名，直接解码成’utf-8’的编码形式来使用（字符到字节的转换）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newpath = unicode(path, &quot;utf-8&quot;)</div></pre></td></tr></table></figure></p>
 <p><strong>备注：</strong>  </p>
 <ul>
-<li>安装了Python2.7.13后重命名了Python27文件夹下python.exe为python2.7.13.exe</li>
-<li>同时对其他不同的版本的也适用（python27，Anaconda）</li>
+<li>要深入理解这个问题，要明白字符串和字节串的区别，路径读取的对应的unicdoe字符</li>
+<li>str是字节串，由unicode经过编码(encode)后的字节组成的  </li>
+<li><a href="http://python.jobbole.com/81244/" target="_blank" rel="external">python编码问题的深入理解、</a> <a href="http://python.jobbole.com/80939/" target="_blank" rel="external">unicode编码问题的深入理解</a></li>
 </ul>
-<h3 id="官方方法"><a href="#官方方法" class="headerlink" title="官方方法"></a>官方方法</h3><blockquote>
-<p>官方提供了python2.x和python3.x这两个环境的转换方法</p>
+<h2 id="open方法使用"><a href="#open方法使用" class="headerlink" title="open方法使用"></a>open方法使用</h2><blockquote>
+<p>open()方法得到对象、操作的对象都是string字符串（fp.wirte(str_data)）</p>
 </blockquote>
-<p>知乎链接：<a href="https://www.zhihu.com/question/21653286" target="_blank" rel="external">https://www.zhihu.com/question/21653286</a>  </p>
-<p><strong>对于Linux</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo pip install sth</div><div class="line"></div><div class="line"><span class="comment"># 或者明确版本</span></div><div class="line">sudo pip2 install sth</div><div class="line">sudo pip3 install sth</div><div class="line">sudo python2 -m pip install sth</div><div class="line">sudo /path/to/python -m pip install sth</div></pre></td></tr></table></figure></p>
-<p><strong>对于 Windows NT</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 如果仅安装 python2</span></div><div class="line">pip install sth</div><div class="line"></div><div class="line"><span class="comment"># 如果安装有 python3, 则需要明确 pip 版本</span></div><div class="line">py <span class="number">-2</span> -m pip install sth</div><div class="line">py <span class="number">-3</span> -m pip install sth</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="使用虚拟环境"><a href="#使用虚拟环境" class="headerlink" title="使用虚拟环境"></a>使用虚拟环境</h2><blockquote>
-<p>使用虚拟环境的好处在于：对于不同的项目，可以定制出所需要的python环境。主要介绍vitualenv和conda这两种虚拟环境工具。</p>
-</blockquote>
-<h3 id="vitualenv"><a href="#vitualenv" class="headerlink" title="vitualenv"></a>vitualenv</h3><p>文档参考地址：<a href="http://virtualenv-chinese-docs.readthedocs.io/en/latest/#id12" target="_blank" rel="external">http://virtualenv-chinese-docs.readthedocs.io/en/latest/#id12</a></p>
-<p>安装vitualenv工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install virtualenv</div></pre></td></tr></table></figure></p>
-<p>创建一个子环境，以系统中默认的python环境为蓝本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ mkdir myproject</div><div class="line">$ cd myproject</div><div class="line">$ virtualenv venv</div><div class="line">New python executable in venv/bin/python</div><div class="line">Installing distribute............done.</div><div class="line"></div><div class="line"># choose other python envs</div><div class="line">$ virtualenv -p path\to\python\python.exe envname</div></pre></td></tr></table></figure></p>
-<p>激活环境后，在对应的环境中安装所需要的包，即完成了子环境的定制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ venv\scripts\activate</div></pre></td></tr></table></figure></p>
-<h3 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h3><p>详细参考：<a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/22678445</a></p>
+<p><strong>python文件读取教程：</strong> <a href="http://www.runoob.com/python/python-files-io.html" target="_blank" rel="external">http://www.runoob.com/python/python-files-io.html</a></p>
 
       
     </div>
@@ -438,7 +442,13 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
           
             <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/版本管理/" rel="tag"># 版本管理</a>
+            <a href="/tags/open/" rel="tag"># open</a>
+          
+            <a href="/tags/文件读取/" rel="tag"># 文件读取</a>
+          
+            <a href="/tags/编码/" rel="tag"># 编码</a>
+          
+            <a href="/tags/unicode/" rel="tag"># unicode</a>
           
         </div>
       
@@ -451,8 +461,8 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/29/python算法整理/" rel="next" title="【python】熟悉基本算法">
-                <i class="fa fa-chevron-left"></i> 【python】熟悉基本算法
+              <a href="/2017/07/09/LDA-SVM/" rel="next" title="【data_mining】数据挖掘流程初步学习">
+                <i class="fa fa-chevron-left"></i> 【data_mining】数据挖掘流程初步学习
               </a>
             
           </div>
@@ -460,10 +470,6 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/09/LDA-SVM/" rel="prev" title="【data_mining】数据挖掘流程初步学习">
-                【data_mining】数据挖掘流程初步学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +606,7 @@ win10系统，先安装有Python3.5.2，后又安装了Python2.7.13（并重命�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不使用虚拟环境"><span class="nav-number">1.</span> <span class="nav-text">不使用虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改执行文件名"><span class="nav-number">1.1.</span> <span class="nav-text">修改执行文件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官方方法"><span class="nav-number">1.2.</span> <span class="nav-text">官方方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">使用虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vitualenv"><span class="nav-number">2.1.</span> <span class="nav-text">vitualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-number">2.2.</span> <span class="nav-text">conda</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件路径读取"><span class="nav-number">1.</span> <span class="nav-text">文件路径读取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取文件夹"><span class="nav-number">1.1.</span> <span class="nav-text">读取文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径格式问题"><span class="nav-number">1.2.</span> <span class="nav-text">路径格式问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路径格式"><span class="nav-number">1.2.1.</span> <span class="nav-text">路径格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中文路径"><span class="nav-number">1.2.2.</span> <span class="nav-text">中文路径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open方法使用"><span class="nav-number">2.</span> <span class="nav-text">open方法使用</span></a></li></ol></div>
             
 
           </div>

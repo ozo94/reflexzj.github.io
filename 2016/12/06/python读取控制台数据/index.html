@@ -110,7 +110,7 @@
 参数读取在pycharm中，通过配置运行环境，预设好参数（通过argv[]获取参数）
 12345import sys# &quot;i=0&quot;时，表示代码本身文件路径，&quot;id =1&quot;代表第一个参数sys.">
 <meta property="og:image" content="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG">
-<meta property="og:updated_time" content="2017-09-08T07:40:29.257Z">
+<meta property="og:updated_time" content="2017-09-12T03:01:21.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【python】数据、参数读取">
 <meta name="twitter:description" content="主要区分参数读取和数据读取这两个概念，一个作用于程序的执行环境，一个作用于程序代码本身。 参数指在程序编译之前，所设置的对应参数；而数据是指执行在程序编译之后，默认接受用户在控制台通过键盘键入的数据。
@@ -398,7 +398,7 @@
 <p><img src="http://omouah54e.bkt.clouddn.com/PYCHARM/%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96.PNG" alt="none"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="comment"># "i=0"时，表示代码本身文件路径，"id =1"代表第一个参数</span></div><div class="line">sys.argv[i]</div><div class="line"><span class="comment"># 第i个参数（j--&gt;k位）</span></div><div class="line">sys.argv[i][j:k]</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <hr>
-<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><h3 id="raw-input-input"><a href="#raw-input-input" class="headerlink" title="[raw_input/input]"></a>[raw_input/input]</h3><ul>
+<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><h3 id="raw-input-input"><a href="#raw-input-input" class="headerlink" title="raw_input/input"></a>raw_input/input</h3><ul>
 <li><p>raw_input([prompt])<br>函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）<br>将每行的输入看作一个字符串来处理，需要对数据进行处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#如果希望读取出in型数据，则需要进行转化</span></div><div class="line">map(int, raw_input().split())</div><div class="line"></div><div class="line">int(raw_input().split()[<span class="number">0</span>])</div></pre></td></tr></table></figure>
 </li>
@@ -406,7 +406,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s=input()</div><div class="line"><span class="comment"># string，需要将输入通过引号括起来，不然会报SyntaxError错误</span></div><div class="line"><span class="comment"># 输入数字会自动识别为int/float型</span></div><div class="line"><span class="comment"># 输入正确的表达式，会给出执行后的结果</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="sys-stdin"><a href="#sys-stdin" class="headerlink" title="[sys.stdin]"></a>[sys.stdin]</h3><ul>
+<h3 id="sys-stdin"><a href="#sys-stdin" class="headerlink" title="sys.stdin"></a>sys.stdin</h3><ul>
 <li><p>readline()<br>标准输入读取一行，但是会读取换行符’\n’</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">str= sys.stdin.readline()</div></pre></td></tr></table></figure>
 </li>
@@ -444,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/05/静态网页爬虫抓取/" rel="next" title="【python】简易爬虫">
-                <i class="fa fa-chevron-left"></i> 【python】简易爬虫
+              <a href="/2016/12/05/csv_Mysql/" rel="next" title="【Mysql】csv文件同步至Mysql数据库">
+                <i class="fa fa-chevron-left"></i> 【Mysql】csv文件同步至Mysql数据库
               </a>
             
           </div>
@@ -536,7 +536,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -558,7 +558,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -593,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参数读取"><span class="nav-number">1.</span> <span class="nav-text">参数读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制台"><span class="nav-number">2.</span> <span class="nav-text">控制台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#raw-input-input"><span class="nav-number">2.1.</span> <span class="nav-text">[raw_input/input]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-stdin"><span class="nav-number">2.2.</span> <span class="nav-text">[sys.stdin]</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参数读取"><span class="nav-number">1.</span> <span class="nav-text">参数读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制台"><span class="nav-number">2.</span> <span class="nav-text">控制台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#raw-input-input"><span class="nav-number">2.1.</span> <span class="nav-text">raw_input/input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-stdin"><span class="nav-number">2.2.</span> <span class="nav-text">sys.stdin</span></a></li></ol></li></ol></div>
             
 
           </div>
